@@ -6,7 +6,8 @@ import { api } from "../../convex/_generated/api";
 import { mutation, query } from "@/lib/convex";
 import { read, update } from "@/lib/store";
 import { scrapeProduct } from "@/lib/scrape";
-import { requireOwner, requireUser } from "@/lib/session";
+import { cookies } from "next/headers";
+import { getRealViewer, requireOwner, requireUser, VIEW_AS_COOKIE } from "@/lib/session";
 import { addFromGrailed, saveOutfit } from "./actions";
 import type { GrailedListing, Target } from "@/lib/types";
 
@@ -121,5 +122,20 @@ export async function listPeople(): Promise<Person[]> {
 export async function removePerson(userId: string) {
   await requireOwner();
   await mutation(api.collab.removePerson, { userId });
+  refresh();
+}
+
+// ---- view as (owner previews the site as a guest) ----
+
+export async function startViewingAs(userId: string | "guest") {
+  const real = await getRealViewer();
+  if (real?.role !== "owner") throw new Error("only the owner can do this");
+  if (userId !== "guest" && !(await query(api.collab.people, {})).some((p) => p.id === userId && !p.owner)) throw new Error("no such guest");
+  (await cookies()).set(VIEW_AS_COOKIE, userId, { httpOnly: true, sameSite: "lax", secure: process.env.NODE_ENV === "production", path: "/", maxAge: 60 * 60 * 12 });
+  refresh();
+}
+
+export async function stopViewingAs() {
+  (await cookies()).delete(VIEW_AS_COOKIE);
   refresh();
 }

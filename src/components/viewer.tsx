@@ -3,7 +3,7 @@
 import { createContext, use, type ReactNode } from "react";
 import type { Role } from "@/lib/types";
 
-export type ViewerInfo = { id: string; name: string; role: Role } | null;
+export type ViewerInfo = { id: string; name: string; role: Role; viewingAs?: { ownerName: string } } | null;
 
 const Ctx = createContext<Promise<ViewerInfo>>(Promise.resolve(null));
 

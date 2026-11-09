@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { Nav, NavFrame } from "@/components/nav";
 import { Palette } from "@/components/palette";
 import { AddItemDialog } from "@/components/add-item-dialog";
+import { ViewAsBanner } from "@/components/view-as-banner";
 import { ViewerProvider } from "@/components/viewer";
 import { getViewer } from "@/lib/session";
 import "./globals.css";
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   // Not awaited: client components unwrap it inside their own Suspense.
-  const viewer = getViewer().then((v) => (v ? { id: v.id, name: v.name, role: v.role } : null));
+  const viewer = getViewer().then((v) => (v ? { id: v.id, name: v.name, role: v.role, viewingAs: v.viewingAs } : null));
   return (
     <html lang="en" className={`${ui.variable} ${code.variable} ${serif.variable} antialiased`}>
       <body className="min-h-dvh bg-background text-foreground">
@@ -31,6 +32,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <TooltipProvider delayDuration={300}>
             <Suspense fallback={<NavFrame />}>
               <Nav />
+            </Suspense>
+            <Suspense fallback={null}>
+              <ViewAsBanner />
             </Suspense>
             <main className="mx-auto w-full max-w-[1440px] px-5 pt-6 pb-24 md:px-8">{children}</main>
             <Suspense fallback={null}>

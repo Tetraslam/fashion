@@ -158,6 +158,13 @@ export default function GuidePage() {
                 </span>
               </li>
               <li className="grid grid-cols-[140px_1fr] gap-4 py-3">
+                <span className="text-foreground">view as</span>
+                <span>
+                  On people, <em>view as</em> shows the site exactly as a guest sees it (or a brand-new guest), with their votes highlighted. A
+                  blue banner stays up until you hit stop. It&apos;s read-only, so you can&apos;t accidentally vote or comment under their name.
+                </span>
+              </li>
+              <li className="grid grid-cols-[140px_1fr] gap-4 py-3">
                 <span className="text-foreground">removing</span>
                 <span>Remove someone on people and they&apos;re signed out on their next click. Their comments stay.</span>
               </li>

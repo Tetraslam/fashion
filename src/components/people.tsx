@@ -2,8 +2,9 @@
 
 import { useState, useTransition } from "react";
 import { toast } from "sonner";
-import { CopyIcon, PlusIcon, TrashIcon } from "@phosphor-icons/react";
-import { createInvite, removePerson, revokeInvite, type Person } from "@/app/collab-actions";
+import { CopyIcon, EyeIcon, PlusIcon, TrashIcon } from "@phosphor-icons/react";
+import { useRouter } from "next/navigation";
+import { createInvite, removePerson, revokeInvite, startViewingAs, type Person } from "@/app/collab-actions";
 import type { Invite } from "@/lib/types";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -19,6 +20,12 @@ async function copy(code: string) {
 export function People({ invites, people, activity }: { invites: Invite[]; people: Person[]; activity: Record<string, number> }) {
   const [label, setLabel] = useState("");
   const [pending, start] = useTransition();
+  const router = useRouter();
+  const viewAs = (id: string) =>
+    start(async () => {
+      await startViewingAs(id);
+      router.push("/");
+    });
   const open = invites.filter((i) => !i.usedBy).reverse();
 
   return (
@@ -60,7 +67,14 @@ export function People({ invites, people, activity }: { invites: Invite[]; peopl
           <p className="text-sm text-muted-foreground">No unused invites. Make one, it gets copied to your clipboard.</p>
         )}
       </Section>
-      <Section title="people" aside={`${people.length} account${people.length === 1 ? "" : "s"}`}>
+      <Section
+        title="people"
+        aside={
+          <button onClick={() => viewAs("guest")} disabled={pending} className="inline-flex items-center gap-1.5 hover:text-foreground">
+            <EyeIcon /> view as a new guest
+          </button>
+        }
+      >
         <ul className="flex flex-col divide-y divide-border border-y border-border">
           {people.map((p) => (
             <li key={p.id} className="flex items-center gap-3 py-3">
@@ -74,6 +88,11 @@ export function People({ invites, people, activity }: { invites: Invite[]; peopl
                   {activity[p.id] ? ` · ${activity[p.id]} comments` : ""}
                 </span>
               </div>
+              {!p.owner && (
+                <Button variant="outline" size="sm" disabled={pending} onClick={() => viewAs(p.id)}>
+                  <EyeIcon /> view as
+                </Button>
+              )}
               {!p.owner && (
                 <Button
                   variant="ghost"
