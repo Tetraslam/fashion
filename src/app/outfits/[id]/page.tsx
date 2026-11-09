@@ -83,7 +83,7 @@ async function Outfit({ params }: { params: PageProps<"/outfits/[id]">["params"]
           </div>
         </Section>
       )}
-      <nav className="flex items-center justify-between border-t border-border pt-6 font-mono text-xs uppercase">
+      <nav className="flex items-center justify-between border-t border-border pt-6 font-serif text-2xl">
         <Link href={`/outfits/${prev.id}`} className="text-muted-foreground hover:text-foreground">
           ← {prev.name}
         </Link>
@@ -105,7 +105,7 @@ function StandIn({ missing, alts }: { missing: Item; alts: Item[] }) {
       <span className="text-muted-foreground">→</span>
       <div className="flex flex-wrap gap-2">
         {alts.map((a) => (
-          <Link key={a.id} href={`/pieces/${a.id}`} className="flex items-center gap-2 border border-border p-1 pr-3 hover:border-moss">
+          <Link key={a.id} href={`/pieces/${a.id}`} className="flex items-center gap-2 border border-border p-1 pr-3 hover:border-ok">
             <ItemPhoto item={a} className="size-12" />
             <span className="text-sm">{a.name}</span>
           </Link>

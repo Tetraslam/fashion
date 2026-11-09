@@ -85,12 +85,12 @@ async function Plan() {
           label="list, used"
           value={queueExpected ? money(queueExpected) : "–"}
           sub={queueRetail && queueExpected ? `${Math.round((1 - queueExpected / queueRetail) * 100)}% under retail` : "check prices to estimate"}
-          className="border-sky/40"
+          className="border-brand/40"
         />
       </div>
 
       {deals.length > 0 && (
-        <Section title={<span className="text-signal">deals live right now</span>}>
+        <Section title={<span className="text-brand">deals live right now</span>}>
           <QueueList entries={deals} watchById={watchById} />
         </Section>
       )}
@@ -135,7 +135,7 @@ async function Plan() {
                   ))}
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col">
-                  <span className="font-bold">{o.name}</span>
+                  <span className="font-serif text-xl leading-tight">{o.name}</span>
                   <span className="truncate text-xs text-muted-foreground">needs {missing.map((m) => m.name).join(", ")}</span>
                 </div>
                 <div className="text-right font-mono text-xs">
@@ -155,15 +155,15 @@ async function Plan() {
               const want = queue.filter((q) => q.item.category === c).length;
               return (
                 <div key={c} className="flex flex-col gap-1.5">
-                  <div className="flex justify-between font-mono text-xs uppercase">
-                    <span>{c}</span>
+                  <div className="flex justify-between text-[13px]">
+                    <span className="capitalize">{c}</span>
                     <span className="text-muted-foreground">
                       {have} owned{want ? ` · ${want} queued` : ""} / {CAPSULE[c]}
                     </span>
                   </div>
                   <div className="flex h-2 gap-px">
                     {Array.from({ length: Math.max(CAPSULE[c], have + want) }, (_, k) => (
-                      <span key={k} className={cn("flex-1", k < have ? "bg-moss" : k < have + want ? "bg-sand/60" : "bg-border")} />
+                      <span key={k} className={cn("flex-1 rounded-full", k < have ? "bg-ok" : k < have + want ? "bg-warn/60" : "bg-border")} />
                     ))}
                   </div>
                 </div>
@@ -187,12 +187,12 @@ async function Plan() {
               d.setMonth(d.getMonth() + k);
               return (
                 <div key={k} className="flex flex-col gap-2 border border-border bg-card p-3">
-                  <div className="flex justify-between font-mono text-xs uppercase">
-                    <span>{d.toLocaleString("en-US", { month: "long", year: "2-digit" })}</span>
+                  <div className="flex justify-between text-[13px]">
+                    <span className="font-serif text-xl">{d.toLocaleString("en-US", { month: "long", year: "2-digit" })}</span>
                     <span className="text-muted-foreground">{money(m.reduce((s, q) => s + (q.cost ?? 0), 0))}</span>
                   </div>
                   {m.map((q) => (
-                    <Link key={q.item.id} href={`/pieces/${q.item.id}`} className="flex items-center gap-2 text-sm hover:text-signal">
+                    <Link key={q.item.id} href={`/pieces/${q.item.id}`} className="flex items-center gap-2 text-sm hover:text-brand">
                       <ItemPhoto item={q.item} className="size-8 shrink-0" />
                       <span className="truncate">{q.item.name}</span>
                     </Link>
@@ -212,7 +212,7 @@ function QueueList({ entries, watchById, ranked }: { entries: QueueEntry[]; watc
     <ol className="flex flex-col gap-1.5">
       {entries.map((q, k) => (
         <li key={q.item.id} className="flex items-center gap-4 border border-border bg-card p-2 pr-4">
-          {ranked && <span className="w-6 text-center font-mono text-sm text-signal">{k + 1}</span>}
+          {ranked && <span className="w-8 text-center font-serif text-3xl text-muted-foreground">{k + 1}</span>}
           <Link href={`/pieces/${q.item.id}`}>
             <ItemPhoto item={q.item} className="size-14" />
           </Link>
@@ -225,7 +225,7 @@ function QueueList({ entries, watchById, ranked }: { entries: QueueEntry[]; watc
           </div>
           <StatusMenu id={q.item.id} status={q.item.status} />
           <div className="w-24 text-right font-mono text-xs">
-            <div className={cn(isDeal(q.item, watchById.get(q.item.id)) && "text-signal")}>{q.cost != null ? `~${money(q.cost)}` : "?"}</div>
+            <div className={cn(isDeal(q.item, watchById.get(q.item.id)) && "text-brand")}>{q.cost != null ? `~${money(q.cost)}` : "?"}</div>
             {q.retail != null && q.cost != null && q.cost < q.retail && <div className="text-muted-foreground line-through">{money(q.retail)}</div>}
           </div>
         </li>

@@ -1,11 +1,12 @@
 export const SECTIONS = [
-  { href: "/", label: "lookbook", hint: "outfits" },
-  { href: "/pieces", label: "pieces", hint: "every item" },
-  { href: "/builder", label: "builder", hint: "make a fit" },
-  { href: "/grailed", label: "grailed", hint: "hunt" },
-  { href: "/plan", label: "plan", hint: "what to buy" },
-  { href: "/brands", label: "brands", hint: "who's good" },
-  { href: "/me", label: "me", hint: "sizes + fit" },
+  { href: "/", label: "Lookbook", hint: "outfits" },
+  { href: "/pieces", label: "Pieces", hint: "every item" },
+  { href: "/builder", label: "Builder", hint: "make a fit" },
+  { href: "/grailed", label: "Grailed", hint: "hunt used" },
+  { href: "/plan", label: "Plan", hint: "what to buy" },
+  { href: "/brands", label: "Brands", hint: "who's good" },
+  { href: "/me", label: "Me", hint: "sizes + fit" },
+  { href: "/guide", label: "Guide", hint: "how this works" },
 ] as const;
 
 export function section(pathname: string) {

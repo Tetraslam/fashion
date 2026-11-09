@@ -15,14 +15,13 @@ export function Nav() {
 // Rendered without a pathname as the static-shell fallback.
 export function NavFrame({ current }: { current?: ReturnType<typeof section> }) {
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex h-14 max-w-[1440px] items-center gap-6 px-5 md:px-8">
-        <Link href="/" className="flex items-baseline gap-2 font-mono text-[13px] tracking-[0.12em] uppercase">
-          <span className="text-signal">closet</span>
-          <span className="text-muted-foreground">/</span>
-          <TextMorph className="min-w-[7ch] text-foreground">{current?.label ?? "…"}</TextMorph>
+    <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-xl">
+      <div className="mx-auto flex h-16 max-w-[1440px] items-center gap-8 px-5 md:px-8">
+        <Link href="/" className="flex shrink-0 items-baseline gap-1.5 font-serif text-[26px] leading-none">
+          <span>Closet</span>
+          <TextMorph className="min-w-[6ch] text-muted-foreground italic">{current ? current.label : ""}</TextMorph>
         </Link>
-        <nav className="scrollbar-none -mx-2 flex flex-1 items-center gap-0.5 overflow-x-auto">
+        <nav className="scrollbar-none -mx-2 flex flex-1 items-center gap-1 overflow-x-auto">
           {SECTIONS.map((s) => {
             const active = current?.href === s.href;
             return (
@@ -30,22 +29,21 @@ export function NavFrame({ current }: { current?: ReturnType<typeof section> }) 
                 key={s.href}
                 href={s.href}
                 className={cn(
-                  "relative px-2.5 py-1.5 font-mono text-[12px] tracking-[0.06em] uppercase transition-colors",
-                  active ? "text-foreground" : "text-muted-foreground hover:text-foreground",
+                  "flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13.5px] transition-colors",
+                  active ? "bg-foreground text-background" : "text-body hover:bg-muted hover:text-foreground",
                 )}
               >
                 {s.label}
-                {active && <span className="absolute inset-x-2.5 -bottom-[13px] h-px bg-signal" />}
               </Link>
             );
           })}
         </nav>
         <button
           onClick={openPalette}
-          className="hidden items-center gap-2 border border-border px-2.5 py-1.5 font-mono text-[11px] text-muted-foreground transition-colors hover:border-foreground/30 hover:text-foreground sm:flex"
+          className="hidden h-9 w-64 items-center gap-2 rounded-full border border-border bg-card px-3.5 text-[13px] text-muted-foreground shadow-[0_1px_0_rgba(0,0,0,0.03)] transition-colors hover:border-foreground/30 hover:text-foreground lg:flex"
         >
           search, add, jump
-          <Kbd>⌘K</Kbd>
+          <Kbd className="ml-auto">⌘K</Kbd>
         </button>
       </div>
     </header>

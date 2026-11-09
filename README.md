@@ -50,6 +50,7 @@ pnpm dev            # http://127.0.0.1:4747
 | `/plan` | buy queue ranked by how many fits each piece unlocks, monthly budget schedule, closet coverage |
 | `/brands` | love / curious / nope, with notes |
 | `/me` | sizes, reference measurements, budget, fit rules |
+| `/guide` | the in-app manual: the status loop, how Grailed pricing and fit checks work, known gaps |
 
 `⌘K` searches everything, jumps anywhere, and takes a pasted product link to add it.
 
@@ -69,6 +70,7 @@ Product photos are saved under `public/products/<item-id>/` so dead links don't 
 ```sh
 pnpm enrich [--force] [--grailed] [id...]   # scrape photos + prices for items missing them
 pnpm deals [--notify]                       # price the want list on Grailed; --notify pushes new deals via ntfy
+                                            # (runs daily at 9am via ~/.config/systemd/user/closet-deals.timer)
 pnpm colors                                 # re-encode photos, recompute garment colors
 pnpm seed                                   # re-import the lookbook (keeps existing edits)
 ```

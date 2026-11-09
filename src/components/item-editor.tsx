@@ -155,7 +155,7 @@ export function ItemEditor({ item }: { item: Item }) {
         )}
         <Button
           variant="ghost"
-          className="ml-auto text-muted-foreground hover:text-signal"
+          className="ml-auto text-muted-foreground hover:text-brand"
           onClick={() => {
             if (!confirm(`delete ${item.name}? it'll be removed from every fit.`)) return;
             start(async () => {

@@ -91,15 +91,16 @@ export function Builder({ items, outfits, costs }: { items: Item[]; outfits: Out
   return (
     <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_420px]">
       <div className="flex flex-col gap-5">
-        <div className="flex flex-col gap-3 border-b border-border pb-6">
-          <div className="font-mono text-[13px] tracking-[0.12em] text-signal uppercase">
+        <div className="flex flex-col gap-4 pt-6 pb-2">
+          <div className="flex items-center gap-2 font-mono text-[11px] tracking-[0.04em] text-muted-foreground uppercase">
+            <span className="size-1.5 rounded-full bg-brand" />
             builder / {editing ? `editing ${editing.name}` : "new fit"}
           </div>
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Name this fit"
-            className="bg-transparent text-4xl font-bold tracking-[-0.03em] outline-none placeholder:text-muted-foreground/40 md:text-5xl"
+            className="bg-transparent font-serif text-6xl leading-none tracking-[-0.025em] outline-none placeholder:text-muted-foreground/35 md:text-7xl"
           />
           <input
             value={vibe}
@@ -151,9 +152,9 @@ export function Builder({ items, outfits, costs }: { items: Item[]; outfits: Out
 
 function Readout({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex flex-col gap-1 border border-border p-3">
+    <div className="flex flex-col gap-1 border-t border-foreground pt-2">
       <span className="label">{label}</span>
-      <TextMorph as="span" className="text-lg text-foreground">
+      <TextMorph as="span" className="font-serif text-3xl text-foreground">
         {value}
       </TextMorph>
     </div>
@@ -203,7 +204,7 @@ function Slot({
           <button
             onClick={onClear}
             aria-label="remove"
-            className="absolute top-3 right-3 bg-black/70 p-1 text-white opacity-0 transition-opacity group-hover:opacity-100"
+            className="absolute top-3 right-3 rounded-full bg-card p-1.5 shadow-sm opacity-0 transition-opacity group-hover:opacity-100"
           >
             <XIcon />
           </button>
@@ -211,7 +212,7 @@ function Slot({
       ) : (
         <div className="flex size-full flex-col items-center justify-center gap-2 p-6 text-center">
           <PlusIcon className="size-6 text-muted-foreground" />
-          <span className="font-mono text-xs tracking-[0.1em] text-muted-foreground uppercase">{LABEL[cat]}</span>
+          <span className="font-serif text-2xl text-muted-foreground italic">{LABEL[cat]}</span>
           <span className="text-xs text-muted-foreground/60">drag a piece here</span>
         </div>
       )}
@@ -239,14 +240,14 @@ function AccessorySlot({ ids, byId, onDrop, onClear }: { ids: string[]; byId: Ma
               <button
                 onClick={() => onClear(id)}
                 aria-label="remove"
-                className="absolute top-1 right-1 bg-black/70 p-1 text-white opacity-0 transition-opacity group-hover:opacity-100"
+                className="absolute top-1 right-1 rounded-full bg-card p-1 shadow-sm opacity-0 transition-opacity group-hover:opacity-100"
               >
                 <XIcon className="size-3" />
               </button>
             </div>
           );
         })}
-        <span className="flex-1 text-center font-mono text-xs tracking-[0.1em] text-muted-foreground uppercase">
+        <span className="flex-1 text-center font-serif text-xl text-muted-foreground italic">
           {ids.length ? "+ more extras" : "extras: rings, chains, bandanas"}
         </span>
       </div>
@@ -267,7 +268,7 @@ function Library({ items, onPick, selected }: { items: Item[]; onPick: (i: Item)
   return (
     <aside className="flex flex-col gap-3 lg:sticky lg:top-20 lg:max-h-[calc(100dvh-6rem)] lg:self-start">
       <div className="flex items-baseline justify-between">
-        <span className="font-mono text-[12px] tracking-[0.12em] uppercase">library</span>
+        <span className="font-serif text-3xl leading-none">Library</span>
         <span className="text-xs text-muted-foreground">drag, or click to drop in its slot</span>
       </div>
       <InputGroup>
@@ -286,7 +287,7 @@ function Library({ items, onPick, selected }: { items: Item[]; onPick: (i: Item)
           owned
         </Chip>
       </div>
-      <div className="grid grid-cols-3 gap-1.5 overflow-y-auto pr-1 pb-2">
+      <div className="grid auto-rows-max grid-cols-3 content-start gap-1.5 overflow-y-auto pr-1 pb-2">
         {shown.map((i) => (
           <button
             key={i.id}
@@ -298,12 +299,12 @@ function Library({ items, onPick, selected }: { items: Item[]; onPick: (i: Item)
             onClick={() => onPick(i)}
             title={`${i.brand} ${i.name}`}
             className={cn(
-              "group relative cursor-grab border text-left active:cursor-grabbing",
-              selected.has(i.id) ? "border-signal" : "border-border hover:border-foreground/40",
+              "group relative cursor-grab overflow-hidden rounded-sm border text-left active:cursor-grabbing",
+              selected.has(i.id) ? "border-brand ring-1 ring-brand" : "border-transparent hover:border-foreground/30",
             )}
           >
             <ItemPhoto item={i} className="pointer-events-none aspect-square" />
-            {i.status === "owned" && <span className="absolute top-1 left-1 size-1.5 rounded-full bg-moss" />}
+            {i.status === "owned" && <span className="absolute top-1.5 left-1.5 size-2 rounded-full bg-ok ring-2 ring-photo" />}
             <div className="truncate px-1 py-0.5 text-[10px] text-muted-foreground">{i.name}</div>
           </button>
         ))}

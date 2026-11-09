@@ -5,13 +5,13 @@ import { Dithering } from "@paper-design/shaders-react";
 import { cn } from "@/lib/utils";
 
 // Drop target with a dithered shader backdrop that wakes up on hover/drag-over.
-// Same feel as the delve-onsite upload zone, retuned to the closet palette.
+// Same feel as the delve-onsite upload zone, retuned for the light theme.
 export function ShaderZone({
   children,
   onDropData,
   accept = () => true,
   active: forced,
-  tint = "#3a1512",
+  tint = "#aab3ff",
   className,
   onClick,
 }: {
@@ -31,7 +31,7 @@ export function ShaderZone({
     <div
       className={cn(
         "relative overflow-hidden border transition-all duration-500 ease-out",
-        active ? "border-signal/40 shadow-[0_0_40px_-12px_rgba(224,72,60,0.35)]" : "border-border",
+        active ? "border-brand/40 shadow-[0_0_48px_-14px_rgba(29,51,255,0.45)]" : "border-border",
         className,
       )}
       onMouseEnter={() => setHover(true)}
@@ -61,8 +61,8 @@ export function ShaderZone({
         style={{ transform: active ? "scale(1.05)" : "scale(1)" }}
       >
         <Dithering
-          colorBack="#0e0e0f"
-          colorFront={active ? tint : "#1a1a1c"}
+          colorBack="#f6f6f4"
+          colorFront={active ? tint : "#e7e7e3"}
           shape="warp"
           type="8x8"
           size={2.5}

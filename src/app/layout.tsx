@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
@@ -9,8 +9,9 @@ import { Palette } from "@/components/palette";
 import { AddItemDialog } from "@/components/add-item-dialog";
 import "./globals.css";
 
-const grotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-grotesk" });
-const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" });
+const ui = Geist({ subsets: ["latin"], variable: "--font-ui" });
+const code = Geist_Mono({ subsets: ["latin"], variable: "--font-code" });
+const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-instrument" });
 
 export const metadata: Metadata = {
   title: { default: "closet", template: "%s / closet" },
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${grotesk.variable} ${mono.variable} antialiased`}>
+    <html lang="en" className={`${ui.variable} ${code.variable} ${serif.variable} antialiased`}>
       <body className="min-h-dvh bg-background text-foreground">
         <NuqsAdapter>
           <TooltipProvider delayDuration={300}>

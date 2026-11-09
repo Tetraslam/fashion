@@ -39,24 +39,24 @@ function ListingCard({ l, retail, onOpen }: { l: GrailedListing; retail?: number
   const price = l.sold ? (l.soldPrice ?? l.price) : l.price;
   const off = retail && price < retail ? Math.round((1 - price / retail) * 100) : 0;
   return (
-    <button onClick={onOpen} className="group flex flex-col border border-border bg-card text-left transition-colors hover:border-foreground/30">
-      <div className="relative aspect-square overflow-hidden bg-muted">
+    <button onClick={onOpen} className="group flex flex-col gap-2 text-left">
+      <div className="relative aspect-square overflow-hidden rounded-sm bg-muted">
         {l.image && (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={grailedImage(l.image, 400)} alt={l.title} loading="lazy" className="size-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
         )}
-        {off >= 20 && <span className="absolute top-1.5 left-1.5 bg-sky px-1.5 font-mono text-[10px] text-black">-{off}%</span>}
+        {off >= 20 && <span className="absolute top-2 left-2 rounded-full bg-brand px-2 py-0.5 font-mono text-[10.5px] text-brand-foreground">-{off}%</span>}
         {l.priceDrops.length > 0 && !l.sold && (
-          <span className="absolute top-1.5 right-1.5 flex items-center bg-black/70 px-1 font-mono text-[10px] text-sand">
+          <span className="absolute top-2 right-2 flex items-center rounded-full bg-card px-1.5 py-0.5 font-mono text-[10.5px] text-warn">
             <ArrowDownIcon className="size-3" />
             {l.priceDrops.length}
           </span>
         )}
       </div>
-      <div className="flex flex-col gap-0.5 p-2.5">
+      <div className="flex flex-col gap-0.5">
         <div className="flex items-baseline justify-between gap-2">
           <span className={cn("font-mono text-sm", l.sold && "text-muted-foreground")}>{money(price)}</span>
-          <span className="font-mono text-[11px] text-foreground uppercase">{l.size}</span>
+          <span className="rounded-full border border-border px-1.5 font-mono text-[10.5px] uppercase">{l.size}</span>
         </div>
         <span className="label truncate">{l.designer}</span>
         <span className="line-clamp-2 text-[13px] leading-snug text-body">{l.title}</span>
@@ -100,8 +100,8 @@ function QuickViewBody({ l, retail }: { l: GrailedListing; retail?: number }) {
   return (
     <>
       <DialogHeader>
-        <DialogTitle className="pr-8 text-xl">{l.title}</DialogTitle>
-        <DialogDescription className="font-mono text-xs uppercase">
+        <DialogTitle className="pr-8 font-serif text-3xl leading-tight font-normal">{l.title}</DialogTitle>
+        <DialogDescription className="text-[13px]">
           {l.designer} · {pretty(l.category)} · size {data?.detail.prettySize ?? l.size}
         </DialogDescription>
       </DialogHeader>
@@ -116,7 +116,7 @@ function QuickViewBody({ l, retail }: { l: GrailedListing; retail?: number }) {
           {photos.length > 1 && (
             <div className="scrollbar-none flex gap-1.5 overflow-x-auto">
               {photos.map((p, i) => (
-                <button key={p} onClick={() => setPhoto(i)} className={cn("size-14 shrink-0 border", i === photo ? "border-signal" : "border-transparent opacity-60 hover:opacity-100")}>
+                <button key={p} onClick={() => setPhoto(i)} className={cn("size-14 shrink-0 border", i === photo ? "border-brand" : "border-transparent opacity-60 hover:opacity-100")}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={grailedImage(p, 120)} alt="" className="size-full object-cover" />
                 </button>
@@ -126,9 +126,9 @@ function QuickViewBody({ l, retail }: { l: GrailedListing; retail?: number }) {
         </div>
         <div className="flex flex-col gap-4">
           <div className="flex items-baseline gap-3">
-            <span className="text-3xl font-bold">{money(price)}</span>
+            <span className="font-serif text-5xl leading-none">{money(price)}</span>
             {l.shippingUS != null && <span className="text-sm text-muted-foreground">+{money(l.shippingUS)} ship</span>}
-            {retail && price < retail && <span className="font-mono text-sm text-sky">{Math.round((1 - price / retail) * 100)}% under retail</span>}
+            {retail && price < retail && <span className="font-mono text-sm text-brand">{Math.round((1 - price / retail) * 100)}% under retail</span>}
           </div>
           <div className="grid grid-cols-2 gap-x-4 gap-y-1 font-mono text-xs">
             <span className="text-muted-foreground">condition</span>
@@ -136,7 +136,7 @@ function QuickViewBody({ l, retail }: { l: GrailedListing; retail?: number }) {
             <span className="text-muted-foreground">seller</span>
             <span className="flex items-center gap-1">
               {l.seller.username}
-              {l.seller.trusted && <SealCheckIcon className="text-sky" />}
+              {l.seller.trusted && <SealCheckIcon className="text-brand" />}
               <span className="text-muted-foreground">
                 {l.seller.rating ? `★${l.seller.rating.toFixed(1)}` : ""} {l.seller.count ? `· ${l.seller.count} deals` : ""}
               </span>
@@ -146,7 +146,7 @@ function QuickViewBody({ l, retail }: { l: GrailedListing; retail?: number }) {
             {l.priceDrops.length > 0 && (
               <>
                 <span className="text-muted-foreground">price drops</span>
-                <span className="text-sand">
+                <span className="text-warn">
                   {money(Math.max(...l.priceDrops, price))} → {money(price)}, {l.priceDrops.length}×
                 </span>
               </>
@@ -201,11 +201,11 @@ function QuickViewBody({ l, retail }: { l: GrailedListing; retail?: number }) {
 }
 
 const VERDICT: Record<FitRow["verdict"], string> = {
-  ok: "text-moss",
-  short: "text-signal",
-  long: "text-sand",
-  tight: "text-signal",
-  loose: "text-sand",
+  ok: "text-ok",
+  short: "text-brand",
+  long: "text-warn",
+  tight: "text-brand",
+  loose: "text-warn",
   "n/a": "text-muted-foreground",
 };
 

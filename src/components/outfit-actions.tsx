@@ -33,7 +33,7 @@ export function OutfitActions({ id, favorite, wearable }: { id: string; favorite
         <TooltipContent>{wearable ? "adds a wear to each piece (cost per wear)" : "own every piece first"}</TooltipContent>
       </Tooltip>
       <Button variant="outline" size="icon-lg" aria-label="favorite" onClick={() => start(() => toggleFavorite(id))}>
-        <StarIcon weight={favorite ? "fill" : "regular"} className={favorite ? "text-sand" : ""} />
+        <StarIcon weight={favorite ? "fill" : "regular"} className={favorite ? "text-warn" : ""} />
       </Button>
       <Button variant="outline" size="icon-lg" asChild aria-label="edit">
         <Link href={`/builder?edit=${id}`}>
@@ -44,7 +44,7 @@ export function OutfitActions({ id, favorite, wearable }: { id: string; favorite
         variant="outline"
         size="icon-lg"
         aria-label="delete"
-        className="hover:border-signal hover:text-signal"
+        className="hover:border-brand hover:text-brand"
         onClick={() => {
           if (!confirm("delete this fit? the pieces stay.")) return;
           start(async () => {

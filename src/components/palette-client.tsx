@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useQueryState, parseAsString } from "nuqs";
 import { toast } from "sonner";
 import {
+  Command,
   CommandDialog,
   CommandEmpty,
   CommandGroup,
@@ -60,6 +61,7 @@ export function PaletteClient({ items, outfits, brands }: Props) {
 
   return (
     <CommandDialog open={open} onOpenChange={setOpen} className="sm:max-w-xl" title="Closet" description="Search the closet">
+      <Command>
       <CommandInput placeholder="find a piece, fit, brand… or paste a product link" value={q} onValueChange={setQ} />
       <CommandList className="max-h-[60vh]">
         <CommandEmpty>nothing here. try grailed?</CommandEmpty>
@@ -88,7 +90,7 @@ export function PaletteClient({ items, outfits, brands }: Props) {
         <CommandGroup heading="go">
           {SECTIONS.map((s) => (
             <CommandItem key={s.href} value={`go ${s.label} ${s.hint}`} onSelect={() => go(s.href)}>
-              <span className="font-mono text-xs uppercase">{s.label}</span>
+              <span>{s.label}</span>
               <span className="text-muted-foreground">{s.hint}</span>
             </CommandItem>
           ))}
@@ -153,6 +155,7 @@ export function PaletteClient({ items, outfits, brands }: Props) {
           ))}
         </CommandGroup>
       </CommandList>
+      </Command>
     </CommandDialog>
   );
 }

@@ -42,3 +42,6 @@ export const SIZES = {
 } as const;
 
 export const pretty = (path?: string) => path?.split(".").pop()?.replace(/_/g, " ") ?? "";
+
+// "footwear.10.5" -> "10.5"
+export const sizeLabel = (categorySize: string) => categorySize.slice(categorySize.indexOf(".") + 1);

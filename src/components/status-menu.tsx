@@ -3,6 +3,7 @@
 import { useOptimistic, useTransition } from "react";
 import { setStatus } from "@/app/actions";
 import { STATUSES, type Status } from "@/lib/types";
+import { STATUS_DOT } from "@/lib/status";
 import { cn } from "@/lib/utils";
 import {
   DropdownMenu,
@@ -11,14 +12,6 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
-export const STATUS_STYLE: Record<Status, string> = {
-  idea: "text-muted-foreground border-border",
-  want: "text-sand border-sand/40",
-  watching: "text-sky border-sky/40",
-  owned: "text-moss border-moss/50 bg-moss/10",
-  passed: "text-muted-foreground/60 border-border line-through",
-};
 
 export const STATUS_HINT: Record<Status, string> = {
   idea: "saw it, no plans",
@@ -30,7 +23,14 @@ export const STATUS_HINT: Record<Status, string> = {
 
 export function StatusBadge({ status, className }: { status: Status; className?: string }) {
   return (
-    <span className={cn("inline-flex h-5 items-center border px-1.5 font-mono text-[10px] tracking-[0.08em] uppercase", STATUS_STYLE[status], className)}>
+    <span
+      className={cn(
+        "inline-flex h-6 items-center gap-1.5 rounded-full border border-border bg-card px-2.5 text-[12px] text-body",
+        status === "passed" && "text-muted-foreground line-through",
+        className,
+      )}
+    >
+      <span className={cn("size-1.5 rounded-full", STATUS_DOT[status])} />
       {status}
     </span>
   );
@@ -46,7 +46,7 @@ export function StatusMenu({ id, status, className }: { id: string; status: Stat
         onClick={(e) => e.stopPropagation()}
         onPointerDown={(e) => e.stopPropagation()}
       >
-        <StatusBadge status={optimistic} className="cursor-pointer hover:brightness-125" />
+        <StatusBadge status={optimistic} className="cursor-pointer transition-colors hover:border-foreground/40" />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" onClick={(e) => e.stopPropagation()}>
         <DropdownMenuRadioGroup
@@ -60,7 +60,8 @@ export function StatusMenu({ id, status, className }: { id: string; status: Stat
         >
           {STATUSES.map((s) => (
             <DropdownMenuRadioItem key={s} value={s} className="gap-3">
-              <span className="font-mono text-xs uppercase">{s}</span>
+              <span className={cn("size-1.5 rounded-full", STATUS_DOT[s])} />
+              <span>{s}</span>
               <span className="ml-auto text-xs text-muted-foreground">{STATUS_HINT[s]}</span>
             </DropdownMenuRadioItem>
           ))}

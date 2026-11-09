@@ -132,7 +132,7 @@ export function Pieces({ items, watches, usage }: { items: Item[]; watches: Watc
           {dealCount > 0 && (
             <>
               <span className="mx-1 h-4 w-px bg-border" />
-              <Chip active={!!f.deals} onClick={() => set({ deals: f.deals ? null : "1" })} className="border-signal/50 text-signal">
+              <Chip active={!!f.deals} onClick={() => set({ deals: f.deals ? null : "1" })} className="border-brand/50 text-brand">
                 deals {dealCount}
               </Chip>
             </>

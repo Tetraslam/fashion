@@ -92,7 +92,7 @@ function AddForm({ initial, onDone }: { initial: string; onDone: () => void }) {
         <span className="label">category</span>
         <ToggleGroup type="single" variant="outline" value={category} onValueChange={(v) => setCategory(v as Category)} className="flex-wrap">
           {CATEGORIES.map((c) => (
-            <ToggleGroupItem key={c} value={c} className="font-mono text-xs uppercase">
+            <ToggleGroupItem key={c} value={c} className="text-[13px]">
               {c}
             </ToggleGroupItem>
           ))}
@@ -102,7 +102,7 @@ function AddForm({ initial, onDone }: { initial: string; onDone: () => void }) {
         <span className="label">status</span>
         <ToggleGroup type="single" variant="outline" value={status} onValueChange={(v) => v && setStatusV(v as Status)} className="flex-wrap">
           {STATUSES.filter((s) => s !== "passed").map((s) => (
-            <ToggleGroupItem key={s} value={s} className="font-mono text-xs uppercase">
+            <ToggleGroupItem key={s} value={s} className="text-[13px]">
               {s}
             </ToggleGroupItem>
           ))}

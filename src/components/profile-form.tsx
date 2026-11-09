@@ -100,9 +100,9 @@ export function ProfileForm({ profile }: { profile: Profile }) {
       <Section title="reference measurements" aside="inches, measured flat">
         <div className="grid gap-6 lg:grid-cols-3">
           {(Object.keys(MEASURES) as MeasureGroup[]).map((g) => (
-            <div key={g} className="flex flex-col gap-3 border border-border bg-card p-4">
+            <div key={g} className="flex flex-col gap-3 rounded-sm border border-border bg-card p-5">
               <div className="flex flex-col gap-1">
-                <span className="font-mono text-xs tracking-[0.1em] uppercase">{g}</span>
+                <span className="font-serif text-2xl capitalize">{g}</span>
                 <span className="text-xs text-muted-foreground">{GROUP_HINT[g]}</span>
               </div>
               {MEASURES[g].map((m) => (

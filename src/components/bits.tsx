@@ -15,11 +15,14 @@ export function PageHeader({
   className?: string;
 }) {
   return (
-    <header className={cn("flex flex-col gap-3.5 border-b border-border pb-8 md:flex-row md:items-end", className)}>
-      <div className="flex flex-1 flex-col gap-3.5">
-        <div className="font-mono text-[13px] tracking-[0.12em] text-signal uppercase">{kicker}</div>
-        <h1 className="text-4xl leading-none font-bold tracking-[-0.03em] md:text-6xl">{title}</h1>
-        {sub && <div className="max-w-3xl text-lg leading-normal text-body">{sub}</div>}
+    <header className={cn("flex flex-col gap-5 pt-6 pb-2 md:flex-row md:items-end", className)}>
+      <div className="flex flex-1 flex-col gap-4">
+        <div className="flex items-center gap-2 font-mono text-[11px] tracking-[0.04em] text-muted-foreground uppercase">
+          <span className="size-1.5 rounded-full bg-brand" />
+          {kicker}
+        </div>
+        <h1 className="font-serif text-6xl leading-[0.92] tracking-[-0.025em] md:text-8xl">{title}</h1>
+        {sub && <div className="max-w-2xl text-[17px] leading-relaxed text-body">{sub}</div>}
       </div>
       {actions && <div className="flex shrink-0 items-center gap-2">{actions}</div>}
     </header>
@@ -31,8 +34,10 @@ export function Chip({ active, className, ...props }: ComponentProps<"button"> &
     <button
       type="button"
       className={cn(
-        "inline-flex h-7 items-center gap-1.5 border px-2.5 font-mono text-[11px] tracking-[0.06em] uppercase transition-colors [&_svg]:size-3.5",
-        active ? "border-foreground bg-foreground text-background" : "border-border text-muted-foreground hover:border-foreground/40 hover:text-foreground",
+        "inline-flex h-7 items-center gap-1.5 rounded-full border px-3 text-[12.5px] transition-colors [&_svg]:size-3.5",
+        active
+          ? "border-foreground bg-foreground text-background"
+          : "border-border bg-card text-body hover:border-foreground/40 hover:text-foreground",
         className,
       )}
       {...props}
@@ -42,20 +47,20 @@ export function Chip({ active, className, ...props }: ComponentProps<"button"> &
 
 export function Stat({ label, value, sub, className }: { label: ReactNode; value: ReactNode; sub?: ReactNode; className?: string }) {
   return (
-    <div className={cn("flex flex-col gap-1.5 border border-border bg-card p-4", className)}>
+    <div className={cn("flex flex-col gap-1 border-t border-foreground pt-3", className)}>
       <span className="label">{label}</span>
-      <span className="text-3xl font-bold tracking-tight tabular-nums">{value}</span>
-      {sub && <span className="text-xs text-muted-foreground">{sub}</span>}
+      <span className="font-serif text-5xl leading-none tracking-tight tabular-nums">{value}</span>
+      {sub && <span className="pt-1 text-xs text-muted-foreground">{sub}</span>}
     </div>
   );
 }
 
 export function Section({ title, aside, children, className }: { title: ReactNode; aside?: ReactNode; children: ReactNode; className?: string }) {
   return (
-    <section className={cn("flex flex-col gap-4", className)}>
-      <div className="flex items-baseline justify-between gap-4 border-b border-border pb-2">
-        <h2 className="font-mono text-[12px] tracking-[0.12em] uppercase">{title}</h2>
-        {aside && <div className="text-xs text-muted-foreground">{aside}</div>}
+    <section className={cn("flex flex-col gap-5", className)}>
+      <div className="flex items-baseline justify-between gap-4 border-b border-border pb-3">
+        <h2 className="font-serif text-3xl leading-none tracking-tight">{title}</h2>
+        {aside && <div className="text-right text-xs text-muted-foreground">{aside}</div>}
       </div>
       {children}
     </section>

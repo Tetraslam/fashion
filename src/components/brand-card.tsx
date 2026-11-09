@@ -8,17 +8,17 @@ import { setBrandStance, updateBrand } from "@/app/actions";
 import { cn } from "@/lib/utils";
 
 const STANCE_ICON = { love: HeartIcon, curious: QuestionIcon, nope: ProhibitIcon } as const;
-const STANCE_COLOR = { love: "text-signal", curious: "text-sand", nope: "text-muted-foreground" } as const;
+const STANCE_COLOR = { love: "text-brand", curious: "text-warn", nope: "text-muted-foreground" } as const;
 
 export function BrandCard({ brand, counts, images }: { brand: Brand; counts: { owned: number; total: number }; images: string[] }) {
   const [stance, setStance] = useOptimistic(brand.stance);
   const [, start] = useTransition();
   return (
-    <div id={brand.slug} className="flex scroll-mt-24 flex-col border border-border bg-card target:border-signal">
-      <div className="flex h-20 gap-px bg-border">
+    <div id={brand.slug} className="flex scroll-mt-24 flex-col overflow-hidden rounded-sm border border-border bg-card target:border-brand target:ring-1 target:ring-brand">
+      <div className="flex h-28 gap-px bg-card">
         {images.length ? (
           images.map((src) => (
-            <div key={src} className="flex-1 bg-[#f3f1ed]">
+            <div key={src} className="flex-1 bg-photo">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={src} alt="" className="size-full object-contain p-1 mix-blend-multiply" />
             </div>
@@ -27,10 +27,10 @@ export function BrandCard({ brand, counts, images }: { brand: Brand; counts: { o
           <div className="flex-1 bg-muted" />
         )}
       </div>
-      <div className="flex flex-col gap-2 p-3">
+      <div className="flex flex-col gap-3 p-4">
         <div className="flex items-start justify-between gap-2">
           <div className="flex flex-col">
-            <span className="text-lg leading-tight font-bold">{brand.name}</span>
+            <span className="font-serif text-[28px] leading-none">{brand.name}</span>
             <span className="font-mono text-[11px] text-muted-foreground">
               {brand.tier} · {counts.total ? `${counts.total} piece${counts.total > 1 ? "s" : ""}` : "no pieces yet"}
               {counts.owned ? ` · ${counts.owned} owned` : ""}
@@ -58,7 +58,7 @@ export function BrandCard({ brand, counts, images }: { brand: Brand; counts: { o
             })}
           </div>
         </div>
-        {brand.tags.length > 0 && <div className="font-mono text-[10px] text-muted-foreground uppercase">{brand.tags.join(" · ")}</div>}
+        {brand.tags.length > 0 && <div className="flex flex-wrap gap-1">{brand.tags.map((t) => <span key={t} className="rounded-full bg-muted px-2 py-0.5 text-[11px] text-body">{t}</span>)}</div>}
         <textarea
           defaultValue={brand.notes ?? ""}
           placeholder="notes: sizing, quality, what to look for…"
@@ -66,7 +66,7 @@ export function BrandCard({ brand, counts, images }: { brand: Brand; counts: { o
           onBlur={(e) => e.target.value !== (brand.notes ?? "") && start(() => updateBrand(brand.name, { notes: e.target.value }))}
           className="field-sizing-content resize-none bg-transparent text-sm text-body outline-none placeholder:text-muted-foreground/40"
         />
-        <div className="flex gap-3 font-mono text-[11px] uppercase">
+        <div className="flex gap-4 border-t border-border pt-2.5 text-[12.5px]">
           <Link href={`/pieces?brand=${encodeURIComponent(brand.name)}`} className="text-muted-foreground hover:text-foreground">
             pieces
           </Link>

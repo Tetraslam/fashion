@@ -51,9 +51,9 @@ export function Lookbook({ outfits, styles, rule }: { outfits: OutfitView[]; sty
         actions={
           <Link
             href="/builder"
-            className="flex items-center gap-2 border border-border px-3 py-2 font-mono text-xs uppercase transition-colors hover:border-signal hover:text-signal"
+            className="flex h-10 items-center gap-2 rounded-full bg-foreground px-5 text-sm text-background transition-colors hover:bg-brand"
           >
-            <PlusIcon /> new fit
+            <PlusIcon /> New fit
           </Link>
         }
       />
@@ -64,7 +64,7 @@ export function Lookbook({ outfits, styles, rule }: { outfits: OutfitView[]; sty
         <Chip active={fav} onClick={() => set({ fav: !fav || null })}>
           <StarIcon weight={fav ? "fill" : "regular"} /> faves
         </Chip>
-        <span className="mx-1 h-4 w-px bg-border" />
+        <span className="mx-1.5 h-4 w-px bg-border" />
         {tags.map((t) => (
           <Chip key={t} active={tag === t} onClick={() => set({ tag: tag === t ? null : t })}>
             {t}
@@ -79,7 +79,7 @@ export function Lookbook({ outfits, styles, rule }: { outfits: OutfitView[]; sty
           ))}
         </span>
       </div>
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(310px,1fr))] gap-5">
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(330px,1fr))] gap-6">
         {shown.map((o) => (
           <OutfitCard key={o.id} o={o} />
         ))}
@@ -92,56 +92,51 @@ function OutfitCard({ o }: { o: OutfitView }) {
   const [, start] = useTransition();
   const done = o.owned === o.pieces.length;
   return (
-    <article className="group relative flex flex-col overflow-hidden border border-border bg-card transition-colors hover:border-foreground/25">
-      <div className="flex h-2.5">
-        {o.palette.map((c, i) => (
-          <div key={i} className="flex-1" style={{ background: c }} />
-        ))}
-      </div>
+    <article className="group relative flex flex-col overflow-hidden rounded-sm border border-border bg-card transition-shadow duration-300 hover:shadow-[0_12px_40px_-16px_rgba(0,0,0,0.18)]">
       <Link href={`/outfits/${o.id}`} className="block">
         <Collage pieces={o.pieces} />
       </Link>
-      <div className="flex flex-col gap-1.5 px-4 pt-4 pb-2">
-        <div className="flex items-center justify-between">
-          <span className="font-mono text-[13px] text-signal">{o.num}</span>
+      <div className="flex flex-col gap-2 px-5 pt-5 pb-3">
+        <div className="flex items-center gap-2.5">
+          <span className="font-mono text-[11px] text-muted-foreground tabular-nums">{o.num}</span>
+          <span className="flex -space-x-1">
+            {o.palette.map((c, i) => (
+              <span key={i} className="size-3.5 rounded-full ring-2 ring-card" style={{ background: c }} />
+            ))}
+          </span>
           <button
             aria-label="favorite"
             onClick={() => start(() => toggleFavorite(o.id))}
-            className={cn("transition-colors", o.favorite ? "text-sand" : "text-muted-foreground/50 hover:text-sand")}
+            className={cn("ml-auto transition-colors", o.favorite ? "text-brand" : "text-muted-foreground/40 hover:text-brand")}
           >
             <StarIcon weight={o.favorite ? "fill" : "regular"} className="size-4" />
           </button>
         </div>
         <Link href={`/outfits/${o.id}`}>
-          <h2 className="text-2xl leading-tight font-bold tracking-tight">{o.name}</h2>
+          <h2 className="font-serif text-[34px] leading-none tracking-[-0.015em]">{o.name}</h2>
         </Link>
-        <p className="text-sm leading-relaxed text-body">{o.vibe}</p>
+        <p className="text-[14px] leading-relaxed text-body">{o.vibe}</p>
       </div>
-      <ul className="flex flex-col gap-1 px-2.5 pb-3">
+      <ul className="flex flex-col px-5 pb-4">
         {o.pieces.map((p) => (
-          <li key={p.id}>
-            <Link
-              href={`/pieces/${p.id}`}
-              className="flex min-h-11 items-center gap-3 bg-muted px-2.5 py-2 transition-colors hover:bg-accent"
-            >
-              <span className="flex min-w-0 flex-1 flex-col gap-0.5">
-                <span className="label truncate">{p.brand}</span>
-                <span className="truncate text-[15px] leading-snug">{p.name}</span>
-              </span>
-              {p.status === "owned" && <CheckIcon className="size-4 shrink-0 text-moss" weight="bold" />}
+          <li key={p.id} className="border-t border-border first:border-t-0">
+            <Link href={`/pieces/${p.id}`} className="flex items-center gap-3 py-2 transition-colors hover:text-brand">
+              <span className="w-[86px] shrink-0 truncate label">{p.brand}</span>
+              <span className="min-w-0 flex-1 truncate text-[13.5px]">{p.name}</span>
+              {p.status === "owned" && <CheckIcon className="size-3.5 shrink-0 text-ok" weight="bold" />}
             </Link>
           </li>
         ))}
       </ul>
-      <div className="mt-auto flex items-center gap-3 border-t border-border px-4 py-3">
-        <div className="flex flex-1 gap-0.5">
+      <div className="mt-auto flex items-center gap-3 border-t border-border px-5 py-3">
+        <div className="flex flex-1 gap-1">
           {o.pieces.map((p) => (
-            <span key={p.id} className={cn("h-1 flex-1", p.status === "owned" ? "bg-moss" : "bg-border")} />
+            <span key={p.id} className={cn("h-[3px] flex-1 rounded-full", p.status === "owned" ? "bg-ok" : "bg-border")} />
           ))}
         </div>
-        <span className="font-mono text-[11px] text-muted-foreground">
+        <span className="font-mono text-[11px] text-muted-foreground tabular-nums">
           {done ? (
-            <span className="text-moss">wearable now</span>
+            <span className="text-ok">wearable now</span>
           ) : (
             <>
               {o.owned}/{o.pieces.length} · {o.toComplete ? `~${money(o.toComplete)}` : "?"}
@@ -160,7 +155,7 @@ function Collage({ pieces }: { pieces: OutfitView["pieces"] }) {
   const sorted = [...pieces].sort((a, b) => ORDER.indexOf(a.category) - ORDER.indexOf(b.category));
   const [hero, ...rest] = sorted;
   return (
-    <div className="grid h-72 grid-cols-[1.4fr_1fr] gap-px bg-border">
+    <div className="grid h-80 grid-cols-[1.4fr_1fr] gap-px bg-card">
       <Tile p={hero} />
       <div className="grid min-h-0 gap-px" style={{ gridTemplateRows: `repeat(${Math.max(rest.length, 1)}, minmax(0, 1fr))` }}>
         {rest.map((p) => (
@@ -173,7 +168,7 @@ function Collage({ pieces }: { pieces: OutfitView["pieces"] }) {
 
 function Tile({ p }: { p?: OutfitView["pieces"][number] }) {
   return (
-    <div className="relative min-h-0 overflow-hidden bg-[#f3f1ed]">
+    <div className="relative min-h-0 overflow-hidden bg-photo">
       {p?.image && (
         // eslint-disable-next-line @next/next/no-img-element
         <img

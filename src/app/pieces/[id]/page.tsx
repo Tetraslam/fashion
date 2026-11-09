@@ -5,7 +5,7 @@ import { ArrowSquareOutIcon } from "@phosphor-icons/react/ssr";
 import { getData } from "@/lib/data";
 import * as grailed from "@/lib/grailed";
 import { money, mySizes, costPerWear } from "@/lib/wardrobe";
-import { pretty } from "@/lib/grailed-meta";
+import { pretty, sizeLabel } from "@/lib/grailed-meta";
 import { ItemPhoto } from "@/components/item-card";
 import { StatusMenu } from "@/components/status-menu";
 import { Section } from "@/components/bits";
@@ -51,33 +51,33 @@ async function Piece({ params, searchParams }: Props) {
         <Gallery images={item.images} name={item.name} />
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-3 border-b border-border pb-6">
-            <div className="flex items-center gap-3 font-mono text-[13px] tracking-[0.12em] uppercase">
-              <Link href={`/pieces?brand=${encodeURIComponent(item.brand)}`} className="text-signal hover:underline">
+            <div className="flex items-center gap-2 text-[13px]">
+              <Link href={`/pieces?brand=${encodeURIComponent(item.brand)}`} className="font-medium text-foreground hover:text-brand">
                 {item.brand}
               </Link>
               <span className="text-muted-foreground">/ {item.category}</span>
               {brand && <span className="text-muted-foreground">/ {brand.tier}</span>}
             </div>
-            <h1 className="text-3xl leading-tight font-bold tracking-tight md:text-4xl">{item.name}</h1>
+            <h1 className="font-serif text-5xl leading-[0.95] tracking-[-0.02em] md:text-6xl">{item.name}</h1>
             <div className="flex flex-wrap items-center gap-3">
               <StatusMenu id={item.id} status={item.status} />
               {item.tags.map((t) => (
-                <Link key={t} href={`/pieces?tag=${t}`} className="font-mono text-[11px] text-muted-foreground uppercase hover:text-foreground">
+                <Link key={t} href={`/pieces?tag=${t}`} className="text-[12.5px] text-muted-foreground hover:text-brand">
                   #{t}
                 </Link>
               ))}
               {item.colors.length > 0 && (
                 <span className="ml-auto flex gap-1">
                   {item.colors.map((c) => (
-                    <span key={c} className="size-4 border border-white/10" style={{ background: c }} title={c} />
+                    <span key={c} className="size-4 rounded-full ring-1 ring-black/10" style={{ background: c }} title={c} />
                   ))}
                 </span>
               )}
             </div>
             <div className="flex items-baseline gap-4 pt-2">
-              <span className="text-2xl font-bold">{money(item.price, item.currency)}</span>
+              <span className="font-serif text-4xl">{money(item.price, item.currency)}</span>
               <span className="text-sm text-muted-foreground">retail{item.currency && item.currency !== "USD" ? ` (${item.currency})` : ""}</span>
-              <a href={item.url} target="_blank" rel="noopener noreferrer" className="ml-auto flex items-center gap-1.5 font-mono text-xs uppercase hover:text-signal">
+              <a href={item.url} target="_blank" rel="noopener noreferrer" className="ml-auto flex items-center gap-1.5 text-[13px] underline-offset-4 hover:text-brand hover:underline">
                 {item.source === "grailed" ? "grailed listing" : "store page"} <ArrowSquareOutIcon />
               </a>
             </div>
@@ -105,7 +105,7 @@ async function Piece({ params, searchParams }: Props) {
                   href={m === "size" ? `/pieces/${item.id}` : `/pieces/${item.id}?g=${m}`}
                   scroll={false}
                   className={cn(
-                    "border px-2 py-0.5 text-[11px] normal-case",
+                    "rounded-full border px-2.5 py-0.5 font-sans text-[12px] tracking-normal",
                     m === mode ? "border-foreground bg-foreground text-background" : "border-border text-muted-foreground hover:text-foreground",
                   )}
                 >
@@ -130,7 +130,7 @@ async function Piece({ params, searchParams }: Props) {
         <Section title="in these fits">
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
             {inFits.map((o) => (
-              <Link key={o.id} href={`/outfits/${o.id}`} className="group flex items-center gap-3 border border-border bg-card p-2 hover:border-foreground/30">
+              <Link key={o.id} href={`/outfits/${o.id}`} className="group flex items-center gap-3 rounded-sm border border-border bg-card p-2 transition-colors hover:border-foreground/30">
                 <div className="flex gap-px">
                   {o.itemIds.slice(0, 5).map((x) => {
                     const it = items.find((i) => i.id === x);
@@ -138,7 +138,7 @@ async function Piece({ params, searchParams }: Props) {
                   })}
                 </div>
                 <div className="flex min-w-0 flex-col">
-                  <span className="font-bold">{o.name}</span>
+                  <span className="font-serif text-xl leading-tight">{o.name}</span>
                   <span className="truncate text-xs text-muted-foreground">{o.vibe}</span>
                 </div>
               </Link>
@@ -187,7 +187,7 @@ async function GrailedFor({ item, profile, mode }: { item: Item; profile: Profil
     <div className="flex flex-col gap-2">
       <span className="font-mono text-[11px] text-muted-foreground">
         {r.total.toLocaleString()} {mode === "sold" ? "sold" : "listed"}
-        {mode === "size" && sizes.length ? ` in ${sizes.map((s) => s.split(".").pop()).join("/")}` : ""}
+        {mode === "size" && sizes.length ? ` in ${sizes.map(sizeLabel).join("/")}` : ""}
         {mode !== "sold" ? ", cheapest first" : ", most recent first"}
       </span>
       <ListingGrid listings={r.hits} retail={item.price} />

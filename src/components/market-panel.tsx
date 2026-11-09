@@ -27,11 +27,11 @@ export function MarketPanel({ item, watch, sizes }: { item: Item; watch?: Watch;
     });
 
   return (
-    <div className={cn("flex flex-col gap-4 border bg-card p-4", deal ? "border-signal/60" : "border-border")}>
+    <div className={cn("flex flex-col gap-5 rounded-sm border bg-card p-5", deal ? "border-brand" : "border-border")}>
       <div className="flex items-center justify-between">
         <span className="label">
           grailed market
-          {deal && <span className="ml-2 bg-signal px-1.5 py-0.5 text-signal-foreground">deal</span>}
+          {deal && <span className="ml-2 rounded-full bg-brand px-2 py-0.5 text-brand-foreground normal-case">deal</span>}
         </span>
         <Button variant="outline" size="sm" onClick={check} disabled={pending}>
           <ArrowsClockwiseIcon className={cn(pending && "animate-spin")} />
@@ -68,8 +68,8 @@ export function MarketPanel({ item, watch, sizes }: { item: Item; watch?: Watch;
 function Num({ label, value, accent, raw }: { label: string; value?: number; accent?: boolean; raw?: boolean }) {
   return (
     <div className="flex flex-col gap-1">
-      <span className="font-mono text-[10px] text-muted-foreground uppercase">{label}</span>
-      <TextMorph as="span" className={cn("text-xl font-bold tabular-nums", accent && "text-sky")}>
+      <span className="label">{label}</span>
+      <TextMorph as="span" className={cn("font-serif text-4xl leading-none tabular-nums", accent && "text-brand")}>
         {raw ? String(value ?? "–") : fmt(value)}
       </TextMorph>
     </div>
@@ -78,8 +78,8 @@ function Num({ label, value, accent, raw }: { label: string; value?: number; acc
 
 function Spark({ history }: { history: PricePoint[] }) {
   const series = [
-    { key: "sizedLowAsk" as const, color: "var(--sky)" },
-    { key: "medianSold" as const, color: "var(--sand)" },
+    { key: "sizedLowAsk" as const, color: "var(--brand)" },
+    { key: "medianSold" as const, color: "var(--warn)" },
   ];
   const vals = history.flatMap((h) => series.map((s) => h[s.key]).filter((v): v is number => v != null));
   if (!vals.length) return null;
@@ -98,8 +98,8 @@ function Spark({ history }: { history: PricePoint[] }) {
         })}
       </svg>
       <div className="flex gap-4 font-mono text-[10px] text-muted-foreground">
-        <span className="text-sky">— cheapest in size</span>
-        <span className="text-sand">— typical sold</span>
+        <span className="text-brand">— cheapest in size</span>
+        <span className="text-warn">— typical sold</span>
         <span className="ml-auto">
           {fmt(lo)}–{fmt(hi)}
         </span>

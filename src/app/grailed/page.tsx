@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import { getData } from "@/lib/data";
 import * as grailed from "@/lib/grailed";
-import { SIZE_KEYS } from "@/lib/grailed-meta";
+import { SIZE_KEYS, sizeLabel } from "@/lib/grailed-meta";
 import { loadGrailedParams } from "@/lib/grailed-params";
 import { GrailedFilters } from "@/components/grailed-filters";
 import { ListingGrid } from "@/components/listings";
@@ -64,9 +64,9 @@ async function Results({ searchParams }: { searchParams: PageProps<"/grailed">["
       <div className="flex items-baseline gap-3 font-mono text-[11px] text-muted-foreground">
         <span>
           {r.total.toLocaleString()} {sold ? "sold" : "listings"}
-          {sizes?.length ? ` in ${[...new Set(sizes.map((s) => s.split(".").pop()))].join("/")}` : ""}
+          {sizes?.length ? ` in ${[...new Set(sizes.map(sizeLabel))].join("/")}` : ""}
         </span>
-        {mine && !sizes?.length && <span className="text-sand">no sizes set in /me, showing every size</span>}
+        {mine && !sizes?.length && <span className="text-warn">no sizes set in /me, showing every size</span>}
       </div>
       {r.hits.length ? <ListingGrid listings={r.hits} /> : <p className="py-16 text-center text-muted-foreground">nothing. widen the filters.</p>}
       {r.pages > 1 && <Pager page={r.page} pages={Math.min(r.pages, 20)} />}
