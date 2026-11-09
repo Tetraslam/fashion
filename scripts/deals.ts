@@ -49,7 +49,7 @@ for (const item of targets) {
   console.log(`${wasDeal ? " " : "*"} ${line}`);
   if (push && !wasDeal) {
     const q = new URLSearchParams({ q: item.grailedQuery, sort: "low", ...(item.grailedCategory ? { cat: item.grailedCategory } : {}) });
-    execFileSync("notify", ["--title", "closet: grailed deal", "--tags", "shopping_bags", "--click", `http://127.0.0.1:4747/grailed?${q}`, line], { stdio: "inherit" });
+    execFileSync("notify", ["--title", "closet: grailed deal", "--tags", "shopping_bags", "--click", `${process.env.CLOSET_SITE_URL ?? "http://127.0.0.1:4747"}/grailed?${q}`, line], { stdio: "inherit" });
   }
 }
 console.log(`priced ${points.size}/${targets.length}`);

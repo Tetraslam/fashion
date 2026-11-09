@@ -178,7 +178,7 @@ export default function GuidePage() {
             <p>
               A systemd timer (<code className="font-mono text-[13px] text-foreground">closet-deals.timer</code>) runs every morning at 9: it
               prices everything marked want or watching and pushes any <em>new</em> deal to your phone through ntfy. Tapping the notification
-              opens the Grailed search here, so the dev server needs to be running to land somewhere.
+              opens the Grailed search on the site. It runs on the laptop, so it only fires when the laptop is on.
             </p>
             <pre className="overflow-x-auto rounded-sm bg-muted p-4 font-mono text-[12.5px] leading-relaxed text-foreground">
               {`pnpm deals                              # run it now, print deals
