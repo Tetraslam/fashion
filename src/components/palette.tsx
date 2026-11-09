@@ -1,8 +1,12 @@
-import { getData } from "@/lib/data";
+import { connection } from "next/server";
+import { getViewer } from "@/lib/session";
+import { readAll } from "@/lib/store";
 import { PaletteClient } from "./palette-client";
 
 export async function Palette() {
-  const { items, outfits, brands } = await getData();
+  await connection();
+  if (!(await getViewer())) return null;
+  const { items, outfits, brands } = await readAll();
   return (
     <PaletteClient
       items={items.map((i) => ({ id: i.id, brand: i.brand, name: i.name, status: i.status, image: i.images[0] }))}

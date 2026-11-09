@@ -2,7 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { useQueryState, parseAsString } from "nuqs";
+import { useQueryStates, parseAsString } from "nuqs";
 import { toast } from "sonner";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
@@ -10,6 +10,9 @@ import { Button } from "@/components/ui/button";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { LinkIcon, SpinnerIcon } from "@phosphor-icons/react";
 import { addFromUrl } from "@/app/actions";
+import { resolveSuggestion, suggestLink } from "@/app/collab-actions";
+import { Textarea } from "@/components/ui/textarea";
+import { useIsOwner } from "./viewer";
 import { CATEGORIES, STATUSES, type Category, type Status } from "@/lib/types";
 import { ShaderZone } from "./shader-zone";
 
@@ -25,23 +28,68 @@ function guessCategory(url: string): Category | undefined {
   if (/t-shirt|tee|shirt|hoodie|sweat|knit|top/.test(u)) return "top";
 }
 
+// ?add=<url> opens this. The owner adds to the closet (and ?sug=<id> marks the
+// friend suggestion it came from as accepted); everyone else sends a suggestion.
 export function AddItemDialog() {
-  const [add, setAdd] = useQueryState("add", parseAsString);
+  const [{ add, sug }, set] = useQueryStates({ add: parseAsString, sug: parseAsString });
+  const owner = useIsOwner();
   const open = add !== null;
+  const close = () => set({ add: null, sug: null });
   return (
-    <Dialog open={open} onOpenChange={(o) => !o && setAdd(null)}>
+    <Dialog open={open} onOpenChange={(o) => !o && close()}>
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
-          <DialogTitle>add a piece</DialogTitle>
-          <DialogDescription>Paste or drag in a product link. Photos and price get pulled automatically.</DialogDescription>
+          <DialogTitle className="font-serif text-3xl font-normal">{owner ? "Add a piece" : "Suggest a piece"}</DialogTitle>
+          <DialogDescription>
+            {owner ? "Paste or drag in a product link. Photos and price get pulled automatically." : "Seen something that belongs in this closet? Drop the link and say why."}
+          </DialogDescription>
         </DialogHeader>
-        {open && <AddForm initial={add ?? ""} onDone={() => setAdd(null)} />}
+        {open && (owner ? <AddForm initial={add ?? ""} suggestion={sug} onDone={close} /> : <SuggestForm initial={add ?? ""} onDone={close} />)}
       </DialogContent>
     </Dialog>
   );
 }
 
-function AddForm({ initial, onDone }: { initial: string; onDone: () => void }) {
+function SuggestForm({ initial, onDone }: { initial: string; onDone: () => void }) {
+  const [url, setUrl] = useState(initial);
+  const [note, setNote] = useState("");
+  const [pending, start] = useTransition();
+  const valid = /^https?:\/\/\S+\.\S+/.test(url.trim());
+  return (
+    <div className="flex flex-col gap-4">
+      <ShaderZone
+        className="h-24"
+        accept={(dt) => dt.types.includes("text/uri-list") || dt.types.includes("text/plain")}
+        onDropData={(dt) => setUrl(draggedUrl(dt).trim())}
+      >
+        <div className="flex size-full items-center justify-center gap-2 text-sm text-body">
+          <LinkIcon className="size-5 text-muted-foreground" /> drop a link here
+        </div>
+      </ShaderZone>
+      <Input autoFocus value={url} placeholder="https://…" onChange={(e) => setUrl(e.target.value)} />
+      <Textarea value={note} onChange={(e) => setNote(e.target.value)} placeholder="why it'd work (optional)" rows={3} />
+      <Button
+        size="lg"
+        disabled={!valid || pending}
+        onClick={() =>
+          start(async () => {
+            try {
+              await suggestLink(url.trim(), note);
+              toast.success("sent. thanks!");
+              onDone();
+            } catch (e) {
+              toast.error((e as Error).message);
+            }
+          })
+        }
+      >
+        {pending ? <SpinnerIcon className="animate-spin" /> : null} send suggestion
+      </Button>
+    </div>
+  );
+}
+
+function AddForm({ initial, suggestion, onDone }: { initial: string; suggestion: string | null; onDone: () => void }) {
   const [url, setUrl] = useState(initial);
   const [category, setCategory] = useState<Category | "">(guessCategory(initial) ?? "");
   const [status, setStatusV] = useState<Status>("want");
@@ -54,6 +102,7 @@ function AddForm({ initial, onDone }: { initial: string; onDone: () => void }) {
       if (!category) return;
       try {
         const r = await addFromUrl({ url: url.trim(), category, status });
+        if (suggestion) await resolveSuggestion(suggestion, "accept");
         toast.success(r.existed ? "already in the closet" : "added");
         onDone();
         router.push(`/pieces/${r.id}`);

@@ -116,3 +116,50 @@ export type GrailedListing = {
   seller: { username: string; rating?: number; count?: number; trusted: boolean };
   url: string;
 };
+
+// ---- people + collab ----
+
+export type Role = "owner" | "viewer";
+
+export type Target = { type: "item" | "outfit"; id: string };
+
+export type Comment = {
+  id: string;
+  target: Target;
+  userId: string;
+  userName: string;
+  body: string;
+  createdAt: string;
+};
+
+// One vote per person per target; re-voting replaces it.
+export type Vote = {
+  target: Target;
+  userId: string;
+  userName: string;
+  value: 1 | -1;
+  at: string;
+};
+
+export type Suggestion = {
+  id: string;
+  kind: "link" | "grailed" | "fit";
+  userId: string;
+  userName: string;
+  note?: string;
+  url?: string; // link + grailed
+  title?: string;
+  image?: string;
+  price?: number;
+  listing?: GrailedListing; // grailed
+  itemIds?: string[]; // fit
+  status: "open" | "accepted" | "dismissed";
+  createdAt: string;
+};
+
+export type Invite = {
+  code: string;
+  label: string; // who it's for
+  createdAt: string;
+  usedBy?: { userId: string; email: string; at: string };
+};

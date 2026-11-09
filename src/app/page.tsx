@@ -13,7 +13,7 @@ export default function Home() {
 }
 
 async function LookbookData() {
-  const { outfits, byId, watchById, profile } = await getData();
+  const { outfits, byId, watchById, profile, comments, votes } = await getData();
   const views: OutfitView[] = outfits.map((o, i) => {
     const { items, owned, missing } = outfitProgress(o, byId);
     const toComplete = missing.reduce((sum, it) => sum + (expectedCost(it, watchById.get(it.id)) ?? 0), 0);
@@ -24,6 +24,9 @@ async function LookbookData() {
       owned,
       toComplete,
       unknownCost: missing.some((it) => expectedCost(it, watchById.get(it.id)) == null),
+      ups: votes.filter((v) => v.target.type === "outfit" && v.target.id === o.id && v.value === 1).length,
+      downs: votes.filter((v) => v.target.type === "outfit" && v.target.id === o.id && v.value === -1).length,
+      commentCount: comments.filter((c) => c.target.type === "outfit" && c.target.id === o.id).length,
     };
   });
   return <Lookbook outfits={views} styles={profile.styles} rule={profile.rules[0]} />;

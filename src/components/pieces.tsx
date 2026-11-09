@@ -11,6 +11,7 @@ import { Chip, PageHeader } from "./bits";
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/input-group";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useIsOwner } from "./viewer";
 
 const SORTS = ["recent", "price", "used-price", "brand", "most-used"] as const;
 
@@ -25,6 +26,7 @@ export function Pieces({ items, watches, usage }: { items: Item[]; watches: Watc
     deals: parseAsString,
   });
   const [, setAdd] = useQueryState("add", parseAsString);
+  const owner = useIsOwner();
   const watchById = useMemo(() => new Map(watches.map((w) => [w.id, w])), [watches]);
   const brands = useMemo(() => [...new Set(items.map((i) => i.brand))].sort((a, b) => a.localeCompare(b)), [items]);
   const tags = useMemo(() => [...new Set(items.flatMap((i) => i.tags))].sort(), [items]);
@@ -63,7 +65,7 @@ export function Pieces({ items, watches, usage }: { items: Item[]; watches: Watc
         sub="Everything you own, want, or are circling. Click a status to change it."
         actions={
           <Button size="lg" onClick={() => setAdd("")}>
-            <PlusIcon /> add from link
+            <PlusIcon /> {owner ? "add from link" : "suggest a piece"}
           </Button>
         }
       />

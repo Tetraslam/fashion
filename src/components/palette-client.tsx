@@ -19,6 +19,7 @@ import { ArrowSquareOutIcon, LinkIcon, MagnifyingGlassIcon, PlusIcon, TagIcon, A
 import { checkAllMarkets } from "@/app/actions";
 import { SECTIONS } from "@/lib/sections";
 import type { BrandStance, Status } from "@/lib/types";
+import { useIsOwner } from "./viewer";
 
 const EVENT = "palette:open";
 export const openPalette = () => window.dispatchEvent(new Event(EVENT));
@@ -35,6 +36,7 @@ export function PaletteClient({ items, outfits, brands }: Props) {
   const router = useRouter();
   const [, setAdd] = useQueryState("add", parseAsString);
   const [pending, start] = useTransition();
+  const owner = useIsOwner();
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -77,7 +79,7 @@ export function PaletteClient({ items, outfits, brands }: Props) {
                 }}
               >
                 <LinkIcon />
-                add this link to the closet
+                {owner ? "add this link to the closet" : "suggest this link"}
               </CommandItem>
             ) : (
               <CommandItem value={`grailed ${q}`} onSelect={() => go(`/grailed?q=${encodeURIComponent(q.trim())}`)}>
@@ -95,15 +97,16 @@ export function PaletteClient({ items, outfits, brands }: Props) {
             </CommandItem>
           ))}
           <CommandItem
-            value="add item link url new piece"
+            value={owner ? "add item link url new piece" : "suggest a piece link url"}
             onSelect={() => {
               setOpen(false);
               setAdd("");
             }}
           >
             <PlusIcon />
-            add a piece from a link
+            {owner ? "add a piece from a link" : "suggest a piece"}
           </CommandItem>
+          {owner && (
           <CommandItem
             value="check grailed prices deals refresh market"
             disabled={pending}
@@ -119,6 +122,7 @@ export function PaletteClient({ items, outfits, brands }: Props) {
             <ArrowsClockwiseIcon />
             check grailed prices for the want list
           </CommandItem>
+          )}
         </CommandGroup>
         <CommandSeparator />
         <CommandGroup heading="fits">

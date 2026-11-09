@@ -1,8 +1,7 @@
 "use server";
 
-// Local, single-user app: the dev server binds to 127.0.0.1 (see package.json),
-// so these actions have no auth.
-import path from "node:path";
+// Every action checks the session itself: requireOwner() for anything that
+// changes the closet, requireUser() for the collab bits friends can do.
 import { refresh } from "next/cache";
 import { read, update, slugify } from "@/lib/store";
 import { scrapeProduct } from "@/lib/scrape";
@@ -10,6 +9,7 @@ import { downloadImages, dominantColors } from "@/lib/images";
 import * as grailed from "@/lib/grailed";
 import { fitCheck } from "@/lib/fit";
 import { mySizes } from "@/lib/wardrobe";
+import { requireOwner, requireUser } from "@/lib/session";
 import type { BrandStance, Category, GrailedListing, Item, Outfit, Profile, Status, Watch } from "@/lib/types";
 
 const now = () => new Date().toISOString();
@@ -28,6 +28,7 @@ function uniqueId(base: string, items: Item[]) {
 }
 
 export async function setStatus(id: string, status: Status) {
+  await requireOwner();
   await update("items", (items) => {
     const item = items.find((i) => i.id === id);
     if (!item) return;
@@ -38,6 +39,7 @@ export async function setStatus(id: string, status: Status) {
 }
 
 export async function updateItem(id: string, patch: Partial<Omit<Item, "id">>) {
+  await requireOwner();
   await update("items", (items) => {
     const item = items.find((i) => i.id === id);
     if (item) Object.assign(item, patch);
@@ -46,6 +48,7 @@ export async function updateItem(id: string, patch: Partial<Omit<Item, "id">>) {
 }
 
 export async function deleteItem(id: string) {
+  await requireOwner();
   await update("items", (items) => {
     const i = items.findIndex((x) => x.id === id);
     if (i >= 0) items.splice(i, 1);
@@ -57,6 +60,7 @@ export async function deleteItem(id: string) {
 }
 
 export async function logWear(id: string) {
+  await requireOwner();
   await update("items", (items) => {
     const item = items.find((i) => i.id === id);
     if (item) (item.wears ??= []).push(now().slice(0, 10));
@@ -65,6 +69,7 @@ export async function logWear(id: string) {
 }
 
 export async function wearOutfit(id: string) {
+  await requireOwner();
   const outfit = (await read("outfits")).find((o) => o.id === id);
   if (!outfit) return;
   await update("items", (items) => {
@@ -75,6 +80,7 @@ export async function wearOutfit(id: string) {
 }
 
 export async function addFromUrl(input: { url: string; category: Category; brand?: string; name?: string; status?: Status }) {
+  await requireOwner();
   const url = new URL(input.url).toString();
   const existing = (await read("items")).find((i) => i.url === url);
   if (existing) return { id: existing.id, existed: true };
@@ -82,8 +88,8 @@ export async function addFromUrl(input: { url: string; category: Category; brand
   const brand = input.brand || scraped?.brand || new URL(url).hostname.replace(/^www\./, "").split(".")[0];
   const name = input.name || scraped?.title?.replace(new RegExp(`^${brand}\\s*[-–|:]?\\s*`, "i"), "") || "Untitled";
   const id = uniqueId(`${brand} ${name}`, await read("items"));
-  const images = scraped ? await downloadImages(id, scraped.images, url) : [];
-  const colors = images[0] ? await dominantColors(path.join(process.cwd(), "public", images[0])) : [];
+  const { urls: images, first } = scraped ? await downloadImages(id, scraped.images, url) : { urls: [], first: undefined };
+  const colors = first ? await dominantColors(first) : [];
   const item: Item = {
     id,
     brand,
@@ -116,6 +122,7 @@ const GRAILED_TO_CATEGORY: Record<string, Category> = {
 };
 
 export async function addFromGrailed(l: GrailedListing, status: Status = "watching") {
+  await requireOwner();
   const items = await read("items");
   const existing = items.find((i) => i.url === l.url);
   if (existing) return { id: existing.id, existed: true };
@@ -123,8 +130,8 @@ export async function addFromGrailed(l: GrailedListing, status: Status = "watchi
   const id = uniqueId(`${brand} ${l.title}`, items);
   const detail = await grailed.listing(l.id).catch(() => undefined);
   const photos = detail?.photos.length ? detail.photos.map((p) => `${p}?w=1000`) : l.image ? [`${l.image}?w=1000`] : [];
-  const images = await downloadImages(id, photos, "https://www.grailed.com/");
-  const colors = images[0] ? await dominantColors(path.join(process.cwd(), "public", images[0])) : [];
+  const { urls: images, first } = await downloadImages(id, photos, "https://www.grailed.com/");
+  const colors = first ? await dominantColors(first) : [];
   const item: Item = {
     id,
     brand,
@@ -150,6 +157,7 @@ export async function addFromGrailed(l: GrailedListing, status: Status = "watchi
 }
 
 export async function saveOutfit(o: Partial<Outfit> & { name: string; itemIds: string[] }) {
+  await requireOwner();
   const items = await read("items");
   const pieces = o.itemIds.map((id) => items.find((i) => i.id === id)).filter(Boolean) as Item[];
   const palette = o.palette?.length ? o.palette : pieces.map((p) => p.colors[0]).filter(Boolean).slice(0, 5);
@@ -178,6 +186,7 @@ export async function saveOutfit(o: Partial<Outfit> & { name: string; itemIds: s
 }
 
 export async function deleteOutfit(id: string) {
+  await requireOwner();
   await update("outfits", (outfits) => {
     const i = outfits.findIndex((o) => o.id === id);
     if (i >= 0) outfits.splice(i, 1);
@@ -186,6 +195,7 @@ export async function deleteOutfit(id: string) {
 }
 
 export async function toggleFavorite(id: string) {
+  await requireOwner();
   await update("outfits", (outfits) => {
     const o = outfits.find((x) => x.id === id);
     if (o) o.favorite = !o.favorite;
@@ -194,6 +204,7 @@ export async function toggleFavorite(id: string) {
 }
 
 export async function setBrandStance(name: string, stance: BrandStance) {
+  await requireOwner();
   await update("brands", (brands) => {
     const b = brands.find((x) => x.name === name);
     if (b) b.stance = stance;
@@ -202,6 +213,7 @@ export async function setBrandStance(name: string, stance: BrandStance) {
 }
 
 export async function updateBrand(name: string, patch: { notes?: string; tier?: "$" | "$$" | "$$$" | "$$$$" }) {
+  await requireOwner();
   await update("brands", (brands) => {
     const b = brands.find((x) => x.name === name);
     if (b) Object.assign(b, patch);
@@ -210,12 +222,14 @@ export async function updateBrand(name: string, patch: { notes?: string; tier?: 
 }
 
 export async function updateProfile(patch: Partial<Profile>) {
+  await requireOwner();
   await update("profile", (p) => void Object.assign(p, patch));
   refresh();
 }
 
 // Snapshot the Grailed market for an item and append it to its price history.
 export async function checkMarket(itemId: string) {
+  await requireOwner();
   const [items, profile] = await Promise.all([read("items"), read("profile")]);
   const item = items.find((i) => i.id === itemId);
   if (!item) throw new Error("no such item");
@@ -239,6 +253,7 @@ export async function checkMarket(itemId: string) {
 }
 
 export async function checkAllMarkets(statuses: Status[] = ["want", "watching"]) {
+  await requireOwner();
   const items = (await read("items")).filter((i) => statuses.includes(i.status));
   let done = 0;
   for (const item of items) {
@@ -252,6 +267,7 @@ export async function checkAllMarkets(statuses: Status[] = ["want", "watching"])
 }
 
 export async function listingDetail(id: number) {
+  await requireUser();
   const [detail, profile] = await Promise.all([grailed.listing(id), read("profile")]);
   return { detail, fit: fitCheck(detail.measurements, detail.category, profile) };
 }

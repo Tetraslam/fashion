@@ -1,5 +1,6 @@
 import { mkdir, writeFile, rm } from "node:fs/promises";
 import path from "node:path";
+import { put } from "@vercel/blob";
 import sharp from "sharp";
 
 // Shopify and most CDNs accept a width hint; full-res product shots are huge.
@@ -18,12 +19,25 @@ export async function normalize(buf: Buffer) {
   return sharp(buf).rotate().resize(1000, 1000, { fit: "inside", withoutEnlargement: true }).webp({ quality: 78 }).toBuffer();
 }
 
-// Saves up to `max` images to public/products/<id>/ and returns their public paths.
-export async function downloadImages(id: string, urls: string[], referer: string, max = 4) {
+// Where a new photo lives: Vercel Blob in production (the deployed filesystem
+// is read-only), public/products/ when running locally without a Blob token.
+async function store(id: string, n: number, buf: Buffer) {
+  if (process.env.BLOB_READ_WRITE_TOKEN) {
+    const blob = await put(`products/${id}/${n}.webp`, buf, { access: "public", contentType: "image/webp", addRandomSuffix: true });
+    return blob.url;
+  }
   const dir = path.join(process.cwd(), "public", "products", id);
-  await rm(dir, { recursive: true, force: true });
   await mkdir(dir, { recursive: true });
+  await writeFile(path.join(dir, `${n}.webp`), buf);
+  return `/products/${id}/${n}.webp`;
+}
+
+// Saves up to `max` images and returns their URLs, plus the first one's bytes
+// for color extraction.
+export async function downloadImages(id: string, urls: string[], referer: string, max = 4) {
+  if (!process.env.BLOB_READ_WRITE_TOKEN) await rm(path.join(process.cwd(), "public", "products", id), { recursive: true, force: true });
   const out: string[] = [];
+  let first: Buffer | undefined;
   for (const url of urls.slice(0, max + 2)) {
     if (out.length >= max) break;
     try {
@@ -38,19 +52,19 @@ export async function downloadImages(id: string, urls: string[], referer: string
       if (!res.ok || !res.headers.get("content-type")?.startsWith("image/")) continue;
       const buf = Buffer.from(await res.arrayBuffer());
       if (buf.length < 4000) continue; // tracking pixels, placeholders
-      const name = `${out.length}.webp`;
-      await writeFile(path.join(dir, name), await normalize(buf));
-      out.push(`/products/${id}/${name}`);
+      const webp = await normalize(buf);
+      first ??= webp;
+      out.push(await store(id, out.length, webp));
     } catch {}
   }
-  return out;
+  return { urls: out, first };
 }
 
 const hex = (r: number, g: number, b: number) =>
   "#" + [r, g, b].map((v) => Math.round(v).toString(16).padStart(2, "0")).join("");
 
 // Up to `k` dominant garment colors, ignoring the (corner-sampled) studio backdrop.
-export async function dominantColors(file: string, k = 3) {
+export async function dominantColors(file: string | Buffer, k = 3) {
   const { data, info } = await sharp(file).resize(48, 48, { fit: "fill" }).removeAlpha().raw().toBuffer({ resolveWithObject: true });
   const px = (i: number) => [data[i * 3], data[i * 3 + 1], data[i * 3 + 2]] as const;
   const w = info.width;

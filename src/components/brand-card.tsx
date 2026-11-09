@@ -6,6 +6,7 @@ import { ArrowSquareOutIcon, HeartIcon, QuestionIcon, ProhibitIcon, MagnifyingGl
 import type { Brand, BrandStance } from "@/lib/types";
 import { setBrandStance, updateBrand } from "@/app/actions";
 import { cn } from "@/lib/utils";
+import { useIsOwner } from "./viewer";
 
 const STANCE_ICON = { love: HeartIcon, curious: QuestionIcon, nope: ProhibitIcon } as const;
 const STANCE_COLOR = { love: "text-brand", curious: "text-warn", nope: "text-muted-foreground" } as const;
@@ -13,6 +14,7 @@ const STANCE_COLOR = { love: "text-brand", curious: "text-warn", nope: "text-mut
 export function BrandCard({ brand, counts, images }: { brand: Brand; counts: { owned: number; total: number }; images: string[] }) {
   const [stance, setStance] = useOptimistic(brand.stance);
   const [, start] = useTransition();
+  const owner = useIsOwner();
   return (
     <div id={brand.slug} className="flex scroll-mt-24 flex-col overflow-hidden rounded-sm border border-border bg-card target:border-brand target:ring-1 target:ring-brand">
       <div className="flex h-28 gap-px bg-card">
@@ -42,6 +44,7 @@ export function BrandCard({ brand, counts, images }: { brand: Brand; counts: { o
               return (
                 <button
                   key={s}
+                  disabled={!owner}
                   aria-label={s}
                   title={s}
                   onClick={() =>
@@ -50,7 +53,7 @@ export function BrandCard({ brand, counts, images }: { brand: Brand; counts: { o
                       await setBrandStance(brand.name, s);
                     })
                   }
-                  className={cn("p-1.5 transition-colors", stance === s ? STANCE_COLOR[s] : "text-muted-foreground/30 hover:text-muted-foreground")}
+                  className={cn("p-1.5 transition-colors disabled:cursor-default", stance === s ? STANCE_COLOR[s] : "text-muted-foreground/30 enabled:hover:text-muted-foreground", !owner && stance !== s && "hidden")}
                 >
                   <Icon weight={stance === s ? "fill" : "regular"} className="size-4" />
                 </button>
@@ -61,7 +64,8 @@ export function BrandCard({ brand, counts, images }: { brand: Brand; counts: { o
         {brand.tags.length > 0 && <div className="flex flex-wrap gap-1">{brand.tags.map((t) => <span key={t} className="rounded-full bg-muted px-2 py-0.5 text-[11px] text-body">{t}</span>)}</div>}
         <textarea
           defaultValue={brand.notes ?? ""}
-          placeholder="notes: sizing, quality, what to look for…"
+          readOnly={!owner}
+          placeholder={owner ? "notes: sizing, quality, what to look for…" : ""}
           rows={1}
           onBlur={(e) => e.target.value !== (brand.notes ?? "") && start(() => updateBrand(brand.name, { notes: e.target.value }))}
           className="field-sizing-content resize-none bg-transparent text-sm text-body outline-none placeholder:text-muted-foreground/40"

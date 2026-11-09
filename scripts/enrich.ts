@@ -38,9 +38,9 @@ await Promise.all(
         console.log(`  x ${item.id}`);
         continue;
       }
-      const local = await downloadImages(item.id, p.images, item.url);
+      const { urls: local, first } = await downloadImages(item.id, p.images, item.url);
       results.set(item.id, { images: local.length ? local : p.images, price: p.price, currency: p.currency });
-      if (local.length) colors.set(item.id, await dominantColors(path.join("public", local[0])));
+      if (first) colors.set(item.id, await dominantColors(first));
       console.log(`  ✓ ${item.id} via ${p.via}: ${local.length} imgs, ${p.price ?? "?"} ${p.currency ?? ""}`);
     }
   }),

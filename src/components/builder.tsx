@@ -9,6 +9,8 @@ import { XIcon, ShuffleIcon, FloppyDiskIcon, MagnifyingGlassIcon, PlusIcon, Eras
 import { CATEGORIES, type Category, type Item, type Outfit, type Status } from "@/lib/types";
 import { money } from "@/lib/wardrobe";
 import { saveOutfit } from "@/app/actions";
+import { suggestFit } from "@/app/collab-actions";
+import { useIsOwner } from "./viewer";
 import { ShaderZone } from "./shader-zone";
 import { ItemPhoto } from "./item-card";
 import { StatusBadge } from "./status-menu";
@@ -38,6 +40,7 @@ export function Builder({ items, outfits, costs }: { items: Item[]; outfits: Out
   const [vibe, setVibe] = useState(editing?.vibe ?? "");
   const [pending, start] = useTransition();
   const router = useRouter();
+  const owner = useIsOwner();
 
   // Opening /builder?edit=<fit> loads that fit's pieces into the slots once.
   const empty = !s.o && !s.t && !s.b && !s.f && !s.a.length;
@@ -83,6 +86,15 @@ export function Builder({ items, outfits, costs }: { items: Item[]; outfits: Out
         toast.error("add some pieces first");
         return;
       }
+      if (!owner) {
+        await suggestFit(
+          slotted.map((i) => i.id),
+          name.trim() || "Untitled fit",
+          vibe.trim(),
+        );
+        toast.success("sent as a suggestion. thanks!");
+        return;
+      }
       const id = await saveOutfit({ id: editing?.id, name: name.trim() || "Untitled fit", vibe: vibe.trim(), itemIds: slotted.map((i) => i.id) });
       toast.success(editing ? "fit updated" : "fit saved");
       router.push(`/outfits/${id}`);
@@ -94,7 +106,7 @@ export function Builder({ items, outfits, costs }: { items: Item[]; outfits: Out
         <div className="flex flex-col gap-4 pt-6 pb-2">
           <div className="flex items-center gap-2 font-mono text-[11px] tracking-[0.04em] text-muted-foreground uppercase">
             <span className="size-1.5 rounded-full bg-brand" />
-            builder / {editing ? `editing ${editing.name}` : "new fit"}
+            builder / {!owner ? "suggest a fit" : editing ? `editing ${editing.name}` : "new fit"}
           </div>
           <input
             value={name}
@@ -110,7 +122,7 @@ export function Builder({ items, outfits, costs }: { items: Item[]; outfits: Out
           />
           <div className="flex flex-wrap items-center gap-2 pt-2">
             <Button onClick={save} disabled={pending} size="lg">
-              <FloppyDiskIcon /> {editing ? "update fit" : "save fit"}
+              <FloppyDiskIcon /> {!owner ? "suggest this fit" : editing ? "update fit" : "save fit"}
             </Button>
             <Button variant="outline" size="lg" onClick={() => roll(["owned"])}>
               <ShuffleIcon /> roll from what i own

@@ -14,6 +14,7 @@ const TOC = [
   ["pages", "Pages"],
   ["grailed", "Grailed"],
   ["fit", "Fit checks"],
+  ["sharing", "Sharing"],
   ["shortcuts", "Shortcuts"],
   ["alerts", "Deal alerts"],
   ["data", "Your data"],
@@ -37,6 +38,7 @@ const PAGES: [string, string, string][] = [
   ["/plan", "Plan", "The buy queue: want and watching pieces ranked by how many fits they unlock and finish, minus cost. Also live deals, the ideas worth promoting first, closest-to-done fits, category coverage, and a month-by-month schedule once you set a budget."],
   ["/brands", "Brands", "Love, curious, or nope, with notes. Each brand links to its pieces, its Grailed results, and its store."],
   ["/me", "Me", "Sizes, reference measurements, height, monthly budget, styles, fit rules."],
+  ["/inbox", "Inbox", "Owner only. Friends' suggestions to add or pass on, every comment they've left, and how the fits are polling."],
 ];
 
 export default function GuidePage() {
@@ -128,7 +130,41 @@ export default function GuidePage() {
             </p>
           </Part>
 
-          <Part id="shortcuts" n={5} title="Shortcuts">
+          <Part id="sharing" n={5} title="Sharing">
+            <p>
+              The closet is members-only. You (the owner account) can change anything; everyone else signs in as a guest who can see
+              everything but change nothing. The server checks this on every action, so hiding a button is never the only lock.
+            </p>
+            <ul className="flex flex-col divide-y divide-border border-y border-border">
+              <li className="grid grid-cols-[140px_1fr] gap-4 py-3">
+                <span className="text-foreground">inviting</span>
+                <span>
+                  On <Link href="/people" className="text-foreground underline underline-offset-4 hover:text-brand">people</Link> (avatar menu), make a link for each friend.
+                  It&apos;s copied to your clipboard and works once. There&apos;s no open sign-up.
+                </span>
+              </li>
+              <li className="grid grid-cols-[140px_1fr] gap-4 py-3">
+                <span className="text-foreground">what guests do</span>
+                <span>
+                  Vote <em>into it</em> or <em>not it</em> on any fit or piece, comment, and suggest things: a product link (avatar menu or ⌘K), a
+                  Grailed listing (from its quick view), or a whole fit (the builder&apos;s save button becomes <em>suggest this fit</em>).
+                </span>
+              </li>
+              <li className="grid grid-cols-[140px_1fr] gap-4 py-3">
+                <span className="text-foreground">your inbox</span>
+                <span>
+                  Suggestions land in <Link href="/inbox" className="text-foreground underline underline-offset-4 hover:text-brand">inbox</Link>. <em>Add</em> puts a piece in the closet as
+                  want (links open the add dialog so you can pick a category) or a fit in the lookbook. <em>Pass</em> dismisses it.
+                </span>
+              </li>
+              <li className="grid grid-cols-[140px_1fr] gap-4 py-3">
+                <span className="text-foreground">removing</span>
+                <span>Remove someone on people and they&apos;re signed out on their next click. Their comments stay.</span>
+              </li>
+            </ul>
+          </Part>
+
+          <Part id="shortcuts" n={6} title="Shortcuts">
             <ul className="flex flex-col gap-3">
               <Li k={<Kbd>⌘K</Kbd>}>Search every piece, fit, and brand, jump to any page, or search Grailed for whatever you typed.</Li>
               <Li k={<span className="text-foreground">paste a link</span>}>Paste a product URL into ⌘K to add it. Photos, price, and colors get pulled automatically.</Li>
@@ -138,7 +174,7 @@ export default function GuidePage() {
             </ul>
           </Part>
 
-          <Part id="alerts" n={6} title="Deal alerts">
+          <Part id="alerts" n={7} title="Deal alerts">
             <p>
               A systemd timer (<code className="font-mono text-[13px] text-foreground">closet-deals.timer</code>) runs every morning at 9: it
               prices everything marked want or watching and pushes any <em>new</em> deal to your phone through ntfy. Tapping the notification
@@ -153,10 +189,12 @@ journalctl --user -u closet-deals -n 50`}
             <p>It does nothing until something is marked want or watching.</p>
           </Part>
 
-          <Part id="data" n={7} title="Your data">
+          <Part id="data" n={8} title="Your data">
             <p>
-              No database. Everything is plain JSON in <code className="font-mono text-[13px] text-foreground">data/</code>, committed to the
-              repo, so the closet has history and you (or Claude) can edit it directly. Changes show up on reload.
+              The live closet is a set of JSON documents in Postgres (Neon, through Vercel), so the deployed site and your laptop see the same
+              thing. The repo keeps a mirror in <code className="font-mono text-[13px] text-foreground">data/</code> for history and hand edits:
+              <code className="font-mono text-[13px] text-foreground"> pnpm data pull</code> copies the database into the files (then commit),
+              and <code className="font-mono text-[13px] text-foreground">pnpm data push items</code> sends edited files back.
             </p>
             <ul className="flex flex-col gap-2">
               <Li k={<File>items.json</File>}>every piece</Li>
@@ -164,16 +202,17 @@ journalctl --user -u closet-deals -n 50`}
               <Li k={<File>brands.json</File>}>brands and your stance on them</Li>
               <Li k={<File>profile.json</File>}>sizes, measurements, budget</Li>
               <Li k={<File>watches.json</File>}>Grailed price history</Li>
-              <Li k={<File>lookbook.json</File>}>the raw extraction of the original Claude lookbook</Li>
+              <Li k={<File>comments.json</File>}>comments, votes.json, suggestions.json, invites.json: the collab side</Li>
+              <Li k={<File>lookbook.json</File>}>the raw extraction of the original Claude lookbook (file only)</Li>
             </ul>
             <p>
-              Product photos are saved to <code className="font-mono text-[13px] text-foreground">public/products/</code>, so a store taking a page
-              down doesn&apos;t lose them. <code className="font-mono text-[13px] text-foreground">pnpm enrich</code> fills in photos and prices
+              Product photos are saved, so a store taking a page down doesn&apos;t lose them: the original 60 live in{" "}
+              <code className="font-mono text-[13px] text-foreground">public/products/</code>, anything added since goes to Vercel Blob. <code className="font-mono text-[13px] text-foreground">pnpm enrich</code> fills in photos and prices
               for pieces missing them.
             </p>
           </Part>
 
-          <Part id="gaps" n={8} title="Known gaps">
+          <Part id="gaps" n={9} title="Known gaps">
             <ul className="flex list-disc flex-col gap-2 pl-5 marker:text-muted-foreground">
               <li>
                 A few stores (Levi&apos;s, New Balance, COS) render everything client-side. Five pieces use a Grailed listing photo as a stand-in,

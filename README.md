@@ -50,20 +50,26 @@ pnpm dev            # http://127.0.0.1:4747
 | `/plan` | buy queue ranked by how many fits each piece unlocks, monthly budget schedule, closet coverage |
 | `/brands` | love / curious / nope, with notes |
 | `/me` | sizes, reference measurements, budget, fit rules |
+| `/inbox`, `/people` | owner only: friends' suggestions, comments, votes; invite links and accounts |
 | `/guide` | the in-app manual: the status loop, how Grailed pricing and fit checks work, known gaps |
 
 `⌘K` searches everything, jumps anywhere, and takes a pasted product link to add it.
 
 ### data
 
-Everything lives in `data/*.json` and is committed, so the closet is version-controlled and hand-editable.
-Product photos are saved under `public/products/<item-id>/` so dead links don't lose them.
+The live closet is a set of JSON documents in Postgres (`closet_docs`, one row per document, row-locked updates), shared by the deployed site, local dev, and the scripts. `data/*.json` is the git mirror:
 
-- `items.json`: every piece (status, retail price, Grailed search, colors, notes, wears)
-- `outfits.json`: fits, as ordered lists of item ids
-- `brands.json`, `profile.json`
-- `watches.json`: Grailed price history per item
-- `lookbook.json`: the raw extraction of the original Claude artifact (`source/lookbook/`, links in `source/lookbook/LINKS.md`)
+```sh
+pnpm data pull                # database -> data/*.json, then commit
+pnpm data push items outfits  # edited files -> database (named docs only; --all for everything)
+```
+
+Without `DATABASE_URL` the app falls back to reading and writing `data/` directly (offline only, no accounts).
+New product photos go to Vercel Blob; the original 60 are in `public/products/`.
+
+### accounts
+
+Better Auth, email + password, no open sign-up. `OWNER_EMAIL` is the only account that can change anything (checked in every server action); it's created once at `/join?owner=1` with `OWNER_SETUP_CODE`. Everyone else joins through a single-use invite link from `/people` and can view, vote, comment, and suggest. Env (`vercel env pull .env.local`): `DATABASE_URL`, `BETTER_AUTH_SECRET`, `OWNER_EMAIL`, `OWNER_SETUP_CODE`, `BLOB_READ_WRITE_TOKEN`, `FIRECRAWL_API_KEY`.
 
 ### scripts
 
@@ -73,6 +79,7 @@ pnpm deals [--notify]                       # price the want list on Grailed; --
                                             # (runs daily at 9am via ~/.config/systemd/user/closet-deals.timer)
 pnpm colors                                 # re-encode photos, recompute garment colors
 pnpm seed                                   # re-import the lookbook (keeps existing edits)
+pnpm db:migrate                             # create/update Better Auth's tables
 ```
 
 `enrich` falls back to Firecrawl for bot-walled stores (`FIRECRAWL_API_KEY`, read from 1Password via `opa` if unset), then to a Grailed photo.

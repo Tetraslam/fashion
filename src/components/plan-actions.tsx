@@ -5,9 +5,11 @@ import { toast } from "sonner";
 import { ArrowsClockwiseIcon } from "@phosphor-icons/react";
 import { checkAllMarkets } from "@/app/actions";
 import { Button } from "@/components/ui/button";
+import { useIsOwner } from "./viewer";
 
 export function PlanActions() {
   const [pending, start] = useTransition();
+  if (!useIsOwner()) return null;
   return (
     <Button
       size="lg"

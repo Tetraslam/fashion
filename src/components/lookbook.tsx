@@ -4,12 +4,13 @@ import Link from "next/link";
 import { useTransition } from "react";
 import { useQueryStates, parseAsString, parseAsBoolean, parseAsStringLiteral } from "nuqs";
 import { TextMorph } from "torph/react";
-import { StarIcon, CheckIcon, PlusIcon } from "@phosphor-icons/react";
+import { StarIcon, CheckIcon, PlusIcon, ThumbsUpIcon, ThumbsDownIcon, ChatCircleIcon } from "@phosphor-icons/react";
 import type { Outfit, Status, Category } from "@/lib/types";
 import { money } from "@/lib/wardrobe";
 import { toggleFavorite } from "@/app/actions";
 import { cn } from "@/lib/utils";
 import { Chip, PageHeader } from "./bits";
+import { useIsOwner } from "./viewer";
 
 export type OutfitView = Outfit & {
   num: string;
@@ -17,6 +18,9 @@ export type OutfitView = Outfit & {
   owned: number;
   toComplete: number;
   unknownCost: boolean;
+  ups: number;
+  downs: number;
+  commentCount: number;
 };
 
 const SORTS = ["lookbook", "closest", "cheapest", "newest"] as const;
@@ -27,6 +31,7 @@ export function Lookbook({ outfits, styles, rule }: { outfits: OutfitView[]; sty
     fav: parseAsBoolean.withDefault(false),
     sort: parseAsStringLiteral(SORTS).withDefault("lookbook"),
   });
+  const owner = useIsOwner();
   const tags = [...new Set(outfits.flatMap((o) => o.tags))].sort();
   let shown = outfits.filter((o) => (!tag || o.tags.includes(tag)) && (!fav || o.favorite));
   if (sort === "closest") shown = [...shown].sort((a, b) => b.owned / b.pieces.length - a.owned / a.pieces.length || a.toComplete - b.toComplete);
@@ -53,7 +58,7 @@ export function Lookbook({ outfits, styles, rule }: { outfits: OutfitView[]; sty
             href="/builder"
             className="flex h-10 items-center gap-2 rounded-full bg-foreground px-5 text-sm text-background transition-colors hover:bg-brand"
           >
-            <PlusIcon /> New fit
+            <PlusIcon /> {owner ? "New fit" : "Suggest a fit"}
           </Link>
         }
       />
@@ -90,6 +95,7 @@ export function Lookbook({ outfits, styles, rule }: { outfits: OutfitView[]; sty
 
 function OutfitCard({ o }: { o: OutfitView }) {
   const [, start] = useTransition();
+  const owner = useIsOwner();
   const done = o.owned === o.pieces.length;
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-sm border border-border bg-card transition-shadow duration-300 hover:shadow-[0_12px_40px_-16px_rgba(0,0,0,0.18)]">
@@ -104,10 +110,33 @@ function OutfitCard({ o }: { o: OutfitView }) {
               <span key={i} className="size-3.5 rounded-full ring-2 ring-card" style={{ background: c }} />
             ))}
           </span>
+          {(o.ups > 0 || o.downs > 0 || o.commentCount > 0) && (
+            <Link href={`/outfits/${o.id}`} className="ml-auto flex items-center gap-2.5 font-mono text-[11px] text-muted-foreground hover:text-foreground">
+              {o.ups > 0 && (
+                <span className="flex items-center gap-1">
+                  <ThumbsUpIcon className="size-3.5" />
+                  {o.ups}
+                </span>
+              )}
+              {o.downs > 0 && (
+                <span className="flex items-center gap-1">
+                  <ThumbsDownIcon className="size-3.5" />
+                  {o.downs}
+                </span>
+              )}
+              {o.commentCount > 0 && (
+                <span className="flex items-center gap-1">
+                  <ChatCircleIcon className="size-3.5" />
+                  {o.commentCount}
+                </span>
+              )}
+            </Link>
+          )}
           <button
             aria-label="favorite"
+            disabled={!owner}
             onClick={() => start(() => toggleFavorite(o.id))}
-            className={cn("ml-auto transition-colors", o.favorite ? "text-brand" : "text-muted-foreground/40 hover:text-brand")}
+            className={cn("transition-colors disabled:cursor-default", !(o.ups || o.downs || o.commentCount) && "ml-auto", o.favorite ? "text-brand" : "text-muted-foreground/40 enabled:hover:text-brand", !owner && !o.favorite && "invisible")}
           >
             <StarIcon weight={o.favorite ? "fill" : "regular"} className="size-4" />
           </button>

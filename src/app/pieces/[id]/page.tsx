@@ -4,13 +4,15 @@ import { notFound } from "next/navigation";
 import { ArrowSquareOutIcon } from "@phosphor-icons/react/ssr";
 import { getData } from "@/lib/data";
 import * as grailed from "@/lib/grailed";
-import { money, mySizes, costPerWear } from "@/lib/wardrobe";
+import { money, mySizes, costPerWear, feedbackFor } from "@/lib/wardrobe";
+import { Feedback } from "@/components/feedback";
 import { pretty, sizeLabel } from "@/lib/grailed-meta";
 import { ItemPhoto } from "@/components/item-card";
 import { StatusMenu } from "@/components/status-menu";
 import { Section } from "@/components/bits";
 import { Gallery } from "@/components/gallery";
 import { ItemEditor } from "@/components/item-editor";
+import { OwnerOnly } from "@/components/viewer";
 import { MarketPanel } from "@/components/market-panel";
 import { ListingGrid } from "@/components/listings";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -33,7 +35,7 @@ type Mode = keyof typeof MODES;
 
 async function Piece({ params, searchParams }: Props) {
   const [{ id }, sp] = await Promise.all([params, searchParams]);
-  const { items, outfits, profile, watchById, brands } = await getData();
+  const { items, outfits, profile, watchById, brands, comments, votes } = await getData();
   const item = items.find((i) => i.id === id);
   if (!item) notFound();
   const mode: Mode = sp.g === "all" || sp.g === "sold" ? sp.g : "size";
@@ -90,7 +92,13 @@ async function Piece({ params, searchParams }: Props) {
             )}
           </div>
           <MarketPanel item={item} watch={watchById.get(item.id)} sizes={mySizes(item.category, profile)} />
-          <ItemEditor item={item} />
+          <div className="flex flex-col gap-3">
+            <span className="label">what people think</span>
+            <Feedback target={{ type: "item", id: item.id }} {...feedbackFor({ type: "item", id: item.id }, comments, votes)} />
+          </div>
+          <OwnerOnly fallback={item.notes ? <p className="text-[15px] leading-relaxed whitespace-pre-line text-body">{item.notes}</p> : null}>
+            <ItemEditor item={item} />
+          </OwnerOnly>
         </div>
       </div>
 

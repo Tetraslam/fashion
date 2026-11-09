@@ -1,5 +1,5 @@
 // Pure wardrobe math, shared by server and client.
-import type { Item, Outfit, Watch, PricePoint, Profile, Category } from "./types";
+import type { Item, Outfit, Watch, PricePoint, Profile, Category, Comment, Target, Vote } from "./types";
 import { SIZE_KEYS } from "./grailed-meta";
 
 export const latest = (w?: Watch): PricePoint | undefined => w?.history.at(-1);
@@ -72,4 +72,10 @@ export function isDeal(item: Item, watch?: Watch) {
   if (!p?.sizedLowAsk) return false;
   if (item.maxPrice) return p.sizedLowAsk <= item.maxPrice;
   return !!item.price && p.sizedLowAsk <= item.price * 0.6;
+}
+
+// Comments and votes aimed at one item or outfit.
+export function feedbackFor(target: Target, comments: Comment[], votes: Vote[]) {
+  const hit = (t: Target) => t.type === target.type && t.id === target.id;
+  return { comments: comments.filter((c) => hit(c.target)), votes: votes.filter((v) => hit(v.target)) };
 }

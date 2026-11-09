@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Chip, Section } from "./bits";
+import { useIsOwner } from "./viewer";
 
 const MEASURE_HINT: Record<string, string> = {
   chest: "pit to pit",
@@ -44,6 +45,7 @@ function Row({ label, children, hint }: { label: string; children: ReactNode; hi
 export function ProfileForm({ profile }: { profile: Profile }) {
   const [p, setP] = useState<Profile>({ ...profile, measurements: profile.measurements ?? {} });
   const [pending, start] = useTransition();
+  const owner = useIsOwner();
   const dirty = JSON.stringify(p) !== JSON.stringify({ ...profile, measurements: profile.measurements ?? {} });
 
   const toggleSize = (key: keyof Profile["sizes"], v: string) => {
@@ -64,7 +66,7 @@ export function ProfileForm({ profile }: { profile: Profile }) {
     });
 
   return (
-    <div className="flex flex-col gap-10">
+    <fieldset disabled={!owner} className="flex flex-col gap-10 disabled:[&_button]:cursor-default">
       <Section title="sizes" aside="pick every size that can work; measurements decide the rest">
         <div>
           <Row label="tops + outerwear" hint="letter sizes on grailed">
@@ -152,11 +154,13 @@ export function ProfileForm({ profile }: { profile: Profile }) {
         </div>
       </Section>
 
-      <div className="sticky bottom-4 flex justify-end">
-        <Button size="lg" onClick={save} disabled={!dirty || pending} className="shadow-lg">
-          <FloppyDiskIcon /> {dirty ? "save" : "saved"}
-        </Button>
-      </div>
-    </div>
+      {owner && (
+        <div className="sticky bottom-4 flex justify-end">
+          <Button size="lg" onClick={save} disabled={!dirty || pending} className="shadow-lg">
+            <FloppyDiskIcon /> {dirty ? "save" : "saved"}
+          </Button>
+        </div>
+      )}
+    </fieldset>
   );
 }

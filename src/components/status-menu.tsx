@@ -4,6 +4,7 @@ import { useOptimistic, useTransition } from "react";
 import { setStatus } from "@/app/actions";
 import { STATUSES, type Status } from "@/lib/types";
 import { STATUS_DOT } from "@/lib/status";
+import { useIsOwner } from "./viewer";
 import { cn } from "@/lib/utils";
 import {
   DropdownMenu,
@@ -39,6 +40,7 @@ export function StatusBadge({ status, className }: { status: Status; className?:
 export function StatusMenu({ id, status, className }: { id: string; status: Status; className?: string }) {
   const [optimistic, setOptimistic] = useOptimistic(status);
   const [, start] = useTransition();
+  if (!useIsOwner()) return <StatusBadge status={status} className={className} />;
   return (
     <DropdownMenu>
       <DropdownMenuTrigger

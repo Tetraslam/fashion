@@ -8,6 +8,9 @@ import type { GrailedListing } from "@/lib/types";
 import { CONDITIONS, grailedImage, pretty } from "@/lib/grailed-meta";
 import { money } from "@/lib/wardrobe";
 import { addFromGrailed, listingDetail } from "@/app/actions";
+import { suggestListing } from "@/app/collab-actions";
+import { useIsOwner } from "./viewer";
+import { Input } from "@/components/ui/input";
 import type { FitRow } from "@/lib/fit";
 import type { ListingDetail } from "@/lib/grailed";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -84,6 +87,8 @@ function QuickViewBody({ l, retail }: { l: GrailedListing; retail?: number }) {
   const [photo, setPhoto] = useState(0);
   const [adding, startAdd] = useTransition();
   const router = useRouter();
+  const owner = useIsOwner();
+  const [note, setNote] = useState("");
   const loading = !data && !err;
   useEffect(() => {
     let alive = true;
@@ -170,13 +175,29 @@ function QuickViewBody({ l, retail }: { l: GrailedListing; retail?: number }) {
           {data?.detail.description && (
             <p className="max-h-40 overflow-y-auto text-sm leading-relaxed whitespace-pre-line text-body">{data.detail.description}</p>
           )}
+          {!owner && !l.sold && <Input value={note} onChange={(e) => setNote(e.target.value)} placeholder="note for the suggestion (optional)" />}
           <div className="mt-auto flex gap-2">
             <Button asChild size="lg" className="flex-1">
               <a href={l.url} target="_blank" rel="noopener noreferrer">
                 {l.sold ? "view on grailed" : "buy / offer on grailed"} <ArrowSquareOutIcon />
               </a>
             </Button>
-            {!l.sold && (
+            {!l.sold && !owner && (
+              <Button
+                variant="outline"
+                size="lg"
+                disabled={adding}
+                onClick={() =>
+                  startAdd(async () => {
+                    await suggestListing(l, note);
+                    toast.success("suggested. thanks!");
+                  })
+                }
+              >
+                {adding ? <SpinnerIcon className="animate-spin" /> : <PlusIcon />} suggest
+              </Button>
+            )}
+            {!l.sold && owner && (
               <Button
                 variant="outline"
                 size="lg"

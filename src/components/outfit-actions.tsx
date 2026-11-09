@@ -8,10 +8,12 @@ import { StarIcon, PencilSimpleIcon, TrashIcon, TShirtIcon } from "@phosphor-ico
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { deleteOutfit, toggleFavorite, wearOutfit } from "@/app/actions";
+import { useIsOwner } from "./viewer";
 
 export function OutfitActions({ id, favorite, wearable }: { id: string; favorite: boolean; wearable: boolean }) {
   const [pending, start] = useTransition();
   const router = useRouter();
+  if (!useIsOwner()) return null;
   return (
     <>
       <Tooltip>

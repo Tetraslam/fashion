@@ -9,6 +9,7 @@ import { checkMarket } from "@/app/actions";
 import { isDeal, money } from "@/lib/wardrobe";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { OwnerOnly } from "./viewer";
 
 const fmt = (n?: number) => (n == null ? "–" : `$${n.toLocaleString()}`);
 
@@ -33,10 +34,12 @@ export function MarketPanel({ item, watch, sizes }: { item: Item; watch?: Watch;
           grailed market
           {deal && <span className="ml-2 rounded-full bg-brand px-2 py-0.5 text-brand-foreground normal-case">deal</span>}
         </span>
-        <Button variant="outline" size="sm" onClick={check} disabled={pending}>
-          <ArrowsClockwiseIcon className={cn(pending && "animate-spin")} />
-          {p ? "recheck" : "check prices"}
-        </Button>
+        <OwnerOnly>
+          <Button variant="outline" size="sm" onClick={check} disabled={pending}>
+            <ArrowsClockwiseIcon className={cn(pending && "animate-spin")} />
+            {p ? "recheck" : "check prices"}
+          </Button>
+        </OwnerOnly>
       </div>
       {p ? (
         <>

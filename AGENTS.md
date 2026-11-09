@@ -10,7 +10,9 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## closet
 
-Single-user local app (`pnpm dev`, binds to 127.0.0.1:4747). No database: `data/*.json` is the source of truth, read fresh on every request (`src/lib/data.ts`), written through `src/lib/store.ts` (`update()` serializes writes per file). Editing the JSON directly is fine and shows up on reload.
+Deployed on Vercel (project `closet`); `pnpm dev` runs on 127.0.0.1:4747 against the same database. Postgres (`DATABASE_URL`) is the source of truth: `src/lib/store.ts` keeps each document (items, outfits, ...) as one row in `closet_docs`, and `update()` is a row-locked read-modify-write. `data/*.json` is a git mirror: to hand-edit, `pnpm data pull`, edit, `pnpm data push <doc>`, then commit the files.
+
+- Auth: Better Auth (`src/lib/auth.ts`). The owner (`OWNER_EMAIL`) edits; invited guests view, vote, comment, suggest. Every server action starts with `requireOwner()` or `requireUser()` (`src/lib/session.ts`); UI hiding via `useIsOwner()` is cosmetic.
 
 - Types for every file: `src/lib/types.ts`. Item ids are slugs; outfits reference items by id.
 - Adding a piece by URL: `addFromUrl` in `src/app/actions.ts` (scrape, save photos to `public/products/<id>/`, derive colors). Scripts can import the same libs (`pnpm tsx scripts/...`).

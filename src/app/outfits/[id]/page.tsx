@@ -2,7 +2,8 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getData } from "@/lib/data";
-import { outfitProgress, expectedCost, money } from "@/lib/wardrobe";
+import { outfitProgress, expectedCost, money, feedbackFor } from "@/lib/wardrobe";
+import { Feedback } from "@/components/feedback";
 import { ItemCard, ItemPhoto } from "@/components/item-card";
 import { PageHeader, Section, Stat } from "@/components/bits";
 import { GridSkeleton } from "@/components/skeletons";
@@ -19,7 +20,7 @@ export default function OutfitPage({ params }: PageProps<"/outfits/[id]">) {
 
 async function Outfit({ params }: { params: PageProps<"/outfits/[id]">["params"] }) {
   const { id } = await params;
-  const { outfits, items, byId, watchById } = await getData();
+  const { outfits, items, byId, watchById, comments, votes } = await getData();
   const idx = outfits.findIndex((o) => o.id === id);
   if (idx < 0) notFound();
   const o = outfits[idx];
@@ -72,6 +73,11 @@ async function Outfit({ params }: { params: PageProps<"/outfits/[id]">["params"]
           {pieces.map((p) => (
             <ItemCard key={p.id} item={p} watch={watchById.get(p.id)} />
           ))}
+        </div>
+      </Section>
+      <Section title="what people think" aside="votes and comments from you and anyone you've invited">
+        <div className="max-w-2xl">
+          <Feedback target={{ type: "outfit", id: o.id }} {...feedbackFor({ type: "outfit", id: o.id }, comments, votes)} />
         </div>
       </Section>
       {standIns.length > 0 && (
