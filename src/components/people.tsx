@@ -41,7 +41,7 @@ export function People({ invites, people, activity }: { invites: Invite[]; peopl
             })
           }
         >
-          <Input value={label} onChange={(e) => setLabel(e.target.value)} placeholder="who's it for?" className="flex-1" />
+          <Input value={label} onChange={(e) => setLabel(e.target.value)} placeholder="their name (just a label for you)" className="flex-1" />
           <Button disabled={pending}>
             <PlusIcon /> make link
           </Button>
