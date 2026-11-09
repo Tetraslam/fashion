@@ -1,447 +1,447 @@
 [
   {
+    "grailedDesigner": "Personsoul",
     "name": "Personsoul",
     "slug": "personsoul",
     "stance": "love",
-    "url": "https://www.personsoul.com",
-    "grailedDesigner": "Personsoul",
     "tags": [
       "dune",
       "avant-garde",
       "denim",
       "silver"
     ],
-    "tier": "$$"
+    "tier": "$$",
+    "url": "https://www.personsoul.com"
   },
   {
+    "grailedDesigner": "Has2sons",
     "name": "Has2sons",
     "slug": "has2sons",
     "stance": "love",
-    "url": "https://has2sons.com",
-    "grailedDesigner": "Has2sons",
     "tags": [
       "moto",
       "statement"
     ],
-    "tier": "$$"
+    "tier": "$$",
+    "url": "https://has2sons.com"
   },
   {
+    "grailedDesigner": "Armani Exchange",
     "name": "Armani Exchange",
     "slug": "armani-exchange",
     "stance": "love",
-    "url": "https://www.armaniexchange.com",
-    "grailedDesigner": "Armani Exchange",
     "tags": [
       "denim",
       "basics"
     ],
-    "tier": "$"
+    "tier": "$",
+    "url": "https://www.armaniexchange.com"
   },
   {
+    "grailedDesigner": "Superdry",
     "name": "Superdry",
     "slug": "superdry",
     "stance": "love",
-    "url": "https://www.superdry.com",
-    "grailedDesigner": "Superdry",
     "tags": [
       "basics"
     ],
-    "tier": "$"
+    "tier": "$",
+    "url": "https://www.superdry.com"
   },
   {
+    "grailedDesigner": "COS",
     "name": "COS",
     "slug": "cos",
     "stance": "love",
-    "url": "https://www.cos.com",
-    "grailedDesigner": "COS",
     "tags": [
       "basics"
     ],
-    "tier": "$"
+    "tier": "$",
+    "url": "https://www.cos.com"
   },
   {
+    "grailedDesigner": "Vitaly",
     "name": "Vitaly",
     "slug": "vitaly",
     "stance": "love",
-    "url": "https://www.vitalydesign.com",
-    "grailedDesigner": "Vitaly",
     "tags": [
       "silver"
     ],
-    "tier": "$"
+    "tier": "$",
+    "url": "https://www.vitalydesign.com"
   },
   {
+    "grailedDesigner": "Nudie Jeans",
     "name": "Nudie Jeans",
     "slug": "nudie-jeans",
     "stance": "love",
-    "url": "https://www.nudiejeans.com",
-    "grailedDesigner": "Nudie Jeans",
     "tags": [],
-    "tier": "$$"
+    "tier": "$$",
+    "url": "https://www.nudiejeans.com"
   },
   {
+    "grailedDesigner": "Thursday Boots",
     "name": "Thursday Boots",
     "slug": "thursday-boots",
     "stance": "love",
-    "url": "https://thursdayboots.com",
-    "grailedDesigner": "Thursday Boots",
     "tags": [],
-    "tier": "$$"
+    "tier": "$$",
+    "url": "https://thursdayboots.com"
   },
   {
+    "grailedDesigner": "Levi's",
     "name": "Levi’s",
     "slug": "levis",
     "stance": "curious",
-    "url": "https://www.levi.com",
-    "grailedDesigner": "Levi's",
     "tags": [
       "denim",
       "basics"
     ],
-    "tier": "$"
+    "tier": "$",
+    "url": "https://www.levi.com"
   },
   {
+    "grailedDesigner": "Dr. Martens",
     "name": "Dr. Martens",
     "slug": "dr-martens",
     "stance": "curious",
-    "url": "https://www.drmartens.com",
-    "grailedDesigner": "Dr. Martens",
     "tags": [
       "moto",
       "post-apocalyptic",
       "cyberpunk"
     ],
-    "tier": "$"
+    "tier": "$",
+    "url": "https://www.drmartens.com"
   },
   {
+    "grailedDesigner": "Diesel",
     "name": "Diesel",
     "slug": "diesel",
     "stance": "curious",
-    "url": "https://diesel.com",
-    "grailedDesigner": "Diesel",
     "tags": [
       "moto",
       "post-apocalyptic",
       "denim",
       "statement"
     ],
-    "tier": "$$$"
+    "tier": "$$$",
+    "url": "https://diesel.com"
   },
   {
+    "grailedDesigner": "Represent",
     "name": "Represent",
     "slug": "represent",
     "stance": "curious",
-    "url": "https://representclo.com",
-    "grailedDesigner": "Represent",
     "tags": [
       "streetwear",
       "denim"
     ],
-    "tier": "$$"
+    "tier": "$$",
+    "url": "https://representclo.com"
   },
   {
+    "grailedDesigner": "Lady White Co.",
     "name": "Lady White Co",
     "slug": "lady-white-co",
     "stance": "curious",
-    "url": "https://ladywhiteco.com",
-    "grailedDesigner": "Lady White Co.",
     "tags": [
       "basics"
     ],
-    "tier": "$$"
+    "tier": "$$",
+    "url": "https://ladywhiteco.com"
   },
   {
+    "grailedDesigner": "New Balance",
     "name": "New Balance",
     "slug": "new-balance",
     "stance": "curious",
-    "url": "https://www.newbalance.com",
-    "grailedDesigner": "New Balance",
     "tags": [
       "streetwear"
     ],
-    "tier": "$"
+    "tier": "$",
+    "url": "https://www.newbalance.com"
   },
   {
+    "grailedDesigner": "Schott",
     "name": "Schott NYC",
     "slug": "schott-nyc",
     "stance": "curious",
-    "url": "https://www.schottnyc.com",
-    "grailedDesigner": "Schott",
     "tags": [
       "moto",
       "vintage"
     ],
-    "tier": "$$$"
+    "tier": "$$$",
+    "url": "https://www.schottnyc.com"
   },
   {
+    "grailedDesigner": "Los Angeles Apparel",
     "name": "Los Angeles Apparel",
     "slug": "los-angeles-apparel",
     "stance": "curious",
-    "url": "https://losangelesapparel.net",
-    "grailedDesigner": "Los Angeles Apparel",
     "tags": [
       "basics"
     ],
-    "tier": "$"
+    "tier": "$",
+    "url": "https://losangelesapparel.net"
   },
   {
+    "grailedDesigner": "Red Wing",
     "name": "Red Wing",
     "slug": "red-wing",
     "stance": "curious",
-    "url": "https://www.redwingheritage.com",
-    "grailedDesigner": "Red Wing",
     "tags": [
       "moto",
       "vintage",
       "workwear"
     ],
-    "tier": "$$"
+    "tier": "$$",
+    "url": "https://www.redwingheritage.com"
   },
   {
+    "grailedDesigner": "Thug Club",
     "name": "Thug Club",
     "slug": "thug-club",
     "stance": "curious",
-    "url": "https://global.thugclub.store",
-    "grailedDesigner": "Thug Club",
     "tags": [
       "statement",
       "streetwear",
       "silver"
     ],
-    "tier": "$$$"
+    "tier": "$$$",
+    "url": "https://global.thugclub.store"
   },
   {
+    "grailedDesigner": "Acne Studios",
     "name": "Acne Studios",
     "slug": "acne-studios",
     "stance": "curious",
-    "url": "https://www.acnestudios.com",
-    "grailedDesigner": "Acne Studios",
     "tags": [
       "denim",
       "moto"
     ],
-    "tier": "$$$"
+    "tier": "$$$",
+    "url": "https://www.acnestudios.com"
   },
   {
+    "grailedDesigner": "Rick Owens Drkshdw",
     "name": "Rick Owens DRKSHDW",
     "slug": "rick-owens-drkshdw",
     "stance": "curious",
-    "url": "https://www.rickowens.eu",
-    "grailedDesigner": "Rick Owens Drkshdw",
     "tags": [
       "cyberpunk",
       "avant-garde"
     ],
-    "tier": "$$$"
+    "tier": "$$$",
+    "url": "https://www.rickowens.eu"
   },
   {
+    "grailedDesigner": "Kapital",
     "name": "Kapital",
     "slug": "kapital",
     "stance": "curious",
-    "url": "https://www.mrporter.com",
-    "grailedDesigner": "Kapital",
     "tags": [
       "denim",
       "dune"
     ],
-    "tier": "$$$"
+    "tier": "$$$",
+    "url": "https://www.mrporter.com"
   },
   {
+    "grailedDesigner": "Guidi",
     "name": "Guidi",
     "slug": "guidi",
     "stance": "curious",
-    "url": "https://guidi.it",
-    "grailedDesigner": "Guidi",
     "tags": [
       "avant-garde",
       "post-apocalyptic"
     ],
-    "tier": "$$$$"
+    "tier": "$$$$",
+    "url": "https://guidi.it"
   },
   {
+    "grailedDesigner": "Camber USA",
     "name": "Camber USA",
     "slug": "camber-usa",
     "stance": "curious",
-    "url": "https://camberusa.com",
-    "grailedDesigner": "Camber USA",
     "tags": [
       "basics"
     ],
-    "tier": "$"
+    "tier": "$",
+    "url": "https://camberusa.com"
   },
   {
+    "grailedDesigner": "Vanson",
     "name": "Vanson",
     "slug": "vanson",
     "stance": "curious",
-    "url": "https://www.vansonleathers.com",
-    "grailedDesigner": "Vanson",
     "tags": [
       "moto",
       "vintage"
     ],
-    "tier": "$$$"
+    "tier": "$$$",
+    "url": "https://www.vansonleathers.com"
   },
   {
+    "grailedDesigner": "Naked & Famous",
     "name": "Naked & Famous",
     "slug": "naked-famous",
     "stance": "curious",
-    "url": "https://nakedandfamousdenim.com",
-    "grailedDesigner": "Naked & Famous",
     "tags": [
       "denim"
     ],
-    "tier": "$$"
+    "tier": "$$",
+    "url": "https://nakedandfamousdenim.com"
   },
   {
+    "grailedDesigner": "Converse",
     "name": "Converse",
     "slug": "converse",
     "stance": "curious",
-    "url": "https://www.converse.com",
-    "grailedDesigner": "Converse",
     "tags": [
       "basics"
     ],
-    "tier": "$"
+    "tier": "$",
+    "url": "https://www.converse.com"
   },
   {
+    "grailedDesigner": "Andersson Bell",
     "name": "Andersson Bell",
     "slug": "andersson-bell",
     "stance": "curious",
-    "url": "https://adsb.co.kr",
-    "grailedDesigner": "Andersson Bell",
     "tags": [
       "streetwear",
       "dune"
     ],
-    "tier": "$$"
+    "tier": "$$",
+    "url": "https://adsb.co.kr"
   },
   {
+    "grailedDesigner": "Salomon",
     "name": "Salomon",
     "slug": "salomon",
     "stance": "curious",
-    "url": "https://www.salomon.com",
-    "grailedDesigner": "Salomon",
     "tags": [
       "gorpcore",
       "cyberpunk"
     ],
-    "tier": "$"
+    "tier": "$",
+    "url": "https://www.salomon.com"
   },
   {
+    "grailedDesigner": "ADER error",
     "name": "ADER error",
     "slug": "ader-error",
     "stance": "curious",
-    "url": "https://www.farfetch.com",
-    "grailedDesigner": "ADER error",
     "tags": [
       "streetwear"
     ],
-    "tier": "$$"
+    "tier": "$$",
+    "url": "https://www.farfetch.com"
   },
   {
+    "grailedDesigner": "Nike",
     "name": "Nike",
     "slug": "nike",
     "stance": "curious",
-    "url": "https://www.nike.com",
-    "grailedDesigner": "Nike",
     "tags": [
       "basics",
       "streetwear"
     ],
-    "tier": "$"
+    "tier": "$",
+    "url": "https://www.nike.com"
   },
   {
+    "grailedDesigner": "Roaringwild",
     "name": "Roaringwild",
     "slug": "roaringwild",
     "stance": "curious",
-    "url": "https://roaringwild.com",
-    "grailedDesigner": "Roaringwild",
     "tags": [
       "workwear",
       "streetwear"
     ],
-    "tier": "$$"
+    "tier": "$$",
+    "url": "https://roaringwild.com"
   },
   {
+    "grailedDesigner": "Timberland",
     "name": "Timberland",
     "slug": "timberland",
     "stance": "curious",
-    "url": "https://www.timberland.com",
-    "grailedDesigner": "Timberland",
     "tags": [
       "workwear"
     ],
-    "tier": "$"
+    "tier": "$",
+    "url": "https://www.timberland.com"
   },
   {
+    "grailedDesigner": "Song for the Mute",
     "name": "Song for the Mute",
     "slug": "song-for-the-mute",
     "stance": "curious",
-    "url": "https://www.songforthemute.com",
-    "grailedDesigner": "Song for the Mute",
     "tags": [
       "dune",
       "avant-garde"
     ],
-    "tier": "$$$$"
+    "tier": "$$$$",
+    "url": "https://www.songforthemute.com"
   },
   {
+    "grailedDesigner": "Who Decides War",
     "name": "Who Decides War",
     "slug": "who-decides-war",
     "stance": "curious",
-    "url": "https://www.neimanmarcus.com",
-    "grailedDesigner": "Who Decides War",
     "tags": [
       "statement",
       "denim"
     ],
-    "tier": "$$$$"
+    "tier": "$$$$",
+    "url": "https://www.neimanmarcus.com"
   },
   {
+    "grailedDesigner": "Heliot Emil",
     "name": "Heliot Emil",
     "slug": "heliot-emil",
     "stance": "curious",
-    "url": "https://heliotemil.com",
-    "grailedDesigner": "Heliot Emil",
     "tags": [
       "cyberpunk",
       "techwear"
     ],
-    "tier": "$$$"
+    "tier": "$$$",
+    "url": "https://heliotemil.com"
   },
   {
+    "grailedDesigner": "Post Archive Faction (PAF)",
     "name": "Post Archive Faction",
     "slug": "post-archive-faction",
     "stance": "curious",
-    "url": "https://postarchivefaction.com",
-    "grailedDesigner": "Post Archive Faction (PAF)",
     "tags": [
       "cyberpunk",
       "techwear"
     ],
-    "tier": "$$$"
+    "tier": "$$$",
+    "url": "https://postarchivefaction.com"
   },
   {
+    "grailedDesigner": "Chrome Hearts",
     "name": "Chrome Hearts",
     "slug": "chrome-hearts",
     "stance": "curious",
-    "url": "https://www.stadiumgoods.com",
-    "grailedDesigner": "Chrome Hearts",
     "tags": [
       "silver",
       "moto"
     ],
-    "tier": "$$$$"
+    "tier": "$$$$",
+    "url": "https://www.stadiumgoods.com"
   },
   {
+    "grailedDesigner": "Onitsuka Tiger",
     "name": "Onitsuka Tiger",
     "slug": "onitsuka-tiger",
     "stance": "curious",
-    "url": "https://www.onitsukatiger.com",
-    "grailedDesigner": "Onitsuka Tiger",
     "tags": [
       "basics"
     ],
-    "tier": "$"
+    "tier": "$",
+    "url": "https://www.onitsukatiger.com"
   }
 ]

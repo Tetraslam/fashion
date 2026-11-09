@@ -1,18 +1,18 @@
 import "server-only";
 import { cache } from "react";
-import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { auth, ownerEmail } from "./auth";
-import type { Role } from "./types";
+import { api } from "../../convex/_generated/api";
+import { isAuthenticated } from "./auth-server";
+import { query } from "./convex";
 
-export type Viewer = { id: string; name: string; email: string; role: Role };
+export type Viewer = { id: string; name: string; email: string; role: "owner" | "viewer" };
 
-// Who is looking at this request, or null. Deduped per render.
+// Who is looking at this request, or null. Deduped per render. Roles are
+// decided in Convex (convex/access.ts), which is also where every read and
+// write is authorized; checks on this side only shape the UI and redirects.
 export const getViewer = cache(async (): Promise<Viewer | null> => {
-  const session = await auth.api.getSession({ headers: await headers() });
-  if (!session) return null;
-  const { id, name, email } = session.user;
-  return { id, name, email, role: email.toLowerCase() === ownerEmail() ? "owner" : "viewer" };
+  if (!(await isAuthenticated())) return null;
+  return await query(api.closet.viewer, {});
 });
 
 // Pages: bounce to /login when signed out.
@@ -22,8 +22,8 @@ export async function requireViewer() {
   return v;
 }
 
-// Server actions: these throw rather than redirect, and they are the real
-// gate. Hiding buttons in the UI is only cosmetic.
+// Server actions: fail early with a readable error. Convex enforces the same
+// rules again on every call.
 export async function requireUser() {
   const v = await getViewer();
   if (!v) throw new Error("sign in first");

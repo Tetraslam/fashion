@@ -88,7 +88,7 @@ export async function addFromUrl(input: { url: string; category: Category; brand
   const brand = input.brand || scraped?.brand || new URL(url).hostname.replace(/^www\./, "").split(".")[0];
   const name = input.name || scraped?.title?.replace(new RegExp(`^${brand}\\s*[-–|:]?\\s*`, "i"), "") || "Untitled";
   const id = uniqueId(`${brand} ${name}`, await read("items"));
-  const { urls: images, first } = scraped ? await downloadImages(id, scraped.images, url) : { urls: [], first: undefined };
+  const { urls: images, first } = scraped ? await downloadImages(scraped.images, url) : { urls: [], first: undefined };
   const colors = first ? await dominantColors(first) : [];
   const item: Item = {
     id,
@@ -130,7 +130,7 @@ export async function addFromGrailed(l: GrailedListing, status: Status = "watchi
   const id = uniqueId(`${brand} ${l.title}`, items);
   const detail = await grailed.listing(l.id).catch(() => undefined);
   const photos = detail?.photos.length ? detail.photos.map((p) => `${p}?w=1000`) : l.image ? [`${l.image}?w=1000`] : [];
-  const { urls: images, first } = await downloadImages(id, photos, "https://www.grailed.com/");
+  const { urls: images, first } = await downloadImages(photos, "https://www.grailed.com/");
   const colors = first ? await dominantColors(first) : [];
   const item: Item = {
     id,

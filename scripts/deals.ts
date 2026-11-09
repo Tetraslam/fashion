@@ -7,6 +7,9 @@ import { read, update } from "../src/lib/store";
 import { market } from "../src/lib/grailed";
 import { mySizes, isDeal, money } from "../src/lib/wardrobe";
 import type { PricePoint, Watch } from "../src/lib/types";
+import { actAsMachine } from "../src/lib/convex";
+
+actAsMachine();
 
 const push = process.argv.includes("--notify");
 const [items, profile] = await Promise.all([read("items"), read("profile")]);

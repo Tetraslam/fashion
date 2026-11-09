@@ -1,14 +1,7 @@
 [
   {
+    "createdAt": "2026-11-09T03:27:06.078Z",
     "id": "red-rider",
-    "name": "Red Rider",
-    "vibe": "Your best jacket, built into a full outfit. Clean white under loud red.",
-    "palette": [
-      "#b3261e",
-      "#efece6",
-      "#7d9bb8",
-      "#141414"
-    ],
     "itemIds": [
       "has2sons-red-curved-sleeve-pu-leather-jacket",
       "cos-oversized-heavyweight-cotton-t-shirt-white",
@@ -16,474 +9,481 @@
       "dr-martens-1460-smooth-leather-boots-black",
       "vitaly-miami-chain"
     ],
+    "name": "Red Rider",
+    "palette": [
+      "#b3261e",
+      "#efece6",
+      "#7d9bb8",
+      "#141414"
+    ],
+    "source": "lookbook",
     "tags": [
       "moto",
       "statement",
       "denim",
       "post-apocalyptic"
     ],
-    "source": "lookbook",
-    "createdAt": "2026-11-09T03:27:06.078Z"
+    "vibe": "Your best jacket, built into a full outfit. Clean white under loud red."
   },
   {
+    "createdAt": "2026-11-09T03:27:06.078Z",
     "id": "wasteland-diesel",
-    "name": "Wasteland Diesel",
-    "vibe": "Worn-in leather, faded grey tee, washed black denim. Looks like it survived something.",
-    "palette": [
-      "#5a3a28",
-      "#7b7d80",
-      "#2f3033",
-      "#1a1a1a"
-    ],
     "itemIds": [
       "diesel-l-eon-treated-leather-biker-jacket",
       "diesel-t-rawnorm-raw-edge-tee-grey",
       "diesel-2001-d-macro-relaxed-jeans-black",
       "dr-martens-jadon-platform-boots"
     ],
+    "name": "Wasteland Diesel",
+    "palette": [
+      "#5a3a28",
+      "#7b7d80",
+      "#2f3033",
+      "#1a1a1a"
+    ],
+    "source": "lookbook",
     "tags": [
       "moto",
       "post-apocalyptic",
       "denim",
       "cyberpunk"
     ],
-    "source": "lookbook",
-    "createdAt": "2026-11-09T03:27:06.078Z"
+    "vibe": "Worn-in leather, faded grey tee, washed black denim. Looks like it survived something."
   },
   {
+    "createdAt": "2026-11-09T03:27:06.078Z",
     "id": "represent-racer",
-    "name": "Represent Racer",
-    "vibe": "Dark brown bomber, white tee, aged black baggy denim. Easy and warm.",
-    "palette": [
-      "#3b2a22",
-      "#efece6",
-      "#2b2b2d",
-      "#d9d6cf"
-    ],
     "itemIds": [
       "represent-smart-bomber-nero",
       "lady-white-co-our-t-shirt-2-pack-white",
       "represent-r3-baggy-denim-aged-black",
       "new-balance-1906r-silver-metallic"
     ],
+    "name": "Represent Racer",
+    "palette": [
+      "#3b2a22",
+      "#efece6",
+      "#2b2b2d",
+      "#d9d6cf"
+    ],
+    "source": "lookbook",
     "tags": [
       "streetwear",
       "denim"
     ],
-    "source": "lookbook",
-    "createdAt": "2026-11-09T03:27:06.078Z"
+    "vibe": "Dark brown bomber, white tee, aged black baggy denim. Easy and warm."
   },
   {
+    "createdAt": "2026-11-09T03:27:06.078Z",
     "id": "black-perfecto",
-    "name": "Black Perfecto",
-    "vibe": "The classic. A real moto jacket that will outlive you.",
-    "palette": [
-      "#121212",
-      "#1d1d1d",
-      "#3f5f86",
-      "#141414"
-    ],
     "itemIds": [
       "schott-nyc-618-steerhide-perfecto",
       "los-angeles-apparel-the-1801-6-5-oz-garment-dye-tee",
       "levis-578-baggy-jeans",
       "red-wing-engineer-boot-2966-black"
     ],
+    "name": "Black Perfecto",
+    "palette": [
+      "#121212",
+      "#1d1d1d",
+      "#3f5f86",
+      "#141414"
+    ],
+    "source": "lookbook",
     "tags": [
       "moto",
       "vintage",
       "denim"
     ],
-    "source": "lookbook",
-    "createdAt": "2026-11-09T03:27:06.078Z"
+    "vibe": "The classic. A real moto jacket that will outlive you."
   },
   {
+    "createdAt": "2026-11-09T03:27:06.078Z",
     "id": "seoul-loud",
-    "name": "Seoul Loud",
-    "vibe": "Skull graphic tee and silver. The jacket stays at home.",
-    "palette": [
-      "#ece8df",
-      "#a8bccd",
-      "#c9ccd1",
-      "#151515"
-    ],
     "itemIds": [
       "thug-club-vintage-riding-skull-t-shirt",
       "acne-studios-1981-loose-fit-jeans-light-blue",
       "thug-club-tc-riding-skull-ring",
       "rick-owens-drkshdw-mega-bumper-low-sneaks"
     ],
+    "name": "Seoul Loud",
+    "palette": [
+      "#ece8df",
+      "#a8bccd",
+      "#c9ccd1",
+      "#151515"
+    ],
+    "source": "lookbook",
     "tags": [
       "statement",
       "streetwear",
       "denim",
       "silver"
     ],
-    "source": "lookbook",
-    "createdAt": "2026-11-09T03:27:06.078Z"
+    "vibe": "Skull graphic tee and silver. The jacket stays at home."
   },
   {
+    "createdAt": "2026-11-09T03:27:06.078Z",
     "id": "canton-monk",
-    "name": "Canton Monk",
-    "vibe": "A long buckled coat over a white tee. Personsoul’s calm, ancient side.",
-    "palette": [
-      "#2b2b2e",
-      "#efece6",
-      "#33415c",
-      "#141414"
-    ],
     "itemIds": [
       "personsoul-double-breasted-shield-buckle-long-coat",
       "cos-oversized-heavyweight-cotton-t-shirt-white",
       "kapital-new-momonroe-wide-leg-jeans",
       "guidi-back-zip-boots"
     ],
+    "name": "Canton Monk",
+    "palette": [
+      "#2b2b2e",
+      "#efece6",
+      "#33415c",
+      "#141414"
+    ],
+    "source": "lookbook",
     "tags": [
       "dune",
       "avant-garde",
       "denim",
       "post-apocalyptic"
     ],
-    "source": "lookbook",
-    "createdAt": "2026-11-09T03:27:06.078Z"
+    "vibe": "A long buckled coat over a white tee. Personsoul’s calm, ancient side."
   },
   {
+    "createdAt": "2026-11-09T03:27:06.078Z",
     "id": "acne-grail",
-    "name": "Acne Grail",
-    "vibe": "Soft brown leather and pale denim. Quiet, but expensive-looking.",
-    "palette": [
-      "#7a4b2e",
-      "#ebe2cf",
-      "#b3c4d4",
-      "#141414"
-    ],
     "itemIds": [
       "acne-studios-leather-jacket-rum-brown",
       "camber-usa-max-weight-tee",
       "acne-studios-1981-loose-fit-jeans-light-blue",
       "acne-studios-leather-ankle-boot-black"
     ],
+    "name": "Acne Grail",
+    "palette": [
+      "#7a4b2e",
+      "#ebe2cf",
+      "#b3c4d4",
+      "#141414"
+    ],
+    "source": "lookbook",
     "tags": [
       "moto",
       "denim"
     ],
-    "source": "lookbook",
-    "createdAt": "2026-11-09T03:27:06.078Z"
+    "vibe": "Soft brown leather and pale denim. Quiet, but expensive-looking."
   },
   {
+    "createdAt": "2026-11-09T03:27:06.078Z",
     "id": "cafe-racer",
-    "name": "Cafe Racer",
-    "vibe": "A Vanson racer jacket. Your red jacket’s older, tougher brother.",
-    "palette": [
-      "#1a1a1a",
-      "#8a8a8a",
-      "#1c2740",
-      "#ececec"
-    ],
     "itemIds": [
       "vanson-model-b-leather-motorcycle-jacket",
       "los-angeles-apparel-the-1801-6-5-oz-garment-dye-tee",
       "naked-famous-super-guy-stretch-selvedge",
       "converse-chuck-70-canvas-white"
     ],
+    "name": "Cafe Racer",
+    "palette": [
+      "#1a1a1a",
+      "#8a8a8a",
+      "#1c2740",
+      "#ececec"
+    ],
+    "source": "lookbook",
     "tags": [
       "moto",
       "vintage",
       "denim"
     ],
-    "source": "lookbook",
-    "createdAt": "2026-11-09T03:27:06.078Z"
+    "vibe": "A Vanson racer jacket. Your red jacket’s older, tougher brother."
   },
   {
+    "createdAt": "2026-11-09T03:27:06.078Z",
     "id": "trail-bell",
-    "name": "Trail Bell",
-    "vibe": "A khaki MA-1 with a fur collar, plus trail shoes. Comfortable enough to walk all day.",
-    "palette": [
-      "#7a7552",
-      "#efece6",
-      "#a3a59a",
-      "#1a1a1a"
-    ],
     "itemIds": [
       "andersson-bell-fur-collar-ma-1-bomber-khaki",
       "cos-oversized-heavyweight-cotton-t-shirt-white",
       "levis-568-loose-straight-jeans",
       "salomon-xt-6-black"
     ],
+    "name": "Trail Bell",
+    "palette": [
+      "#7a7552",
+      "#efece6",
+      "#a3a59a",
+      "#1a1a1a"
+    ],
+    "source": "lookbook",
     "tags": [
       "streetwear",
       "dune",
       "denim",
       "gorpcore"
     ],
-    "source": "lookbook",
-    "createdAt": "2026-11-09T03:27:06.078Z"
+    "vibe": "A khaki MA-1 with a fur collar, plus trail shoes. Comfortable enough to walk all day."
   },
   {
+    "createdAt": "2026-11-09T03:27:06.078Z",
     "id": "error-blue",
-    "name": "Error Blue",
-    "vibe": "One blue denim jacket, everything else black. One color does all the work.",
-    "palette": [
-      "#4f74b8",
-      "#141414",
-      "#1a1a1a",
-      "#ededed"
-    ],
     "itemIds": [
       "ader-error-hooded-denim-jacket-blue",
       "los-angeles-apparel-the-1801-6-5-oz-garment-dye-tee",
       "diesel-2001-d-macro-relaxed-jeans-black-dieselmacro2",
       "nike-air-force-1-07-white"
     ],
+    "name": "Error Blue",
+    "palette": [
+      "#4f74b8",
+      "#141414",
+      "#1a1a1a",
+      "#ededed"
+    ],
+    "source": "lookbook",
     "tags": [
       "streetwear",
       "denim",
       "post-apocalyptic"
     ],
-    "source": "lookbook",
-    "createdAt": "2026-11-09T03:27:06.078Z"
+    "vibe": "One blue denim jacket, everything else black. One color does all the work."
   },
   {
+    "createdAt": "2026-11-09T03:27:06.078Z",
     "id": "roaring-workwear",
-    "name": "Roaring Workwear",
-    "vibe": "A patchwork work jacket and baggy jeans. Chinese streetwear with a builder feel.",
-    "palette": [
-      "#a68a5c",
-      "#141414",
-      "#7d9bb8",
-      "#5b4636"
-    ],
     "itemIds": [
       "roaringwild-patch-work-detroit-jacket",
       "los-angeles-apparel-the-1801-6-5-oz-garment-dye-tee",
       "levis-578-baggy-jeans",
       "timberland-premium-6-inch-waterproof-boot"
     ],
+    "name": "Roaring Workwear",
+    "palette": [
+      "#a68a5c",
+      "#141414",
+      "#7d9bb8",
+      "#5b4636"
+    ],
+    "source": "lookbook",
     "tags": [
       "workwear",
       "streetwear",
       "denim"
     ],
-    "source": "lookbook",
-    "createdAt": "2026-11-09T03:27:06.078Z"
+    "vibe": "A patchwork work jacket and baggy jeans. Chinese streetwear with a builder feel."
   },
   {
+    "createdAt": "2026-11-09T03:27:06.078Z",
     "id": "navy-mute",
-    "name": "Navy Mute",
-    "vibe": "A heavy navy coat, a bandana, washed black jeans. The Dune feeling, but for the street.",
-    "palette": [
-      "#1e2a44",
-      "#3a3633",
-      "#2b2b2d",
-      "#6b8fc4"
-    ],
     "itemIds": [
       "song-for-the-mute-playground-coach-coat-navy",
       "cos-oversized-heavyweight-cotton-t-shirt-white",
       "diesel-2001-d-macro-relaxed-jeans-black",
       "kapital-fastcolor-selvedge-bandana"
     ],
+    "name": "Navy Mute",
+    "palette": [
+      "#1e2a44",
+      "#3a3633",
+      "#2b2b2d",
+      "#6b8fc4"
+    ],
+    "source": "lookbook",
     "tags": [
       "dune",
       "avant-garde",
       "denim",
       "post-apocalyptic"
     ],
-    "source": "lookbook",
-    "createdAt": "2026-11-09T03:27:06.078Z"
+    "vibe": "A heavy navy coat, a bandana, washed black jeans. The Dune feeling, but for the street."
   },
   {
+    "createdAt": "2026-11-09T03:27:06.078Z",
     "id": "denim-on-denim",
-    "name": "Denim on Denim",
-    "vibe": "A patched, embroidered trucker with matching jeans. Very loud, in a good way.",
-    "palette": [
-      "#3d5a80",
-      "#efece6",
-      "#3d5a80",
-      "#4a2c1c"
-    ],
     "itemIds": [
       "who-decides-war-mechanic-patchwork-trucker-jacket",
       "who-decides-war-save-you-denim",
       "cos-oversized-heavyweight-cotton-t-shirt-white",
       "dr-martens-1460-smooth-leather-boots-black"
     ],
+    "name": "Denim on Denim",
+    "palette": [
+      "#3d5a80",
+      "#efece6",
+      "#3d5a80",
+      "#4a2c1c"
+    ],
+    "source": "lookbook",
     "tags": [
       "statement",
       "denim",
       "moto",
       "post-apocalyptic"
     ],
-    "source": "lookbook",
-    "createdAt": "2026-11-09T03:27:06.078Z"
+    "vibe": "A patched, embroidered trucker with matching jeans. Very loud, in a good way."
   },
   {
+    "createdAt": "2026-11-09T03:27:06.078Z",
     "id": "indigo-nomad",
-    "name": "Indigo Nomad",
-    "vibe": "Patched boro denim and a big bandana. The closest thing to a Fremen in jeans.",
-    "palette": [
-      "#26354f",
-      "#d8cfbc",
-      "#2e3e5c",
-      "#6b4630"
-    ],
     "itemIds": [
       "kapital-boro-distressed-patchwork-denim-jacket",
       "kapital-century-denim-5p",
       "kapital-fastcolor-selvedge-bandana",
       "red-wing-classic-moc-875-brown"
     ],
+    "name": "Indigo Nomad",
+    "palette": [
+      "#26354f",
+      "#d8cfbc",
+      "#2e3e5c",
+      "#6b4630"
+    ],
+    "source": "lookbook",
     "tags": [
       "dune",
       "denim",
       "workwear",
       "vintage"
     ],
-    "source": "lookbook",
-    "createdAt": "2026-11-09T03:27:06.078Z"
+    "vibe": "Patched boro denim and a big bandana. The closest thing to a Fremen in jeans."
   },
   {
+    "createdAt": "2026-11-09T03:27:06.078Z",
     "id": "drkshdw",
+    "itemIds": [
+      "rick-owens-drkshdw-gimp-hoodie-black",
+      "rick-owens-drkshdw-detroit-cut-jeans",
+      "rick-owens-drkshdw-sneaks-ramones-high-top"
+    ],
     "name": "DRKSHDW",
-    "vibe": "Black hoodie, black jeans, big sneakers. Rick Owens without going all the way.",
     "palette": [
       "#151515",
       "#232323",
       "#2f4a73",
       "#ece9e2"
     ],
-    "itemIds": [
-      "rick-owens-drkshdw-gimp-hoodie-black",
-      "rick-owens-drkshdw-detroit-cut-jeans",
-      "rick-owens-drkshdw-sneaks-ramones-high-top"
-    ],
+    "source": "lookbook",
     "tags": [
       "cyberpunk",
       "avant-garde"
     ],
-    "source": "lookbook",
-    "createdAt": "2026-11-09T03:27:06.078Z"
+    "vibe": "Black hoodie, black jeans, big sneakers. Rick Owens without going all the way."
   },
   {
+    "createdAt": "2026-11-09T03:27:06.078Z",
     "id": "clipped-in",
-    "name": "Clipped In",
-    "vibe": "A black technical jacket with a carabiner closure. The most cyberpunk fit here that is still comfy.",
-    "palette": [
-      "#1b1d20",
-      "#efece6",
-      "#202022",
-      "#2c2f33"
-    ],
     "itemIds": [
       "heliot-emil-moire-technical-jacket",
       "post-archive-faction-souvenir-tee-paris-edition",
       "diesel-2001-d-macro-relaxed-jeans-black",
       "salomon-xt-6-black"
     ],
+    "name": "Clipped In",
+    "palette": [
+      "#1b1d20",
+      "#efece6",
+      "#202022",
+      "#2c2f33"
+    ],
+    "source": "lookbook",
     "tags": [
       "cyberpunk",
       "techwear",
       "denim",
       "post-apocalyptic"
     ],
-    "source": "lookbook",
-    "createdAt": "2026-11-09T03:27:06.078Z"
+    "vibe": "A black technical jacket with a carabiner closure. The most cyberpunk fit here that is still comfy."
   },
   {
+    "createdAt": "2026-11-09T03:27:06.078Z",
     "id": "rivet-night",
-    "name": "Rivet Night",
-    "vibe": "Black leather, black denim, heavy silver. For going out.",
-    "palette": [
-      "#0f0f10",
-      "#1a1a1a",
-      "#222224",
-      "#c9ccd1"
-    ],
     "itemIds": [
       "schott-nyc-618-steerhide-perfecto",
       "los-angeles-apparel-the-1801-6-5-oz-garment-dye-tee",
       "acne-studios-1996m-regular-fit-jeans-vintage-black",
       "chrome-hearts-keeper-ring-silver-resale"
     ],
+    "name": "Rivet Night",
+    "palette": [
+      "#0f0f10",
+      "#1a1a1a",
+      "#222224",
+      "#c9ccd1"
+    ],
+    "source": "lookbook",
     "tags": [
       "moto",
       "vintage",
       "denim",
       "silver"
     ],
-    "source": "lookbook",
-    "createdAt": "2026-11-09T03:27:06.078Z"
+    "vibe": "Black leather, black denim, heavy silver. For going out."
   },
   {
+    "createdAt": "2026-11-09T03:27:06.078Z",
     "id": "sf-summer",
-    "name": "SF Summer",
-    "vibe": "No jacket. Just a good tee, good jeans, and steel.",
-    "palette": [
-      "#3e4a3d",
-      "#50698a",
-      "#c9ccd1",
-      "#ededed"
-    ],
     "itemIds": [
       "superdry-vintage-logo-classic-t-shirt",
       "armani-exchange-straight-fit-5-pocket-jeans",
       "vitaly-proxy-ring",
       "onitsuka-tiger-mexico-66-swiss-store-pick-your-region"
     ],
+    "name": "SF Summer",
+    "palette": [
+      "#3e4a3d",
+      "#50698a",
+      "#c9ccd1",
+      "#ededed"
+    ],
+    "source": "lookbook",
     "tags": [
       "denim",
       "silver"
     ],
-    "source": "lookbook",
-    "createdAt": "2026-11-09T03:27:06.078Z"
+    "vibe": "No jacket. Just a good tee, good jeans, and steel."
   },
   {
+    "createdAt": "2026-11-09T03:27:06.078Z",
     "id": "full-personsoul",
-    "name": "Full Personsoul",
-    "vibe": "All one brand, top to bottom. Washed denim, corduroy, and a silver ring.",
-    "palette": [
-      "#5a6e86",
-      "#efece6",
-      "#4a3d30",
-      "#c9ccd1"
-    ],
     "itemIds": [
       "personsoul-embroidered-stand-collar-washed-denim-jacket",
       "personsoul-vintage-washed-corduroy-wide-leg-pants",
       "personsoul-sterling-silver-armor-ring",
       "cos-oversized-heavyweight-cotton-t-shirt-white"
     ],
+    "name": "Full Personsoul",
+    "palette": [
+      "#5a6e86",
+      "#efece6",
+      "#4a3d30",
+      "#c9ccd1"
+    ],
+    "source": "lookbook",
     "tags": [
       "dune",
       "denim",
       "silver"
     ],
-    "source": "lookbook",
-    "createdAt": "2026-11-09T03:27:06.078Z"
+    "vibe": "All one brand, top to bottom. Washed denim, corduroy, and a silver ring."
   },
   {
+    "createdAt": "2026-11-09T03:27:06.078Z",
     "id": "red-echo",
-    "name": "Red Echo",
-    "vibe": "A second red jacket, in perforated leather. The red jacket idea, done another way.",
-    "palette": [
-      "#9e2a22",
-      "#151515",
-      "#262628",
-      "#e9e1cf"
-    ],
     "itemIds": [
       "diesel-red-colour-block-perforated-leather-biker-jacket",
       "los-angeles-apparel-the-1801-6-5-oz-garment-dye-tee",
       "diesel-2001-d-macro-relaxed-jeans-black-dieselmacro2",
       "new-balance-9060-sea-salt"
     ],
+    "name": "Red Echo",
+    "palette": [
+      "#9e2a22",
+      "#151515",
+      "#262628",
+      "#e9e1cf"
+    ],
+    "source": "lookbook",
     "tags": [
       "moto",
       "statement",
       "denim",
       "post-apocalyptic"
     ],
-    "source": "lookbook",
-    "createdAt": "2026-11-09T03:27:06.078Z"
+    "vibe": "A second red jacket, in perforated leather. The red jacket idea, done another way."
   }
 ]

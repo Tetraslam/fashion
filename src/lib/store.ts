@@ -1,16 +1,15 @@
-// The closet is a handful of JSON documents (items, outfits, ...).
+// The closet is a handful of JSON documents (items, outfits, ...) stored in
+// Convex as one row per entry (convex/closet.ts). This module gives the rest
+// of the app whole-document reads and read-modify-write updates:
+// update() reads a document, lets `fn` change it, and writes back only the
+// entries that changed, retrying if someone else wrote in between.
 //
-// With DATABASE_URL set, Postgres is the source of truth: one row per document
-// in closet_docs, and every update is a row-locked read-modify-write. Without
-// it, the documents are the files in data/ (offline use only). `pnpm data pull`
-// mirrors the database into data/ for git history and hand edits, and
-// `pnpm data push` sends hand edits back.
+// data/*.json is a git mirror: `pnpm data pull` / `pnpm data push`.
 import { readFile, writeFile, rename } from "node:fs/promises";
 import path from "node:path";
-import { pool } from "./db";
+import { api } from "../../convex/_generated/api";
+import { mutation, query } from "./convex";
 import type { Brand, Comment, Invite, Item, Outfit, Profile, Suggestion, Vote, Watch } from "./types";
-
-const DATA = path.join(process.cwd(), "data");
 
 export type Docs = {
   items: Item[];
@@ -40,26 +39,76 @@ const defaults: Docs = {
 };
 const fresh = <K extends DocName>(name: K): Docs[K] => structuredClone(defaults[name]);
 
-let schema: Promise<void> | undefined;
-function ensureSchema() {
-  const db = pool()!;
-  schema ??= db
-    .query(
-      `create table if not exists closet_docs (
-         name text primary key,
-         value json not null,
-         updated_at timestamptz not null default now()
-       )`,
-    )
-    .then(() => undefined)
-    .catch((e) => {
-      schema = undefined;
-      throw e;
-    });
-  return schema;
+// The stable key of each entry within its document.
+const KEY: { [K in DocName]: (v: never) => string } = {
+  items: (i: Item) => i.id,
+  outfits: (o: Outfit) => o.id,
+  brands: (b: Brand) => b.name,
+  profile: () => "profile",
+  watches: (w: Watch) => w.id,
+  comments: (c: Comment) => c.id,
+  votes: (v: Vote) => `${v.target.type}:${v.target.id}:${v.userId}`,
+  suggestions: (s: Suggestion) => s.id,
+  invites: (i: Invite) => i.code,
+};
+
+const asList = <K extends DocName>(name: K, value: Docs[K]): unknown[] => (name === "profile" ? [value] : (value as unknown[]));
+const fromList = <K extends DocName>(name: K, values: unknown[]): Docs[K] =>
+  (name === "profile" ? (values[0] ?? fresh(name)) : values) as Docs[K];
+
+// Convex has no `undefined`; JSON round-tripping drops those fields.
+const plain = (v: unknown) => JSON.parse(JSON.stringify(v));
+
+export async function read<K extends DocName>(name: K): Promise<Docs[K]> {
+  const { values } = await query(api.closet.doc, { name });
+  return fromList(name, values);
 }
 
-// ---- files (offline) ----
+export async function update<K extends DocName, R = void>(name: K, fn: (value: Docs[K]) => R | Promise<R>): Promise<R> {
+  for (let attempt = 0; attempt < 6; attempt++) {
+    const { version, values } = await query(api.closet.doc, { name });
+    const before = new Map<string, { pos: number; json: string }>();
+    values.forEach((v: unknown, pos: number) => before.set(KEY[name](v as never), { pos, json: JSON.stringify(v) }));
+
+    const value = fromList(name, structuredClone(values));
+    const result = await fn(value);
+    const after = asList(name, value).map(plain);
+
+    const upserts: { key: string; pos: number; value: unknown }[] = [];
+    const seen = new Set<string>();
+    after.forEach((v, pos) => {
+      const key = KEY[name](v as never);
+      if (seen.has(key)) throw new Error(`duplicate ${name} key ${key}`);
+      seen.add(key);
+      const old = before.get(key);
+      if (!old || old.pos !== pos || old.json !== JSON.stringify(v)) upserts.push({ key, pos, value: v });
+    });
+    const deletes = [...before.keys()].filter((k) => !seen.has(k));
+    if (!upserts.length && !deletes.length) return result;
+    if ((await mutation(api.closet.apply, { name, version, upserts, deletes })) === "ok") return result;
+  }
+  throw new Error(`couldn't save ${name}: too many concurrent edits, try again`);
+}
+
+// Replace a whole document (used by `pnpm data push`).
+export async function replace<K extends DocName>(name: K, value: Docs[K]) {
+  await update(name, (current) => {
+    if (Array.isArray(current)) (current as unknown[]).splice(0, current.length, ...(value as unknown[]));
+    else {
+      for (const k of Object.keys(current)) delete (current as Record<string, unknown>)[k];
+      Object.assign(current, value);
+    }
+  });
+}
+
+export async function readAll(): Promise<Docs> {
+  const { docs } = await query(api.closet.all, {});
+  return Object.fromEntries(DOC_NAMES.map((n) => [n, fromList(n, (docs as Record<string, unknown[]>)[n] ?? asList(n, fresh(n)))])) as Docs;
+}
+
+// ---- the git mirror ----
+
+const DATA = path.join(process.cwd(), "data");
 
 export async function readFileDoc<K extends DocName>(name: K): Promise<Docs[K]> {
   try {
@@ -70,74 +119,19 @@ export async function readFileDoc<K extends DocName>(name: K): Promise<Docs[K]> 
   }
 }
 
+// Keys sorted, matching how Convex stores objects, so pulls diff cleanly.
+const sorted = (v: unknown): unknown =>
+  Array.isArray(v)
+    ? v.map(sorted)
+    : v && typeof v === "object"
+      ? Object.fromEntries(Object.keys(v).sort().map((k) => [k, sorted((v as Record<string, unknown>)[k])]))
+      : v;
+
 export async function writeFileDoc<K extends DocName>(name: K, value: Docs[K]) {
   const file = path.join(DATA, `${name}.json`);
   const tmp = `${file}.${process.pid}.tmp`;
-  await writeFile(tmp, JSON.stringify(value, null, 2) + "\n");
+  await writeFile(tmp, JSON.stringify(sorted(value), null, 2) + "\n");
   await rename(tmp, file);
-}
-
-
-// Serialize file read-modify-writes within this process.
-const locks = new Map<string, Promise<unknown>>();
-
-// ---- public API ----
-
-export async function read<K extends DocName>(name: K): Promise<Docs[K]> {
-  const db = pool();
-  if (!db) return readFileDoc(name);
-  await ensureSchema();
-  const { rows } = await db.query("select value from closet_docs where name = $1", [name]);
-  return rows[0]?.value ?? fresh(name);
-}
-
-export async function update<K extends DocName, R = void>(name: K, fn: (value: Docs[K]) => R | Promise<R>): Promise<R> {
-  const db = pool();
-  if (!db) {
-    const prev = locks.get(name) ?? Promise.resolve();
-    const next = prev.then(async () => {
-      const value = await readFileDoc(name);
-      const result = await fn(value);
-      await writeFileDoc(name, value);
-      return result;
-    });
-    locks.set(name, next.catch(() => {}));
-    return next;
-  }
-  await ensureSchema();
-  const client = await db.connect();
-  try {
-    await client.query("begin");
-    // Make sure the row exists so `for update` has something to lock.
-    await client.query("insert into closet_docs (name, value) values ($1, $2) on conflict (name) do nothing", [name, JSON.stringify(fresh(name))]);
-    const { rows } = await client.query("select value from closet_docs where name = $1 for update", [name]);
-    const value = rows[0].value as Docs[K];
-    const result = await fn(value);
-    await client.query("update closet_docs set value = $2, updated_at = now() where name = $1", [name, JSON.stringify(value)]);
-    await client.query("commit");
-    return result;
-  } catch (e) {
-    await client.query("rollback").catch(() => {});
-    throw e;
-  } finally {
-    client.release();
-  }
-}
-
-// Replace a whole document (used by `pnpm data push`).
-export async function replace<K extends DocName>(name: K, value: Docs[K]) {
-  const db = pool();
-  if (!db) return writeFileDoc(name, value);
-  await ensureSchema();
-  await db.query(
-    "insert into closet_docs (name, value) values ($1, $2) on conflict (name) do update set value = excluded.value, updated_at = now()",
-    [name, JSON.stringify(value)],
-  );
-}
-
-export async function readAll() {
-  const docs = await Promise.all(DOC_NAMES.map((n) => read(n)));
-  return Object.fromEntries(DOC_NAMES.map((n, i) => [n, docs[i]])) as Docs;
 }
 
 export const slugify = (s: string) =>

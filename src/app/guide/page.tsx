@@ -191,8 +191,7 @@ journalctl --user -u closet-deals -n 50`}
 
           <Part id="data" n={8} title="Your data">
             <p>
-              The live closet is a set of JSON documents in Postgres (Neon, through Vercel), so the deployed site and your laptop see the same
-              thing. The repo keeps a mirror in <code className="font-mono text-[13px] text-foreground">data/</code> for history and hand edits:
+              The live closet lives in Convex, so the deployed site and your laptop&apos;s scripts see the same thing. The repo keeps a mirror in <code className="font-mono text-[13px] text-foreground">data/</code> for history and hand edits:
               <code className="font-mono text-[13px] text-foreground"> pnpm data pull</code> copies the database into the files (then commit),
               and <code className="font-mono text-[13px] text-foreground">pnpm data push items</code> sends edited files back.
             </p>
@@ -207,7 +206,7 @@ journalctl --user -u closet-deals -n 50`}
             </ul>
             <p>
               Product photos are saved, so a store taking a page down doesn&apos;t lose them: the original 60 live in{" "}
-              <code className="font-mono text-[13px] text-foreground">public/products/</code>, anything added since goes to Vercel Blob. <code className="font-mono text-[13px] text-foreground">pnpm enrich</code> fills in photos and prices
+              <code className="font-mono text-[13px] text-foreground">public/products/</code>, anything added since goes to Convex file storage. <code className="font-mono text-[13px] text-foreground">pnpm enrich</code> fills in photos and prices
               for pieces missing them.
             </p>
           </Part>

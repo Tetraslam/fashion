@@ -14,6 +14,9 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // The original lookbook export, kept verbatim.
     "source/**",
+    "convex/_generated/**",
+    ".agents/**",
+    ".claude/**",
   ]),
 ]);
 

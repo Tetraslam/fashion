@@ -5,6 +5,9 @@ import { readdir, readFile, writeFile, rm } from "node:fs/promises";
 import path from "node:path";
 import { update } from "../src/lib/store";
 import { normalize, dominantColors } from "../src/lib/images";
+import { actAsMachine } from "../src/lib/convex";
+
+actAsMachine();
 
 const recolor = process.argv.includes("--recolor");
 const root = path.join("public", "products");

@@ -1,6 +1,5 @@
-import { mkdir, writeFile, rm } from "node:fs/promises";
-import path from "node:path";
-import { put } from "@vercel/blob";
+import { api } from "../../convex/_generated/api";
+import { mutation } from "./convex";
 import sharp from "sharp";
 
 // Shopify and most CDNs accept a width hint; full-res product shots are huge.
@@ -19,23 +18,21 @@ export async function normalize(buf: Buffer) {
   return sharp(buf).rotate().resize(1000, 1000, { fit: "inside", withoutEnlargement: true }).webp({ quality: 78 }).toBuffer();
 }
 
-// Where a new photo lives: Vercel Blob in production (the deployed filesystem
-// is read-only), public/products/ when running locally without a Blob token.
-async function store(id: string, n: number, buf: Buffer) {
-  if (process.env.BLOB_READ_WRITE_TOKEN) {
-    const blob = await put(`products/${id}/${n}.webp`, buf, { access: "public", contentType: "image/webp", addRandomSuffix: true });
-    return blob.url;
-  }
-  const dir = path.join(process.cwd(), "public", "products", id);
-  await mkdir(dir, { recursive: true });
-  await writeFile(path.join(dir, `${n}.webp`), buf);
-  return `/products/${id}/${n}.webp`;
+// New photos go to Convex file storage (the deployed filesystem is read-only).
+// The original lookbook photos ship in public/products/.
+async function store(buf: Buffer) {
+  const uploadUrl = await mutation(api.collab.uploadUrl, {});
+  const res = await fetch(uploadUrl, { method: "POST", headers: { "content-type": "image/webp" }, body: new Uint8Array(buf) });
+  if (!res.ok) throw new Error(`photo upload ${res.status}`);
+  const { storageId } = await res.json();
+  const url = await mutation(api.collab.photoUrl, { storageId });
+  if (!url) throw new Error("photo upload lost");
+  return url;
 }
 
 // Saves up to `max` images and returns their URLs, plus the first one's bytes
 // for color extraction.
-export async function downloadImages(id: string, urls: string[], referer: string, max = 4) {
-  if (!process.env.BLOB_READ_WRITE_TOKEN) await rm(path.join(process.cwd(), "public", "products", id), { recursive: true, force: true });
+export async function downloadImages(urls: string[], referer: string, max = 4) {
   const out: string[] = [];
   let first: Buffer | undefined;
   for (const url of urls.slice(0, max + 2)) {
@@ -54,7 +51,7 @@ export async function downloadImages(id: string, urls: string[], referer: string
       if (buf.length < 4000) continue; // tracking pixels, placeholders
       const webp = await normalize(buf);
       first ??= webp;
-      out.push(await store(id, out.length, webp));
+      out.push(await store(webp));
     } catch {}
   }
   return { urls: out, first };

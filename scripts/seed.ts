@@ -1,4 +1,7 @@
 // One-time import of data/lookbook.json into the wardrobe files. Safe to re-run:
+import { actAsMachine } from "../src/lib/convex";
+
+actAsMachine();
 // existing items/outfits/brands keep their edits, new ones are appended.
 // usage: pnpm tsx scripts/seed.ts
 import { readFileSync } from "node:fs";

@@ -57,19 +57,22 @@ pnpm dev            # http://127.0.0.1:4747
 
 ### data
 
-The live closet is a set of JSON documents in Postgres (`closet_docs`, one row per document, row-locked updates), shared by the deployed site, local dev, and the scripts. `data/*.json` is the git mirror:
+The backend is [Convex](https://convex.dev) (`convex/`). The closet is a set of documents (items, outfits, brands, ...) stored one row per entry; the app updates a whole document with a compare-and-swap on its version (`src/lib/store.ts`, `convex/closet.ts`). New product photos go to Convex file storage; the original 60 are in `public/products/`.
+
+`data/*.json` is the git mirror of production:
 
 ```sh
-pnpm data pull                # database -> data/*.json, then commit
-pnpm data push items outfits  # edited files -> database (named docs only; --all for everything)
+pnpm data pull                # Convex -> data/*.json, then commit
+pnpm data push items outfits  # edited files -> Convex (named docs only; --all for everything)
 ```
 
-Without `DATABASE_URL` the app falls back to reading and writing `data/` directly (offline only, no accounts).
-New product photos go to Vercel Blob; the original 60 are in `public/products/`.
+There are two Convex deployments. `pnpm dev` and `pnpm convex:dev` use the dev one (`.env.local`); the deployed site, `pnpm data`, `pnpm deals`, and the other scripts use production (`.env.prod`, git-ignored). Ship backend changes with `pnpm convex:deploy`.
 
 ### accounts
 
-Better Auth, email + password, no open sign-up. `OWNER_EMAIL` is the only account that can change anything (checked in every server action); it's created once at `/join?owner=1` with `OWNER_SETUP_CODE`. Everyone else joins through a single-use invite link from `/people` and can view, vote, comment, and suggest. Env (`vercel env pull .env.local`): `DATABASE_URL`, `BETTER_AUTH_SECRET`, `OWNER_EMAIL`, `OWNER_SETUP_CODE`, `BLOB_READ_WRITE_TOKEN`, `FIRECRAWL_API_KEY`.
+Better Auth running inside Convex (`convex/auth.ts`), email + password, no open sign-up. `OWNER_EMAIL` is the only account that can change anything; every Convex function checks the caller's role itself (`convex/access.ts`), since Convex functions are public endpoints. The owner account is created once at `/join?owner=1` with `OWNER_SETUP_CODE`; everyone else joins through a single-use invite link from `/people` and can view, vote, comment, and suggest. Scripts act as the owner with `CLOSET_MACHINE_KEY`.
+
+Convex env: `BETTER_AUTH_SECRET`, `SITE_URL`, `OWNER_EMAIL`, `OWNER_SETUP_CODE`, `CLOSET_MACHINE_KEY`. Vercel env: `NEXT_PUBLIC_CONVEX_URL`, `NEXT_PUBLIC_CONVEX_SITE_URL`, `FIRECRAWL_API_KEY`.
 
 ### scripts
 
@@ -79,7 +82,7 @@ pnpm deals [--notify]                       # price the want list on Grailed; --
                                             # (runs daily at 9am via ~/.config/systemd/user/closet-deals.timer)
 pnpm colors                                 # re-encode photos, recompute garment colors
 pnpm seed                                   # re-import the lookbook (keeps existing edits)
-pnpm db:migrate                             # create/update Better Auth's tables
+pnpm convex:deploy                          # push convex/ to production
 ```
 
 `enrich` falls back to Firecrawl for bot-walled stores (`FIRECRAWL_API_KEY`, read from 1Password via `opa` if unset), then to a Grailed photo.

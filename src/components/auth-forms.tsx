@@ -73,7 +73,7 @@ export function JoinForm() {
           const code = owner ? String(form.get("setup")) : (params.get("code") ?? "");
           const { error } = await authClient.signUp.email(
             { name: String(form.get("name")), email: String(form.get("email")), password: String(form.get("password")) },
-            { headers: { "x-invite-code": code } },
+            { query: { invite: code } },
           );
           if (error) return setError(error.message ?? "couldn't create the account");
           router.push("/");

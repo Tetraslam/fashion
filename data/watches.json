@@ -1,7 +1,5 @@
 [
   {
-    "id": "schott-nyc-618-steerhide-perfecto",
-    "query": "schott perfecto 618",
     "category": "outerwear.leather_jackets",
     "history": [
       {
@@ -11,6 +9,8 @@
         "medianAsk": 597,
         "medianSold": 333
       }
-    ]
+    ],
+    "id": "schott-nyc-618-steerhide-perfecto",
+    "query": "schott perfecto 618"
   }
 ]
