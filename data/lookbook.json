@@ -1,0 +1,1086 @@
+{
+  "products": [
+    {
+      "brand": "Has2sons",
+      "item": "Red Curved-Sleeve PU Leather Jacket",
+      "url": "https://has2sons.com/products/red-scimitar-sleeve-pu-leather-jacket-washed-silhouette-short-coat-lapel-air-pressure-3d-gluing-process",
+      "key": "h2sRed"
+    },
+    {
+      "brand": "COS",
+      "item": "Oversized Heavyweight Cotton T-Shirt, white",
+      "url": "https://www.cos.com/en-ww/men/menswear/tshirts/oversized-fit/product/the-heavy-duty-t-shirt-white-1147848001",
+      "key": "cos"
+    },
+    {
+      "brand": "Levi’s",
+      "item": "568 Loose Straight Jeans",
+      "url": "https://www.levi.com/US/en_US/clothing/men/jeans/loose/568TM-loose-straight-mens-jeans/p/290370066",
+      "key": "l568"
+    },
+    {
+      "brand": "Dr. Martens",
+      "item": "1460 Smooth Leather Boots, black",
+      "url": "https://www.drmartens.com/us/en/1460-smooth-leather-lace-up-boots-black/p/11822006",
+      "key": "dm1460"
+    },
+    {
+      "brand": "Vitaly",
+      "item": "Miami Chain",
+      "url": "https://www.vitalydesign.com/products/miami-chain-2-0",
+      "key": "vitChain"
+    },
+    {
+      "brand": "Diesel",
+      "item": "L-Eon treated leather biker jacket",
+      "url": "https://diesel.com/en-us/outerwear-%26-jackets/l-eon-brown/A200000ALBB7BB.html",
+      "key": "dieselBiker"
+    },
+    {
+      "brand": "Diesel",
+      "item": "T-Rawnorm raw-edge tee, grey",
+      "url": "https://diesel.com/en-us/tshirts/t-rawnorm-grey/A261670KMAH900.html",
+      "key": "dieselTee"
+    },
+    {
+      "brand": "Diesel",
+      "item": "2001 D-Macro Relaxed Jeans, black",
+      "url": "https://diesel.com/en-us/relaxed/relaxed-jeans-2001-d-macro-09p09-black/A1159809P0902.html",
+      "key": "dieselMacro"
+    },
+    {
+      "brand": "Dr. Martens",
+      "item": "Jadon Platform Boots",
+      "url": "https://www.drmartens.com/us/en/jadon-boot-smooth-leather-platforms-black/p/15265001",
+      "key": "jadon"
+    },
+    {
+      "brand": "Represent",
+      "item": "Smart Bomber, Nero",
+      "url": "https://representclo.com/products/smart-bomber-nero",
+      "key": "repBomber"
+    },
+    {
+      "brand": "Lady White Co",
+      "item": "Our T-Shirt 2-Pack, white",
+      "url": "https://ladywhiteco.com/products/our-t-shirt-2-pack-white",
+      "key": "ladyWhite"
+    },
+    {
+      "brand": "Represent",
+      "item": "R3 Baggy Denim, aged black",
+      "url": "https://representclo.com/products/r3-baggy-denim-aged-black",
+      "key": "repDenim"
+    },
+    {
+      "brand": "New Balance",
+      "item": "1906R, silver metallic",
+      "url": "https://www.newbalance.com/pd/1906r/M1906RV1-47448-PMG-NA.html",
+      "key": "nb1906"
+    },
+    {
+      "brand": "Schott NYC",
+      "item": "618 Steerhide Perfecto",
+      "url": "https://www.schottnyc.com/products/618-classic-perfecto-steerhide-leather-motorcycle-jacket",
+      "key": "schott"
+    },
+    {
+      "brand": "Los Angeles Apparel",
+      "item": "The 1801 6.5 oz Garment Dye Tee",
+      "url": "https://losangelesapparel.net/products/the-1801-garment-dye",
+      "key": "laa"
+    },
+    {
+      "brand": "Levi’s",
+      "item": "578 Baggy Jeans",
+      "url": "https://www.levi.com/US/en_US/clothing/men/jeans/loose/578TM-baggy-mens-jeans/p/A47500021",
+      "key": "l578"
+    },
+    {
+      "brand": "Red Wing",
+      "item": "Engineer Boot 2966, black",
+      "url": "https://www.redwingheritage.com/mens/heritage/engineer-02966.html",
+      "key": "rwEngineer"
+    },
+    {
+      "brand": "Thug Club",
+      "item": "Vintage Riding Skull T-Shirt",
+      "url": "https://global.thugclub.store/products/vintage-riding-skull-t-shirt",
+      "key": "thugTee"
+    },
+    {
+      "brand": "Acne Studios",
+      "item": "1981 Loose Fit Jeans, light blue",
+      "url": "https://www.acnestudios.com/us/en/acne-studios-1981-u-light-blue-vintage/C00097-228.html",
+      "key": "acne1981"
+    },
+    {
+      "brand": "Thug Club",
+      "item": "TC Riding Skull Ring",
+      "url": "https://global.thugclub.store/products/tc-riding-skull-ring",
+      "key": "thugRing"
+    },
+    {
+      "brand": "Rick Owens DRKSHDW",
+      "item": "Mega Bumper Low Sneaks",
+      "url": "https://www.rickowens.eu/en-us/products/du02f6832bmo911",
+      "key": "drkLow"
+    },
+    {
+      "brand": "Personsoul",
+      "item": "Double-Breasted Shield Buckle Long Coat",
+      "url": "https://www.personsoul.com/products/personsoul-double-breasted-shield-buckle-long-coat",
+      "key": "psCoat"
+    },
+    {
+      "brand": "Kapital",
+      "item": "New Momonroe Wide-Leg Jeans",
+      "url": "https://www.mrporter.com/en-us/mens/product/kapital/clothing/straight-jeans/new-momonroe-wide-leg-jeans/1647597345955021",
+      "key": "kapWide"
+    },
+    {
+      "brand": "Guidi",
+      "item": "Back Zip Boots",
+      "url": "https://guidi.it/products/back-zip-mid-bootsm",
+      "key": "guidi"
+    },
+    {
+      "brand": "Acne Studios",
+      "item": "Leather Jacket, rum brown",
+      "url": "https://www.acnestudios.com/us/en/leather-jacket-rum-brown/B70168-DT0.html",
+      "key": "acneLeather"
+    },
+    {
+      "brand": "Camber USA",
+      "item": "Max-Weight Tee",
+      "url": "https://camberusa.com/max-weight/",
+      "key": "camber"
+    },
+    {
+      "brand": "Acne Studios",
+      "item": "Leather Ankle Boot, black",
+      "url": "https://www.acnestudios.com/us/en/ac-mn-shoe000017/BD0390-900.html",
+      "key": "acneBoot"
+    },
+    {
+      "brand": "Vanson",
+      "item": "Model B Leather Motorcycle Jacket",
+      "url": "https://www.vansonleathers.com/leather-garments/379-model-B-leather-motorcycle-jacket-B.html",
+      "key": "vanson"
+    },
+    {
+      "brand": "Naked & Famous",
+      "item": "Super Guy Stretch Selvedge",
+      "url": "https://nakedandfamousdenim.com/products/naked-famous-super-guy-stretch-selvedge",
+      "key": "naked"
+    },
+    {
+      "brand": "Converse",
+      "item": "Chuck 70 Canvas, white",
+      "url": "https://www.converse.com/shop/p/chuck-70-canvas-unisex-high-top-shoe/162056C.html",
+      "key": "chuck"
+    },
+    {
+      "brand": "Andersson Bell",
+      "item": "Fur Collar MA-1 Bomber, khaki",
+      "url": "https://adsb.co.kr/products/fur-collar-ma-1-bomber-khaki",
+      "key": "abBomber"
+    },
+    {
+      "brand": "Salomon",
+      "item": "XT-6, black",
+      "url": "https://www.salomon.com/en-us/product/xt-6-lg4239/L41086600",
+      "key": "xt6"
+    },
+    {
+      "brand": "ADER error",
+      "item": "Hooded Denim Jacket, blue",
+      "url": "https://www.farfetch.com/shopping/men/ader-error-hooded-denim-jacket-item-32066173.aspx",
+      "key": "ader"
+    },
+    {
+      "brand": "Diesel",
+      "item": "2001 D-Macro Relaxed Jeans, black",
+      "url": "https://diesel.com/en-us/relaxed/relaxed-jeans-2001-d-macro-0bebb-black/A115980BEBB02.html",
+      "key": "dieselMacro2"
+    },
+    {
+      "brand": "Nike",
+      "item": "Air Force 1 ’07, white",
+      "url": "https://www.nike.com/t/air-force-1-07-mens-shoes-DZejrQoC/CW2288-111",
+      "key": "af1"
+    },
+    {
+      "brand": "Roaringwild",
+      "item": "Patch Work Detroit Jacket",
+      "url": "https://roaringwild.com/products/roaringwild-patch-work-detroit-jacket",
+      "key": "rwild"
+    },
+    {
+      "brand": "Timberland",
+      "item": "Premium 6-Inch Waterproof Boot",
+      "url": "https://www.timberland.com/en-us/p/men/footwear-10039/mens-timberland-premium-6-inch-waterproof-boot-TB110061713",
+      "key": "timb"
+    },
+    {
+      "brand": "Song for the Mute",
+      "item": "“Playground” Coach Coat, navy",
+      "url": "https://www.songforthemute.com/product/playground-coach-coat-poly-wool-melton-navy/",
+      "key": "sftm"
+    },
+    {
+      "brand": "Kapital",
+      "item": "Fastcolor Selvedge Bandana",
+      "url": "https://glasswingshop.com/products/kapital-fastcolor-selvedge-bandana-churchill-garden-large-sax",
+      "key": "kapBandana"
+    },
+    {
+      "brand": "Who Decides War",
+      "item": "Mechanic Patchwork Trucker Jacket",
+      "url": "https://www.neimanmarcus.com/p/who-decides-war-mens-mechanic-embroidered-patchwork-trucker-jacket-prod286960813",
+      "key": "wdwJacket"
+    },
+    {
+      "brand": "Who Decides War",
+      "item": "Save You Denim",
+      "url": "https://whodecideswar.com/products/save-you-denim",
+      "key": "wdwJeans"
+    },
+    {
+      "brand": "Kapital",
+      "item": "Boro Distressed Patchwork Denim Jacket",
+      "url": "https://www.mrporter.com/en-us/mens/product/kapital/clothing/lightweight-waterproof-jackets/boro-distressed-patchwork-denim-jacket/1647597345952727",
+      "key": "kapBoro"
+    },
+    {
+      "brand": "Kapital",
+      "item": "Century Denim 5P",
+      "url": "https://shopcanoeclub.com/products/century-denim-5p-monkey-cisco-n5s",
+      "key": "kapCentury"
+    },
+    {
+      "brand": "Red Wing",
+      "item": "Classic Moc 875, brown",
+      "url": "https://www.redwingheritage.com/mens/heritage/classic-moc/classic-moc-00875.html",
+      "key": "rwMoc"
+    },
+    {
+      "brand": "Rick Owens DRKSHDW",
+      "item": "Gimp Hoodie, black",
+      "url": "https://www.rickowens.eu/products/du02f6291rigp09",
+      "key": "drkHoodie"
+    },
+    {
+      "brand": "Rick Owens DRKSHDW",
+      "item": "Detroit Cut Jeans",
+      "url": "https://www.rickowens.eu/en-us/products/du02f6366sbw99x",
+      "key": "drkDetroit"
+    },
+    {
+      "brand": "Rick Owens DRKSHDW",
+      "item": "Sneaks (Ramones high-top)",
+      "url": "https://www.rickowens.eu/en-us/products/du02f6800doem89811",
+      "key": "drkSneaks"
+    },
+    {
+      "brand": "Heliot Emil",
+      "item": "Moire Technical Jacket",
+      "url": "https://heliotemil.com/products/moire-technical-jacket-black-preaw25",
+      "key": "heliot"
+    },
+    {
+      "brand": "Post Archive Faction",
+      "item": "Souvenir Tee, Paris Edition",
+      "url": "https://postarchivefaction.com/products/souvenir-paris-wh-r1",
+      "key": "paf"
+    },
+    {
+      "brand": "Acne Studios",
+      "item": "1996M Regular Fit Jeans, vintage black",
+      "url": "https://www.acnestudios.com/us/en/acne-studios-1996m-vintage-black/B00513-900.html?g=man",
+      "key": "acneBlack"
+    },
+    {
+      "brand": "Chrome Hearts",
+      "item": "Keeper Ring, silver (resale)",
+      "url": "https://www.stadiumgoods.com/products/keeper-ring-silver-170736",
+      "key": "chRing"
+    },
+    {
+      "brand": "Superdry",
+      "item": "Vintage Logo Classic T-Shirt",
+      "url": "https://www.superdry.com/us/mens/t-shirts/vintage-logo-classic-t-shirt-276647.html",
+      "key": "sdTee"
+    },
+    {
+      "brand": "Armani Exchange",
+      "item": "Straight Fit 5-Pocket Jeans",
+      "url": "https://www.armani.com/en-us/armani-exchange/straight-fit-5-pockets-pant-in-cotton-denim-cod-XM000069-AF28151-MB002/",
+      "key": "ax"
+    },
+    {
+      "brand": "Vitaly",
+      "item": "Proxy Ring",
+      "url": "https://www.vitalydesign.com/products/proxy",
+      "key": "vitRing"
+    },
+    {
+      "brand": "Onitsuka Tiger",
+      "item": "Mexico 66 (Swiss store, pick your region)",
+      "url": "https://www.onitsukatiger.com/ch/en-ch/mexico-66/p/1183c102-100.html",
+      "key": "mexico66"
+    },
+    {
+      "brand": "Personsoul",
+      "item": "Embroidered Stand Collar Washed Denim Jacket",
+      "url": "https://www.personsoul.com/products/personsoul-embroidered-stand-collar-washed-denim-jacket",
+      "key": "psJacket"
+    },
+    {
+      "brand": "Personsoul",
+      "item": "Vintage Washed Corduroy Wide Leg Pants",
+      "url": "https://www.personsoul.com/products/personsoul-vintage-washed-corduroy-wide-leg-pants-with-belt",
+      "key": "psPants"
+    },
+    {
+      "brand": "Personsoul",
+      "item": "Sterling Silver Armor Ring",
+      "url": "https://www.personsoul.com/products/personsoul-sterling-silver-armor-ring",
+      "key": "psRing"
+    },
+    {
+      "brand": "Diesel",
+      "item": "Red Colour-Block Perforated Leather Biker Jacket",
+      "url": "https://www.ssense.com/en-us/men/product/diesel/red-colour-block-perforated-leather-biker-jacket/19359541",
+      "key": "dieselRed"
+    },
+    {
+      "brand": "New Balance",
+      "item": "9060, sea salt",
+      "url": "https://www.newbalance.com/pd/9060/U9060V1-49464-PMG-NA.html?dwvar_U9060V1-49464-PMG-NA_style=U9060ECA",
+      "key": "nb9060"
+    }
+  ],
+  "outfits": [
+    {
+      "name": "Red Rider",
+      "vibe": "Your best jacket, built into a full outfit. Clean white under loud red.",
+      "palette": [
+        "#b3261e",
+        "#efece6",
+        "#7d9bb8",
+        "#141414"
+      ],
+      "pieces": [
+        {
+          "brand": "Has2sons",
+          "item": "Red Curved-Sleeve PU Leather Jacket",
+          "url": "https://has2sons.com/products/red-scimitar-sleeve-pu-leather-jacket-washed-silhouette-short-coat-lapel-air-pressure-3d-gluing-process",
+          "key": "h2sRed"
+        },
+        {
+          "brand": "COS",
+          "item": "Oversized Heavyweight Cotton T-Shirt, white",
+          "url": "https://www.cos.com/en-ww/men/menswear/tshirts/oversized-fit/product/the-heavy-duty-t-shirt-white-1147848001",
+          "key": "cos"
+        },
+        {
+          "brand": "Levi’s",
+          "item": "568 Loose Straight Jeans",
+          "url": "https://www.levi.com/US/en_US/clothing/men/jeans/loose/568TM-loose-straight-mens-jeans/p/290370066",
+          "key": "l568"
+        },
+        {
+          "brand": "Dr. Martens",
+          "item": "1460 Smooth Leather Boots, black",
+          "url": "https://www.drmartens.com/us/en/1460-smooth-leather-lace-up-boots-black/p/11822006",
+          "key": "dm1460"
+        },
+        {
+          "brand": "Vitaly",
+          "item": "Miami Chain",
+          "url": "https://www.vitalydesign.com/products/miami-chain-2-0",
+          "key": "vitChain"
+        }
+      ]
+    },
+    {
+      "name": "Wasteland Diesel",
+      "vibe": "Worn-in leather, faded grey tee, washed black denim. Looks like it survived something.",
+      "palette": [
+        "#5a3a28",
+        "#7b7d80",
+        "#2f3033",
+        "#1a1a1a"
+      ],
+      "pieces": [
+        {
+          "brand": "Diesel",
+          "item": "L-Eon treated leather biker jacket",
+          "url": "https://diesel.com/en-us/outerwear-%26-jackets/l-eon-brown/A200000ALBB7BB.html",
+          "key": "dieselBiker"
+        },
+        {
+          "brand": "Diesel",
+          "item": "T-Rawnorm raw-edge tee, grey",
+          "url": "https://diesel.com/en-us/tshirts/t-rawnorm-grey/A261670KMAH900.html",
+          "key": "dieselTee"
+        },
+        {
+          "brand": "Diesel",
+          "item": "2001 D-Macro Relaxed Jeans, black",
+          "url": "https://diesel.com/en-us/relaxed/relaxed-jeans-2001-d-macro-09p09-black/A1159809P0902.html",
+          "key": "dieselMacro"
+        },
+        {
+          "brand": "Dr. Martens",
+          "item": "Jadon Platform Boots",
+          "url": "https://www.drmartens.com/us/en/jadon-boot-smooth-leather-platforms-black/p/15265001",
+          "key": "jadon"
+        }
+      ]
+    },
+    {
+      "name": "Represent Racer",
+      "vibe": "Dark brown bomber, white tee, aged black baggy denim. Easy and warm.",
+      "palette": [
+        "#3b2a22",
+        "#efece6",
+        "#2b2b2d",
+        "#d9d6cf"
+      ],
+      "pieces": [
+        {
+          "brand": "Represent",
+          "item": "Smart Bomber, Nero",
+          "url": "https://representclo.com/products/smart-bomber-nero",
+          "key": "repBomber"
+        },
+        {
+          "brand": "Lady White Co",
+          "item": "Our T-Shirt 2-Pack, white",
+          "url": "https://ladywhiteco.com/products/our-t-shirt-2-pack-white",
+          "key": "ladyWhite"
+        },
+        {
+          "brand": "Represent",
+          "item": "R3 Baggy Denim, aged black",
+          "url": "https://representclo.com/products/r3-baggy-denim-aged-black",
+          "key": "repDenim"
+        },
+        {
+          "brand": "New Balance",
+          "item": "1906R, silver metallic",
+          "url": "https://www.newbalance.com/pd/1906r/M1906RV1-47448-PMG-NA.html",
+          "key": "nb1906"
+        }
+      ]
+    },
+    {
+      "name": "Black Perfecto",
+      "vibe": "The classic. A real moto jacket that will outlive you.",
+      "palette": [
+        "#121212",
+        "#1d1d1d",
+        "#3f5f86",
+        "#141414"
+      ],
+      "pieces": [
+        {
+          "brand": "Schott NYC",
+          "item": "618 Steerhide Perfecto",
+          "url": "https://www.schottnyc.com/products/618-classic-perfecto-steerhide-leather-motorcycle-jacket",
+          "key": "schott"
+        },
+        {
+          "brand": "Los Angeles Apparel",
+          "item": "The 1801 6.5 oz Garment Dye Tee",
+          "url": "https://losangelesapparel.net/products/the-1801-garment-dye",
+          "key": "laa"
+        },
+        {
+          "brand": "Levi’s",
+          "item": "578 Baggy Jeans",
+          "url": "https://www.levi.com/US/en_US/clothing/men/jeans/loose/578TM-baggy-mens-jeans/p/A47500021",
+          "key": "l578"
+        },
+        {
+          "brand": "Red Wing",
+          "item": "Engineer Boot 2966, black",
+          "url": "https://www.redwingheritage.com/mens/heritage/engineer-02966.html",
+          "key": "rwEngineer"
+        }
+      ]
+    },
+    {
+      "name": "Seoul Loud",
+      "vibe": "Skull graphic tee and silver. The jacket stays at home.",
+      "palette": [
+        "#ece8df",
+        "#a8bccd",
+        "#c9ccd1",
+        "#151515"
+      ],
+      "pieces": [
+        {
+          "brand": "Thug Club",
+          "item": "Vintage Riding Skull T-Shirt",
+          "url": "https://global.thugclub.store/products/vintage-riding-skull-t-shirt",
+          "key": "thugTee"
+        },
+        {
+          "brand": "Acne Studios",
+          "item": "1981 Loose Fit Jeans, light blue",
+          "url": "https://www.acnestudios.com/us/en/acne-studios-1981-u-light-blue-vintage/C00097-228.html",
+          "key": "acne1981"
+        },
+        {
+          "brand": "Thug Club",
+          "item": "TC Riding Skull Ring",
+          "url": "https://global.thugclub.store/products/tc-riding-skull-ring",
+          "key": "thugRing"
+        },
+        {
+          "brand": "Rick Owens DRKSHDW",
+          "item": "Mega Bumper Low Sneaks",
+          "url": "https://www.rickowens.eu/en-us/products/du02f6832bmo911",
+          "key": "drkLow"
+        }
+      ]
+    },
+    {
+      "name": "Canton Monk",
+      "vibe": "A long buckled coat over a white tee. Personsoul’s calm, ancient side.",
+      "palette": [
+        "#2b2b2e",
+        "#efece6",
+        "#33415c",
+        "#141414"
+      ],
+      "pieces": [
+        {
+          "brand": "Personsoul",
+          "item": "Double-Breasted Shield Buckle Long Coat",
+          "url": "https://www.personsoul.com/products/personsoul-double-breasted-shield-buckle-long-coat",
+          "key": "psCoat"
+        },
+        {
+          "brand": "COS",
+          "item": "Oversized Heavyweight Cotton T-Shirt, white",
+          "url": "https://www.cos.com/en-ww/men/menswear/tshirts/oversized-fit/product/the-heavy-duty-t-shirt-white-1147848001",
+          "key": "cos"
+        },
+        {
+          "brand": "Kapital",
+          "item": "New Momonroe Wide-Leg Jeans",
+          "url": "https://www.mrporter.com/en-us/mens/product/kapital/clothing/straight-jeans/new-momonroe-wide-leg-jeans/1647597345955021",
+          "key": "kapWide"
+        },
+        {
+          "brand": "Guidi",
+          "item": "Back Zip Boots",
+          "url": "https://guidi.it/products/back-zip-mid-bootsm",
+          "key": "guidi"
+        }
+      ]
+    },
+    {
+      "name": "Acne Grail",
+      "vibe": "Soft brown leather and pale denim. Quiet, but expensive-looking.",
+      "palette": [
+        "#7a4b2e",
+        "#ebe2cf",
+        "#b3c4d4",
+        "#141414"
+      ],
+      "pieces": [
+        {
+          "brand": "Acne Studios",
+          "item": "Leather Jacket, rum brown",
+          "url": "https://www.acnestudios.com/us/en/leather-jacket-rum-brown/B70168-DT0.html",
+          "key": "acneLeather"
+        },
+        {
+          "brand": "Camber USA",
+          "item": "Max-Weight Tee",
+          "url": "https://camberusa.com/max-weight/",
+          "key": "camber"
+        },
+        {
+          "brand": "Acne Studios",
+          "item": "1981 Loose Fit Jeans, light blue",
+          "url": "https://www.acnestudios.com/us/en/acne-studios-1981-u-light-blue-vintage/C00097-228.html",
+          "key": "acne1981"
+        },
+        {
+          "brand": "Acne Studios",
+          "item": "Leather Ankle Boot, black",
+          "url": "https://www.acnestudios.com/us/en/ac-mn-shoe000017/BD0390-900.html",
+          "key": "acneBoot"
+        }
+      ]
+    },
+    {
+      "name": "Cafe Racer",
+      "vibe": "A Vanson racer jacket. Your red jacket’s older, tougher brother.",
+      "palette": [
+        "#1a1a1a",
+        "#8a8a8a",
+        "#1c2740",
+        "#ececec"
+      ],
+      "pieces": [
+        {
+          "brand": "Vanson",
+          "item": "Model B Leather Motorcycle Jacket",
+          "url": "https://www.vansonleathers.com/leather-garments/379-model-B-leather-motorcycle-jacket-B.html",
+          "key": "vanson"
+        },
+        {
+          "brand": "Los Angeles Apparel",
+          "item": "The 1801 6.5 oz Garment Dye Tee",
+          "url": "https://losangelesapparel.net/products/the-1801-garment-dye",
+          "key": "laa"
+        },
+        {
+          "brand": "Naked & Famous",
+          "item": "Super Guy Stretch Selvedge",
+          "url": "https://nakedandfamousdenim.com/products/naked-famous-super-guy-stretch-selvedge",
+          "key": "naked"
+        },
+        {
+          "brand": "Converse",
+          "item": "Chuck 70 Canvas, white",
+          "url": "https://www.converse.com/shop/p/chuck-70-canvas-unisex-high-top-shoe/162056C.html",
+          "key": "chuck"
+        }
+      ]
+    },
+    {
+      "name": "Trail Bell",
+      "vibe": "A khaki MA-1 with a fur collar, plus trail shoes. Comfortable enough to walk all day.",
+      "palette": [
+        "#7a7552",
+        "#efece6",
+        "#a3a59a",
+        "#1a1a1a"
+      ],
+      "pieces": [
+        {
+          "brand": "Andersson Bell",
+          "item": "Fur Collar MA-1 Bomber, khaki",
+          "url": "https://adsb.co.kr/products/fur-collar-ma-1-bomber-khaki",
+          "key": "abBomber"
+        },
+        {
+          "brand": "COS",
+          "item": "Oversized Heavyweight Cotton T-Shirt, white",
+          "url": "https://www.cos.com/en-ww/men/menswear/tshirts/oversized-fit/product/the-heavy-duty-t-shirt-white-1147848001",
+          "key": "cos"
+        },
+        {
+          "brand": "Levi’s",
+          "item": "568 Loose Straight Jeans",
+          "url": "https://www.levi.com/US/en_US/clothing/men/jeans/loose/568TM-loose-straight-mens-jeans/p/290370066",
+          "key": "l568"
+        },
+        {
+          "brand": "Salomon",
+          "item": "XT-6, black",
+          "url": "https://www.salomon.com/en-us/product/xt-6-lg4239/L41086600",
+          "key": "xt6"
+        }
+      ]
+    },
+    {
+      "name": "Error Blue",
+      "vibe": "One blue denim jacket, everything else black. One color does all the work.",
+      "palette": [
+        "#4f74b8",
+        "#141414",
+        "#1a1a1a",
+        "#ededed"
+      ],
+      "pieces": [
+        {
+          "brand": "ADER error",
+          "item": "Hooded Denim Jacket, blue",
+          "url": "https://www.farfetch.com/shopping/men/ader-error-hooded-denim-jacket-item-32066173.aspx",
+          "key": "ader"
+        },
+        {
+          "brand": "Los Angeles Apparel",
+          "item": "The 1801 6.5 oz Garment Dye Tee",
+          "url": "https://losangelesapparel.net/products/the-1801-garment-dye",
+          "key": "laa"
+        },
+        {
+          "brand": "Diesel",
+          "item": "2001 D-Macro Relaxed Jeans, black",
+          "url": "https://diesel.com/en-us/relaxed/relaxed-jeans-2001-d-macro-0bebb-black/A115980BEBB02.html",
+          "key": "dieselMacro2"
+        },
+        {
+          "brand": "Nike",
+          "item": "Air Force 1 ’07, white",
+          "url": "https://www.nike.com/t/air-force-1-07-mens-shoes-DZejrQoC/CW2288-111",
+          "key": "af1"
+        }
+      ]
+    },
+    {
+      "name": "Roaring Workwear",
+      "vibe": "A patchwork work jacket and baggy jeans. Chinese streetwear with a builder feel.",
+      "palette": [
+        "#a68a5c",
+        "#141414",
+        "#7d9bb8",
+        "#5b4636"
+      ],
+      "pieces": [
+        {
+          "brand": "Roaringwild",
+          "item": "Patch Work Detroit Jacket",
+          "url": "https://roaringwild.com/products/roaringwild-patch-work-detroit-jacket",
+          "key": "rwild"
+        },
+        {
+          "brand": "Los Angeles Apparel",
+          "item": "The 1801 6.5 oz Garment Dye Tee",
+          "url": "https://losangelesapparel.net/products/the-1801-garment-dye",
+          "key": "laa"
+        },
+        {
+          "brand": "Levi’s",
+          "item": "578 Baggy Jeans",
+          "url": "https://www.levi.com/US/en_US/clothing/men/jeans/loose/578TM-baggy-mens-jeans/p/A47500021",
+          "key": "l578"
+        },
+        {
+          "brand": "Timberland",
+          "item": "Premium 6-Inch Waterproof Boot",
+          "url": "https://www.timberland.com/en-us/p/men/footwear-10039/mens-timberland-premium-6-inch-waterproof-boot-TB110061713",
+          "key": "timb"
+        }
+      ]
+    },
+    {
+      "name": "Navy Mute",
+      "vibe": "A heavy navy coat, a bandana, washed black jeans. The Dune feeling, but for the street.",
+      "palette": [
+        "#1e2a44",
+        "#3a3633",
+        "#2b2b2d",
+        "#6b8fc4"
+      ],
+      "pieces": [
+        {
+          "brand": "Song for the Mute",
+          "item": "“Playground” Coach Coat, navy",
+          "url": "https://www.songforthemute.com/product/playground-coach-coat-poly-wool-melton-navy/",
+          "key": "sftm"
+        },
+        {
+          "brand": "COS",
+          "item": "Oversized Heavyweight Cotton T-Shirt, white",
+          "url": "https://www.cos.com/en-ww/men/menswear/tshirts/oversized-fit/product/the-heavy-duty-t-shirt-white-1147848001",
+          "key": "cos"
+        },
+        {
+          "brand": "Diesel",
+          "item": "2001 D-Macro Relaxed Jeans, black",
+          "url": "https://diesel.com/en-us/relaxed/relaxed-jeans-2001-d-macro-09p09-black/A1159809P0902.html",
+          "key": "dieselMacro"
+        },
+        {
+          "brand": "Kapital",
+          "item": "Fastcolor Selvedge Bandana",
+          "url": "https://glasswingshop.com/products/kapital-fastcolor-selvedge-bandana-churchill-garden-large-sax",
+          "key": "kapBandana"
+        }
+      ]
+    },
+    {
+      "name": "Denim on Denim",
+      "vibe": "A patched, embroidered trucker with matching jeans. Very loud, in a good way.",
+      "palette": [
+        "#3d5a80",
+        "#efece6",
+        "#3d5a80",
+        "#4a2c1c"
+      ],
+      "pieces": [
+        {
+          "brand": "Who Decides War",
+          "item": "Mechanic Patchwork Trucker Jacket",
+          "url": "https://www.neimanmarcus.com/p/who-decides-war-mens-mechanic-embroidered-patchwork-trucker-jacket-prod286960813",
+          "key": "wdwJacket"
+        },
+        {
+          "brand": "Who Decides War",
+          "item": "Save You Denim",
+          "url": "https://whodecideswar.com/products/save-you-denim",
+          "key": "wdwJeans"
+        },
+        {
+          "brand": "COS",
+          "item": "Oversized Heavyweight Cotton T-Shirt, white",
+          "url": "https://www.cos.com/en-ww/men/menswear/tshirts/oversized-fit/product/the-heavy-duty-t-shirt-white-1147848001",
+          "key": "cos"
+        },
+        {
+          "brand": "Dr. Martens",
+          "item": "1460 Smooth Leather Boots",
+          "url": "https://www.drmartens.com/us/en/1460-smooth-leather-lace-up-boots-black/p/11822006",
+          "key": "dm1460"
+        }
+      ]
+    },
+    {
+      "name": "Indigo Nomad",
+      "vibe": "Patched boro denim and a big bandana. The closest thing to a Fremen in jeans.",
+      "palette": [
+        "#26354f",
+        "#d8cfbc",
+        "#2e3e5c",
+        "#6b4630"
+      ],
+      "pieces": [
+        {
+          "brand": "Kapital",
+          "item": "Boro Distressed Patchwork Denim Jacket",
+          "url": "https://www.mrporter.com/en-us/mens/product/kapital/clothing/lightweight-waterproof-jackets/boro-distressed-patchwork-denim-jacket/1647597345952727",
+          "key": "kapBoro"
+        },
+        {
+          "brand": "Kapital",
+          "item": "Century Denim 5P",
+          "url": "https://shopcanoeclub.com/products/century-denim-5p-monkey-cisco-n5s",
+          "key": "kapCentury"
+        },
+        {
+          "brand": "Kapital",
+          "item": "Fastcolor Selvedge Bandana",
+          "url": "https://glasswingshop.com/products/kapital-fastcolor-selvedge-bandana-churchill-garden-large-sax",
+          "key": "kapBandana"
+        },
+        {
+          "brand": "Red Wing",
+          "item": "Classic Moc 875, brown",
+          "url": "https://www.redwingheritage.com/mens/heritage/classic-moc/classic-moc-00875.html",
+          "key": "rwMoc"
+        }
+      ]
+    },
+    {
+      "name": "DRKSHDW",
+      "vibe": "Black hoodie, black jeans, big sneakers. Rick Owens without going all the way.",
+      "palette": [
+        "#151515",
+        "#232323",
+        "#2f4a73",
+        "#ece9e2"
+      ],
+      "pieces": [
+        {
+          "brand": "Rick Owens DRKSHDW",
+          "item": "Gimp Hoodie, black",
+          "url": "https://www.rickowens.eu/products/du02f6291rigp09",
+          "key": "drkHoodie"
+        },
+        {
+          "brand": "Rick Owens DRKSHDW",
+          "item": "Detroit Cut Jeans",
+          "url": "https://www.rickowens.eu/en-us/products/du02f6366sbw99x",
+          "key": "drkDetroit"
+        },
+        {
+          "brand": "Rick Owens DRKSHDW",
+          "item": "Sneaks (Ramones high-top)",
+          "url": "https://www.rickowens.eu/en-us/products/du02f6800doem89811",
+          "key": "drkSneaks"
+        }
+      ]
+    },
+    {
+      "name": "Clipped In",
+      "vibe": "A black technical jacket with a carabiner closure. The most cyberpunk fit here that is still comfy.",
+      "palette": [
+        "#1b1d20",
+        "#efece6",
+        "#202022",
+        "#2c2f33"
+      ],
+      "pieces": [
+        {
+          "brand": "Heliot Emil",
+          "item": "Moire Technical Jacket",
+          "url": "https://heliotemil.com/products/moire-technical-jacket-black-preaw25",
+          "key": "heliot"
+        },
+        {
+          "brand": "Post Archive Faction",
+          "item": "Souvenir Tee, Paris Edition",
+          "url": "https://postarchivefaction.com/products/souvenir-paris-wh-r1",
+          "key": "paf"
+        },
+        {
+          "brand": "Diesel",
+          "item": "2001 D-Macro Relaxed Jeans, black",
+          "url": "https://diesel.com/en-us/relaxed/relaxed-jeans-2001-d-macro-09p09-black/A1159809P0902.html",
+          "key": "dieselMacro"
+        },
+        {
+          "brand": "Salomon",
+          "item": "XT-6, black",
+          "url": "https://www.salomon.com/en-us/product/xt-6-lg4239/L41086600",
+          "key": "xt6"
+        }
+      ]
+    },
+    {
+      "name": "Rivet Night",
+      "vibe": "Black leather, black denim, heavy silver. For going out.",
+      "palette": [
+        "#0f0f10",
+        "#1a1a1a",
+        "#222224",
+        "#c9ccd1"
+      ],
+      "pieces": [
+        {
+          "brand": "Schott NYC",
+          "item": "618 Steerhide Perfecto",
+          "url": "https://www.schottnyc.com/products/618-classic-perfecto-steerhide-leather-motorcycle-jacket",
+          "key": "schott"
+        },
+        {
+          "brand": "Los Angeles Apparel",
+          "item": "The 1801 Tee, black",
+          "url": "https://losangelesapparel.net/products/the-1801-garment-dye",
+          "key": "laa"
+        },
+        {
+          "brand": "Acne Studios",
+          "item": "1996M Regular Fit Jeans, vintage black",
+          "url": "https://www.acnestudios.com/us/en/acne-studios-1996m-vintage-black/B00513-900.html?g=man",
+          "key": "acneBlack"
+        },
+        {
+          "brand": "Chrome Hearts",
+          "item": "Keeper Ring, silver (resale)",
+          "url": "https://www.stadiumgoods.com/products/keeper-ring-silver-170736",
+          "key": "chRing"
+        }
+      ]
+    },
+    {
+      "name": "SF Summer",
+      "vibe": "No jacket. Just a good tee, good jeans, and steel.",
+      "palette": [
+        "#3e4a3d",
+        "#50698a",
+        "#c9ccd1",
+        "#ededed"
+      ],
+      "pieces": [
+        {
+          "brand": "Superdry",
+          "item": "Vintage Logo Classic T-Shirt",
+          "url": "https://www.superdry.com/us/mens/t-shirts/vintage-logo-classic-t-shirt-276647.html",
+          "key": "sdTee"
+        },
+        {
+          "brand": "Armani Exchange",
+          "item": "Straight Fit 5-Pocket Jeans",
+          "url": "https://www.armani.com/en-us/armani-exchange/straight-fit-5-pockets-pant-in-cotton-denim-cod-XM000069-AF28151-MB002/",
+          "key": "ax"
+        },
+        {
+          "brand": "Vitaly",
+          "item": "Proxy Ring",
+          "url": "https://www.vitalydesign.com/products/proxy",
+          "key": "vitRing"
+        },
+        {
+          "brand": "Onitsuka Tiger",
+          "item": "Mexico 66 (Swiss store, pick your region)",
+          "url": "https://www.onitsukatiger.com/ch/en-ch/mexico-66/p/1183c102-100.html",
+          "key": "mexico66"
+        }
+      ]
+    },
+    {
+      "name": "Full Personsoul",
+      "vibe": "All one brand, top to bottom. Washed denim, corduroy, and a silver ring.",
+      "palette": [
+        "#5a6e86",
+        "#efece6",
+        "#4a3d30",
+        "#c9ccd1"
+      ],
+      "pieces": [
+        {
+          "brand": "Personsoul",
+          "item": "Embroidered Stand Collar Washed Denim Jacket",
+          "url": "https://www.personsoul.com/products/personsoul-embroidered-stand-collar-washed-denim-jacket",
+          "key": "psJacket"
+        },
+        {
+          "brand": "Personsoul",
+          "item": "Vintage Washed Corduroy Wide Leg Pants",
+          "url": "https://www.personsoul.com/products/personsoul-vintage-washed-corduroy-wide-leg-pants-with-belt",
+          "key": "psPants"
+        },
+        {
+          "brand": "Personsoul",
+          "item": "Sterling Silver Armor Ring",
+          "url": "https://www.personsoul.com/products/personsoul-sterling-silver-armor-ring",
+          "key": "psRing"
+        },
+        {
+          "brand": "COS",
+          "item": "Oversized Heavyweight Cotton T-Shirt, white",
+          "url": "https://www.cos.com/en-ww/men/menswear/tshirts/oversized-fit/product/the-heavy-duty-t-shirt-white-1147848001",
+          "key": "cos"
+        }
+      ]
+    },
+    {
+      "name": "Red Echo",
+      "vibe": "A second red jacket, in perforated leather. The red jacket idea, done another way.",
+      "palette": [
+        "#9e2a22",
+        "#151515",
+        "#262628",
+        "#e9e1cf"
+      ],
+      "pieces": [
+        {
+          "brand": "Diesel",
+          "item": "Red Colour-Block Perforated Leather Biker Jacket",
+          "url": "https://www.ssense.com/en-us/men/product/diesel/red-colour-block-perforated-leather-biker-jacket/19359541",
+          "key": "dieselRed"
+        },
+        {
+          "brand": "Los Angeles Apparel",
+          "item": "The 1801 6.5 oz Garment Dye Tee",
+          "url": "https://losangelesapparel.net/products/the-1801-garment-dye",
+          "key": "laa"
+        },
+        {
+          "brand": "Diesel",
+          "item": "2001 D-Macro Relaxed Jeans, black",
+          "url": "https://diesel.com/en-us/relaxed/relaxed-jeans-2001-d-macro-0bebb-black/A115980BEBB02.html",
+          "key": "dieselMacro2"
+        },
+        {
+          "brand": "New Balance",
+          "item": "9060, sea salt",
+          "url": "https://www.newbalance.com/pd/9060/U9060V1-49464-PMG-NA.html?dwvar_U9060V1-49464-PMG-NA_style=U9060ECA",
+          "key": "nb9060"
+        }
+      ]
+    }
+  ]
+}

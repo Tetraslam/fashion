@@ -1,0 +1,1536 @@
+[
+  {
+    "id": "has2sons-red-curved-sleeve-pu-leather-jacket",
+    "brand": "Has2sons",
+    "name": "Red Curved-Sleeve PU Leather Jacket",
+    "category": "outerwear",
+    "url": "https://has2sons.com/products/red-scimitar-sleeve-pu-leather-jacket-washed-silhouette-short-coat-lapel-air-pressure-3d-gluing-process",
+    "images": [
+      "/products/has2sons-red-curved-sleeve-pu-leather-jacket/0.webp",
+      "/products/has2sons-red-curved-sleeve-pu-leather-jacket/1.webp",
+      "/products/has2sons-red-curved-sleeve-pu-leather-jacket/2.webp",
+      "/products/has2sons-red-curved-sleeve-pu-leather-jacket/3.webp"
+    ],
+    "status": "owned",
+    "colors": [
+      "#8e2833",
+      "#340d15",
+      "#cd6b74"
+    ],
+    "tags": [
+      "moto",
+      "statement"
+    ],
+    "grailedQuery": "has2sons leather jacket",
+    "grailedCategory": "outerwear.leather_jackets",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "owned": {},
+    "price": 199
+  },
+  {
+    "id": "cos-oversized-heavyweight-cotton-t-shirt-white",
+    "brand": "COS",
+    "name": "Oversized Heavyweight Cotton T-Shirt, white",
+    "category": "top",
+    "url": "https://www.cos.com/en-ww/men/menswear/tshirts/oversized-fit/product/the-heavy-duty-t-shirt-white-1147848001",
+    "images": [
+      "/products/cos-oversized-heavyweight-cotton-t-shirt-white/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#d5d5d0",
+      "#96948d"
+    ],
+    "tags": [
+      "basics"
+    ],
+    "grailedQuery": "cos heavyweight t shirt",
+    "grailedCategory": "tops.short_sleeve_shirts",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "levis-568-loose-straight-jeans",
+    "brand": "Levi’s",
+    "name": "568 Loose Straight Jeans",
+    "category": "bottom",
+    "url": "https://www.levi.com/US/en_US/clothing/men/jeans/loose/568TM-loose-straight-mens-jeans/p/290370066",
+    "images": [
+      "/products/levis-568-loose-straight-jeans/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#d3cecc",
+      "#0d0a0d",
+      "#4e4a4c"
+    ],
+    "tags": [
+      "denim",
+      "basics"
+    ],
+    "grailedQuery": "levis 568",
+    "grailedCategory": "bottoms.denim",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "dr-martens-1460-smooth-leather-boots-black",
+    "brand": "Dr. Martens",
+    "name": "1460 Smooth Leather Boots, black",
+    "category": "footwear",
+    "url": "https://www.drmartens.com/us/en/1460-smooth-leather-lace-up-boots-black/p/11822006",
+    "images": [
+      "/products/dr-martens-1460-smooth-leather-boots-black/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#302b28",
+      "#767370"
+    ],
+    "tags": [
+      "moto",
+      "post-apocalyptic"
+    ],
+    "grailedQuery": "dr martens 1460",
+    "grailedCategory": "footwear.boots",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "vitaly-miami-chain",
+    "brand": "Vitaly",
+    "name": "Miami Chain",
+    "category": "accessory",
+    "url": "https://www.vitalydesign.com/products/miami-chain-2-0",
+    "images": [
+      "/products/vitaly-miami-chain/0.webp",
+      "/products/vitaly-miami-chain/1.webp",
+      "/products/vitaly-miami-chain/2.webp",
+      "/products/vitaly-miami-chain/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#b0b0b0"
+    ],
+    "tags": [
+      "silver"
+    ],
+    "grailedQuery": "vitaly chain",
+    "grailedCategory": "accessories.jewelry_watches",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 35
+  },
+  {
+    "id": "diesel-l-eon-treated-leather-biker-jacket",
+    "brand": "Diesel",
+    "name": "L-Eon treated leather biker jacket",
+    "category": "outerwear",
+    "url": "https://diesel.com/en-us/outerwear-%26-jackets/l-eon-brown/A200000ALBB7BB.html",
+    "images": [
+      "/products/diesel-l-eon-treated-leather-biker-jacket/0.webp",
+      "/products/diesel-l-eon-treated-leather-biker-jacket/1.webp",
+      "/products/diesel-l-eon-treated-leather-biker-jacket/2.webp",
+      "/products/diesel-l-eon-treated-leather-biker-jacket/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#514f4e",
+      "#b4b2ae"
+    ],
+    "tags": [
+      "moto",
+      "post-apocalyptic"
+    ],
+    "grailedQuery": "diesel leather biker jacket",
+    "grailedCategory": "outerwear.leather_jackets",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 1395,
+    "currency": "USD"
+  },
+  {
+    "id": "diesel-t-rawnorm-raw-edge-tee-grey",
+    "brand": "Diesel",
+    "name": "T-Rawnorm raw-edge tee, grey",
+    "category": "top",
+    "url": "https://diesel.com/en-us/tshirts/t-rawnorm-grey/A261670KMAH900.html",
+    "images": [
+      "/products/diesel-t-rawnorm-raw-edge-tee-grey/0.webp",
+      "/products/diesel-t-rawnorm-raw-edge-tee-grey/1.webp",
+      "/products/diesel-t-rawnorm-raw-edge-tee-grey/2.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#676a6a",
+      "#4b392f",
+      "#171615"
+    ],
+    "tags": [
+      "post-apocalyptic"
+    ],
+    "grailedQuery": "diesel t-rawnorm",
+    "grailedCategory": "tops.short_sleeve_shirts",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 150,
+    "currency": "USD"
+  },
+  {
+    "id": "diesel-2001-d-macro-relaxed-jeans-black",
+    "brand": "Diesel",
+    "name": "2001 D-Macro Relaxed Jeans, black (09P09 wash)",
+    "category": "bottom",
+    "url": "https://diesel.com/en-us/relaxed/relaxed-jeans-2001-d-macro-09p09-black/A1159809P0902.html",
+    "images": [
+      "/products/diesel-2001-d-macro-relaxed-jeans-black/0.webp",
+      "/products/diesel-2001-d-macro-relaxed-jeans-black/1.webp",
+      "/products/diesel-2001-d-macro-relaxed-jeans-black/2.webp",
+      "/products/diesel-2001-d-macro-relaxed-jeans-black/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#101013",
+      "#53534d",
+      "#b0b0ad"
+    ],
+    "tags": [
+      "denim",
+      "post-apocalyptic"
+    ],
+    "grailedQuery": "diesel d-macro",
+    "grailedCategory": "bottoms.denim",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 250,
+    "currency": "USD"
+  },
+  {
+    "id": "dr-martens-jadon-platform-boots",
+    "brand": "Dr. Martens",
+    "name": "Jadon Platform Boots",
+    "category": "footwear",
+    "url": "https://www.drmartens.com/us/en/jadon-boot-smooth-leather-platforms-black/p/15265001",
+    "images": [
+      "/products/dr-martens-jadon-platform-boots/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#322d2b",
+      "#777472",
+      "#fdfefd"
+    ],
+    "tags": [
+      "post-apocalyptic",
+      "cyberpunk"
+    ],
+    "grailedQuery": "dr martens jadon",
+    "grailedCategory": "footwear.boots",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "represent-smart-bomber-nero",
+    "brand": "Represent",
+    "name": "Smart Bomber, Nero",
+    "category": "outerwear",
+    "url": "https://representclo.com/products/smart-bomber-nero",
+    "images": [
+      "/products/represent-smart-bomber-nero/0.webp",
+      "/products/represent-smart-bomber-nero/1.webp",
+      "/products/represent-smart-bomber-nero/2.webp",
+      "/products/represent-smart-bomber-nero/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#4a3730",
+      "#d5d4d4"
+    ],
+    "tags": [
+      "streetwear"
+    ],
+    "grailedQuery": "represent bomber",
+    "grailedCategory": "outerwear.bombers",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 370
+  },
+  {
+    "id": "lady-white-co-our-t-shirt-2-pack-white",
+    "brand": "Lady White Co",
+    "name": "Our T-Shirt 2-Pack, white",
+    "category": "top",
+    "url": "https://ladywhiteco.com/products/our-t-shirt-2-pack-white",
+    "images": [
+      "/products/lady-white-co-our-t-shirt-2-pack-white/0.webp",
+      "/products/lady-white-co-our-t-shirt-2-pack-white/1.webp",
+      "/products/lady-white-co-our-t-shirt-2-pack-white/2.webp",
+      "/products/lady-white-co-our-t-shirt-2-pack-white/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#efece6"
+    ],
+    "tags": [
+      "basics"
+    ],
+    "grailedQuery": "lady white co t-shirt",
+    "grailedCategory": "tops.short_sleeve_shirts",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 120
+  },
+  {
+    "id": "represent-r3-baggy-denim-aged-black",
+    "brand": "Represent",
+    "name": "R3 Baggy Denim, aged black",
+    "category": "bottom",
+    "url": "https://representclo.com/products/r3-baggy-denim-aged-black",
+    "images": [
+      "/products/represent-r3-baggy-denim-aged-black/0.webp",
+      "/products/represent-r3-baggy-denim-aged-black/1.webp",
+      "/products/represent-r3-baggy-denim-aged-black/2.webp",
+      "/products/represent-r3-baggy-denim-aged-black/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#313131",
+      "#d3d3d3",
+      "#8e8e8e"
+    ],
+    "tags": [
+      "denim",
+      "streetwear"
+    ],
+    "grailedQuery": "represent baggy denim",
+    "grailedCategory": "bottoms.denim",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 107.5
+  },
+  {
+    "id": "new-balance-1906r-silver-metallic",
+    "brand": "New Balance",
+    "name": "1906R, silver metallic",
+    "category": "footwear",
+    "url": "https://www.newbalance.com/pd/1906r/M1906RV1-47448-PMG-NA.html",
+    "images": [
+      "/products/new-balance-1906r-silver-metallic/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#8b8d8e",
+      "#f3f0eb",
+      "#afb0ae"
+    ],
+    "tags": [
+      "streetwear"
+    ],
+    "grailedQuery": "new balance 1906r",
+    "grailedCategory": "footwear.lowtop_sneakers",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "schott-nyc-618-steerhide-perfecto",
+    "brand": "Schott NYC",
+    "name": "618 Steerhide Perfecto",
+    "category": "outerwear",
+    "url": "https://www.schottnyc.com/products/618-classic-perfecto-steerhide-leather-motorcycle-jacket",
+    "images": [
+      "/products/schott-nyc-618-steerhide-perfecto/0.webp",
+      "/products/schott-nyc-618-steerhide-perfecto/1.webp",
+      "/products/schott-nyc-618-steerhide-perfecto/2.webp",
+      "/products/schott-nyc-618-steerhide-perfecto/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#2d3133",
+      "#afb0b1",
+      "#6c6f71"
+    ],
+    "tags": [
+      "moto",
+      "vintage"
+    ],
+    "grailedQuery": "schott perfecto 618",
+    "grailedCategory": "outerwear.leather_jackets",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 1020
+  },
+  {
+    "id": "los-angeles-apparel-the-1801-6-5-oz-garment-dye-tee",
+    "brand": "Los Angeles Apparel",
+    "name": "The 1801 6.5 oz Garment Dye Tee",
+    "category": "top",
+    "url": "https://losangelesapparel.net/products/the-1801-garment-dye",
+    "images": [
+      "/products/los-angeles-apparel-the-1801-6-5-oz-garment-dye-tee/0.webp",
+      "/products/los-angeles-apparel-the-1801-6-5-oz-garment-dye-tee/1.webp",
+      "/products/los-angeles-apparel-the-1801-6-5-oz-garment-dye-tee/2.webp",
+      "/products/los-angeles-apparel-the-1801-6-5-oz-garment-dye-tee/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#d5ced4",
+      "#745347"
+    ],
+    "tags": [
+      "basics"
+    ],
+    "grailedQuery": "los angeles apparel 1801",
+    "grailedCategory": "tops.short_sleeve_shirts",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 26
+  },
+  {
+    "id": "levis-578-baggy-jeans",
+    "brand": "Levi’s",
+    "name": "578 Baggy Jeans",
+    "category": "bottom",
+    "url": "https://www.levi.com/US/en_US/clothing/men/jeans/loose/578TM-baggy-mens-jeans/p/A47500021",
+    "images": [
+      "/products/levis-578-baggy-jeans/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#cfd8e6",
+      "#516c89",
+      "#32465b"
+    ],
+    "tags": [
+      "denim",
+      "basics"
+    ],
+    "grailedQuery": "levis 578 baggy",
+    "grailedCategory": "bottoms.denim",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "red-wing-engineer-boot-2966-black",
+    "brand": "Red Wing",
+    "name": "Engineer Boot 2966, black",
+    "category": "footwear",
+    "url": "https://www.redwingheritage.com/mens/heritage/engineer-02966.html",
+    "images": [
+      "/products/red-wing-engineer-boot-2966-black/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#2a282a",
+      "#4e4d51",
+      "#8c8c8e"
+    ],
+    "tags": [
+      "moto",
+      "vintage"
+    ],
+    "grailedQuery": "red wing engineer 2966",
+    "grailedCategory": "footwear.boots",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "thug-club-vintage-riding-skull-t-shirt",
+    "brand": "Thug Club",
+    "name": "Vintage Riding Skull T-Shirt",
+    "category": "top",
+    "url": "https://global.thugclub.store/products/vintage-riding-skull-t-shirt",
+    "images": [
+      "/products/thug-club-vintage-riding-skull-t-shirt/0.webp",
+      "/products/thug-club-vintage-riding-skull-t-shirt/1.webp",
+      "/products/thug-club-vintage-riding-skull-t-shirt/2.webp",
+      "/products/thug-club-vintage-riding-skull-t-shirt/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#c9c9b6",
+      "#4b4b48",
+      "#909086"
+    ],
+    "tags": [
+      "statement",
+      "streetwear"
+    ],
+    "grailedQuery": "thug club skull t shirt",
+    "grailedCategory": "tops.short_sleeve_shirts",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 178
+  },
+  {
+    "id": "acne-studios-1981-loose-fit-jeans-light-blue",
+    "brand": "Acne Studios",
+    "name": "1981 Loose Fit Jeans, light blue",
+    "category": "bottom",
+    "url": "https://www.acnestudios.com/us/en/acne-studios-1981-u-light-blue-vintage/C00097-228.html",
+    "images": [
+      "/products/acne-studios-1981-loose-fit-jeans-light-blue/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#71716f",
+      "#b4c6d3",
+      "#7696ac"
+    ],
+    "tags": [
+      "denim"
+    ],
+    "grailedQuery": "acne studios 1981",
+    "grailedCategory": "bottoms.denim",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "thug-club-tc-riding-skull-ring",
+    "brand": "Thug Club",
+    "name": "TC Riding Skull Ring",
+    "category": "accessory",
+    "url": "https://global.thugclub.store/products/tc-riding-skull-ring",
+    "images": [
+      "/products/thug-club-tc-riding-skull-ring/0.webp",
+      "/products/thug-club-tc-riding-skull-ring/1.webp",
+      "/products/thug-club-tc-riding-skull-ring/2.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#8e8d89",
+      "#51504f",
+      "#b4b2ac"
+    ],
+    "tags": [
+      "silver"
+    ],
+    "grailedQuery": "thug club ring",
+    "grailedCategory": "accessories.jewelry_watches",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 399
+  },
+  {
+    "id": "rick-owens-drkshdw-mega-bumper-low-sneaks",
+    "brand": "Rick Owens DRKSHDW",
+    "name": "Mega Bumper Low Sneaks",
+    "category": "footwear",
+    "url": "https://www.rickowens.eu/en-us/products/du02f6832bmo911",
+    "images": [
+      "/products/rick-owens-drkshdw-mega-bumper-low-sneaks/0.webp",
+      "/products/rick-owens-drkshdw-mega-bumper-low-sneaks/1.webp",
+      "/products/rick-owens-drkshdw-mega-bumper-low-sneaks/2.webp",
+      "/products/rick-owens-drkshdw-mega-bumper-low-sneaks/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#e5dac8",
+      "#1b1615"
+    ],
+    "tags": [
+      "cyberpunk",
+      "avant-garde"
+    ],
+    "grailedQuery": "rick owens drkshdw bumper",
+    "grailedCategory": "footwear.lowtop_sneakers",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 795
+  },
+  {
+    "id": "personsoul-double-breasted-shield-buckle-long-coat",
+    "brand": "Personsoul",
+    "name": "Double-Breasted Shield Buckle Long Coat",
+    "category": "outerwear",
+    "url": "https://www.personsoul.com/products/personsoul-double-breasted-shield-buckle-long-coat",
+    "images": [
+      "/products/personsoul-double-breasted-shield-buckle-long-coat/0.webp",
+      "/products/personsoul-double-breasted-shield-buckle-long-coat/1.webp",
+      "/products/personsoul-double-breasted-shield-buckle-long-coat/2.webp",
+      "/products/personsoul-double-breasted-shield-buckle-long-coat/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#4b3932",
+      "#151311",
+      "#8b6a56"
+    ],
+    "tags": [
+      "dune",
+      "avant-garde"
+    ],
+    "grailedQuery": "personsoul coat",
+    "grailedCategory": "outerwear.heavy_coats",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 489
+  },
+  {
+    "id": "kapital-new-momonroe-wide-leg-jeans",
+    "brand": "Kapital",
+    "name": "New Momonroe Wide-Leg Jeans",
+    "category": "bottom",
+    "url": "https://www.mrporter.com/en-us/mens/product/kapital/clothing/straight-jeans/new-momonroe-wide-leg-jeans/1647597345955021",
+    "images": [
+      "/products/kapital-new-momonroe-wide-leg-jeans/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#2c2d46",
+      "#898992",
+      "#b4b3b6"
+    ],
+    "tags": [
+      "denim",
+      "dune"
+    ],
+    "grailedQuery": "kapital wide jeans",
+    "grailedCategory": "bottoms.denim",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "guidi-back-zip-boots",
+    "brand": "Guidi",
+    "name": "Back Zip Boots",
+    "category": "footwear",
+    "url": "https://guidi.it/products/back-zip-mid-bootsm",
+    "images": [
+      "/products/guidi-back-zip-boots/0.webp",
+      "/products/guidi-back-zip-boots/1.webp",
+      "/products/guidi-back-zip-boots/2.webp",
+      "/products/guidi-back-zip-boots/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#161616",
+      "#727272",
+      "#4d4d4d"
+    ],
+    "tags": [
+      "avant-garde",
+      "post-apocalyptic"
+    ],
+    "grailedQuery": "guidi back zip",
+    "grailedCategory": "footwear.boots",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 1500
+  },
+  {
+    "id": "acne-studios-leather-jacket-rum-brown",
+    "brand": "Acne Studios",
+    "name": "Leather Jacket, rum brown",
+    "category": "outerwear",
+    "url": "https://www.acnestudios.com/us/en/leather-jacket-rum-brown/B70168-DT0.html",
+    "images": [
+      "/products/acne-studios-leather-jacket-rum-brown/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#30302f",
+      "#6b4d4f",
+      "#afafb0"
+    ],
+    "tags": [
+      "moto"
+    ],
+    "grailedQuery": "acne studios leather jacket",
+    "grailedCategory": "outerwear.leather_jackets",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "camber-usa-max-weight-tee",
+    "brand": "Camber USA",
+    "name": "Max-Weight Tee",
+    "category": "top",
+    "url": "https://camberusa.com/max-weight/",
+    "images": [
+      "/products/camber-usa-max-weight-tee/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#b5b3b3",
+      "#303234",
+      "#cf252b"
+    ],
+    "tags": [
+      "basics"
+    ],
+    "grailedQuery": "camber max weight",
+    "grailedCategory": "tops.short_sleeve_shirts",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "acne-studios-leather-ankle-boot-black",
+    "brand": "Acne Studios",
+    "name": "Leather Ankle Boot, black",
+    "category": "footwear",
+    "url": "https://www.acnestudios.com/us/en/ac-mn-shoe000017/BD0390-900.html",
+    "images": [
+      "/products/acne-studios-leather-ankle-boot-black/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#1c1817",
+      "#d2d1cf",
+      "#706c6b"
+    ],
+    "tags": [
+      "moto"
+    ],
+    "grailedQuery": "acne studios boots",
+    "grailedCategory": "footwear.boots",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "vanson-model-b-leather-motorcycle-jacket",
+    "brand": "Vanson",
+    "name": "Model B Leather Motorcycle Jacket",
+    "category": "outerwear",
+    "url": "https://www.vansonleathers.com/leather-garments/379-model-B-leather-motorcycle-jacket-B.html",
+    "images": [
+      "/products/vanson-model-b-leather-motorcycle-jacket/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#495255",
+      "#1b2329",
+      "#899296"
+    ],
+    "tags": [
+      "moto",
+      "vintage"
+    ],
+    "grailedQuery": "vanson model b",
+    "grailedCategory": "outerwear.leather_jackets",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 735,
+    "currency": "USD"
+  },
+  {
+    "id": "naked-famous-super-guy-stretch-selvedge",
+    "brand": "Naked & Famous",
+    "name": "Super Guy Stretch Selvedge",
+    "category": "bottom",
+    "url": "https://nakedandfamousdenim.com/products/naked-famous-super-guy-stretch-selvedge",
+    "images": [
+      "/products/naked-famous-super-guy-stretch-selvedge/0.webp",
+      "/products/naked-famous-super-guy-stretch-selvedge/1.webp",
+      "/products/naked-famous-super-guy-stretch-selvedge/2.webp",
+      "/products/naked-famous-super-guy-stretch-selvedge/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#3a3c43",
+      "#ab704e",
+      "#cdcfd1"
+    ],
+    "tags": [
+      "denim"
+    ],
+    "grailedQuery": "naked and famous super guy",
+    "grailedCategory": "bottoms.denim",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 176
+  },
+  {
+    "id": "converse-chuck-70-canvas-white",
+    "brand": "Converse",
+    "name": "Chuck 70 Canvas, white",
+    "category": "footwear",
+    "url": "https://www.converse.com/shop/p/chuck-70-canvas-unisex-high-top-shoe/162056C.html",
+    "images": [
+      "/products/converse-chuck-70-canvas-white/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#d2d1cf",
+      "#989491"
+    ],
+    "tags": [
+      "basics"
+    ],
+    "grailedQuery": "converse chuck 70",
+    "grailedCategory": "footwear.hitop_sneakers",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "andersson-bell-fur-collar-ma-1-bomber-khaki",
+    "brand": "Andersson Bell",
+    "name": "Fur Collar MA-1 Bomber, khaki",
+    "category": "outerwear",
+    "url": "https://adsb.co.kr/products/fur-collar-ma-1-bomber-khaki",
+    "images": [
+      "/products/andersson-bell-fur-collar-ma-1-bomber-khaki/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#262f39",
+      "#adb1b4",
+      "#4f5a65"
+    ],
+    "tags": [
+      "streetwear",
+      "dune"
+    ],
+    "grailedQuery": "andersson bell ma-1",
+    "grailedCategory": "outerwear.bombers",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "salomon-xt-6-black",
+    "brand": "Salomon",
+    "name": "XT-6, black",
+    "category": "footwear",
+    "url": "https://www.salomon.com/en-us/product/xt-6-lg4239/L41086600",
+    "images": [
+      "/products/salomon-xt-6-black/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#2c2c2c",
+      "#ffffff"
+    ],
+    "tags": [
+      "gorpcore",
+      "cyberpunk"
+    ],
+    "grailedQuery": "salomon xt-6",
+    "grailedCategory": "footwear.lowtop_sneakers",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "currency": "USD"
+  },
+  {
+    "id": "ader-error-hooded-denim-jacket-blue",
+    "brand": "ADER error",
+    "name": "Hooded Denim Jacket, blue",
+    "category": "outerwear",
+    "url": "https://www.farfetch.com/shopping/men/ader-error-hooded-denim-jacket-item-32066173.aspx",
+    "images": [
+      "/products/ader-error-hooded-denim-jacket-blue/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#305577",
+      "#c8ced5"
+    ],
+    "tags": [
+      "streetwear"
+    ],
+    "grailedQuery": "ader error denim jacket",
+    "grailedCategory": "outerwear.denim_jackets",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "diesel-2001-d-macro-relaxed-jeans-black-dieselmacro2",
+    "brand": "Diesel",
+    "name": "2001 D-Macro Relaxed Jeans, black (0BEBB wash)",
+    "category": "bottom",
+    "url": "https://diesel.com/en-us/relaxed/relaxed-jeans-2001-d-macro-0bebb-black/A115980BEBB02.html",
+    "images": [
+      "/products/diesel-2001-d-macro-relaxed-jeans-black-dieselmacro2/0.webp",
+      "/products/diesel-2001-d-macro-relaxed-jeans-black-dieselmacro2/1.webp",
+      "/products/diesel-2001-d-macro-relaxed-jeans-black-dieselmacro2/2.webp",
+      "/products/diesel-2001-d-macro-relaxed-jeans-black-dieselmacro2/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#111114",
+      "#cfcfc3",
+      "#504f4e"
+    ],
+    "tags": [
+      "denim",
+      "post-apocalyptic"
+    ],
+    "grailedQuery": "diesel d-macro",
+    "grailedCategory": "bottoms.denim",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 295,
+    "currency": "USD"
+  },
+  {
+    "id": "nike-air-force-1-07-white",
+    "brand": "Nike",
+    "name": "Air Force 1 ’07, white",
+    "category": "footwear",
+    "url": "https://www.nike.com/t/air-force-1-07-mens-shoes-DZejrQoC/CW2288-111",
+    "images": [
+      "/products/nike-air-force-1-07-white/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#ccced0"
+    ],
+    "tags": [
+      "basics",
+      "streetwear"
+    ],
+    "grailedQuery": "nike air force 1 white",
+    "grailedCategory": "footwear.lowtop_sneakers",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "roaringwild-patch-work-detroit-jacket",
+    "brand": "Roaringwild",
+    "name": "Patch Work Detroit Jacket",
+    "category": "outerwear",
+    "url": "https://roaringwild.com/products/roaringwild-patch-work-detroit-jacket",
+    "images": [
+      "/products/roaringwild-patch-work-detroit-jacket/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#c6a679",
+      "#8e7254",
+      "#534639"
+    ],
+    "tags": [
+      "workwear",
+      "streetwear"
+    ],
+    "grailedQuery": "roaringwild jacket",
+    "grailedCategory": "outerwear.light_jackets",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "timberland-premium-6-inch-waterproof-boot",
+    "brand": "Timberland",
+    "name": "Premium 6-Inch Waterproof Boot",
+    "category": "footwear",
+    "url": "https://www.timberland.com/en-us/p/men/footwear-10039/mens-timberland-premium-6-inch-waterproof-boot-TB110061713",
+    "images": [
+      "/products/timberland-premium-6-inch-waterproof-boot/0.webp",
+      "/products/timberland-premium-6-inch-waterproof-boot/1.webp",
+      "/products/timberland-premium-6-inch-waterproof-boot/2.webp",
+      "/products/timberland-premium-6-inch-waterproof-boot/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#ac7331",
+      "#191514"
+    ],
+    "tags": [
+      "workwear"
+    ],
+    "grailedQuery": "timberland 6 inch boot",
+    "grailedCategory": "footwear.boots",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 220,
+    "currency": "USD"
+  },
+  {
+    "id": "song-for-the-mute-playground-coach-coat-navy",
+    "brand": "Song for the Mute",
+    "name": "“Playground” Coach Coat, navy",
+    "category": "outerwear",
+    "url": "https://www.songforthemute.com/product/playground-coach-coat-poly-wool-melton-navy/",
+    "images": [
+      "/products/song-for-the-mute-playground-coach-coat-navy/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#4c534d",
+      "#b2b2a9",
+      "#1a282c"
+    ],
+    "tags": [
+      "dune",
+      "avant-garde"
+    ],
+    "grailedQuery": "song for the mute coat",
+    "grailedCategory": "outerwear.heavy_coats",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "kapital-fastcolor-selvedge-bandana",
+    "brand": "Kapital",
+    "name": "Fastcolor Selvedge Bandana",
+    "category": "accessory",
+    "url": "https://glasswingshop.com/products/kapital-fastcolor-selvedge-bandana-churchill-garden-large-sax",
+    "images": [
+      "/products/kapital-fastcolor-selvedge-bandana/0.webp",
+      "/products/kapital-fastcolor-selvedge-bandana/1.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#acb8c8",
+      "#2c344e",
+      "#8d8e95"
+    ],
+    "tags": [
+      "dune"
+    ],
+    "grailedQuery": "kapital bandana",
+    "grailedCategory": "accessories.gloves_scarves",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 99
+  },
+  {
+    "id": "who-decides-war-mechanic-patchwork-trucker-jacket",
+    "brand": "Who Decides War",
+    "name": "Mechanic Patchwork Trucker Jacket",
+    "category": "outerwear",
+    "url": "https://www.neimanmarcus.com/p/who-decides-war-mens-mechanic-embroidered-patchwork-trucker-jacket-prod286960813",
+    "images": [
+      "/products/who-decides-war-mechanic-patchwork-trucker-jacket/0.webp",
+      "/products/who-decides-war-mechanic-patchwork-trucker-jacket/1.webp",
+      "/products/who-decides-war-mechanic-patchwork-trucker-jacket/2.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#73756c",
+      "#37454d",
+      "#d1d1d0"
+    ],
+    "tags": [
+      "statement",
+      "denim"
+    ],
+    "grailedQuery": "who decides war jacket",
+    "grailedCategory": "outerwear.denim_jackets",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 650,
+    "currency": "USD"
+  },
+  {
+    "id": "who-decides-war-save-you-denim",
+    "brand": "Who Decides War",
+    "name": "Save You Denim",
+    "category": "bottom",
+    "url": "https://whodecideswar.com/products/save-you-denim",
+    "images": [
+      "/products/who-decides-war-save-you-denim/0.webp",
+      "/products/who-decides-war-save-you-denim/1.webp",
+      "/products/who-decides-war-save-you-denim/2.webp",
+      "/products/who-decides-war-save-you-denim/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#6b7475",
+      "#ced2d2",
+      "#2e3030"
+    ],
+    "tags": [
+      "statement",
+      "denim"
+    ],
+    "grailedQuery": "who decides war denim",
+    "grailedCategory": "bottoms.denim",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 450
+  },
+  {
+    "id": "kapital-boro-distressed-patchwork-denim-jacket",
+    "brand": "Kapital",
+    "name": "Boro Distressed Patchwork Denim Jacket",
+    "category": "outerwear",
+    "url": "https://www.mrporter.com/en-us/mens/product/kapital/clothing/lightweight-waterproof-jackets/boro-distressed-patchwork-denim-jacket/1647597345952727",
+    "images": [
+      "/products/kapital-boro-distressed-patchwork-denim-jacket/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#4e5453",
+      "#969592"
+    ],
+    "tags": [
+      "dune",
+      "denim"
+    ],
+    "grailedQuery": "kapital boro jacket",
+    "grailedCategory": "outerwear.denim_jackets",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "kapital-century-denim-5p",
+    "brand": "Kapital",
+    "name": "Century Denim 5P",
+    "category": "bottom",
+    "url": "https://shopcanoeclub.com/products/century-denim-5p-monkey-cisco-n5s",
+    "images": [
+      "/products/kapital-century-denim-5p/0.webp",
+      "/products/kapital-century-denim-5p/1.webp",
+      "/products/kapital-century-denim-5p/2.webp",
+      "/products/kapital-century-denim-5p/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#433c33",
+      "#d5d3ce"
+    ],
+    "tags": [
+      "dune",
+      "denim"
+    ],
+    "grailedQuery": "kapital century denim",
+    "grailedCategory": "bottoms.denim",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 571
+  },
+  {
+    "id": "red-wing-classic-moc-875-brown",
+    "brand": "Red Wing",
+    "name": "Classic Moc 875, brown",
+    "category": "footwear",
+    "url": "https://www.redwingheritage.com/mens/heritage/classic-moc/classic-moc-00875.html",
+    "images": [
+      "/products/red-wing-classic-moc-875-brown/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#ab3814",
+      "#f4e8d5",
+      "#d4714d"
+    ],
+    "tags": [
+      "workwear",
+      "vintage"
+    ],
+    "grailedQuery": "red wing moc toe 875",
+    "grailedCategory": "footwear.boots",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "rick-owens-drkshdw-gimp-hoodie-black",
+    "brand": "Rick Owens DRKSHDW",
+    "name": "Gimp Hoodie, black",
+    "category": "top",
+    "url": "https://www.rickowens.eu/products/du02f6291rigp09",
+    "images": [
+      "/products/rick-owens-drkshdw-gimp-hoodie-black/0.webp",
+      "/products/rick-owens-drkshdw-gimp-hoodie-black/1.webp",
+      "/products/rick-owens-drkshdw-gimp-hoodie-black/2.webp",
+      "/products/rick-owens-drkshdw-gimp-hoodie-black/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#1b1a1a",
+      "#b18a74",
+      "#4b4b4a"
+    ],
+    "tags": [
+      "cyberpunk",
+      "avant-garde"
+    ],
+    "grailedQuery": "rick owens drkshdw gimp hoodie",
+    "grailedCategory": "tops.sweatshirts_hoodies",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 660
+  },
+  {
+    "id": "rick-owens-drkshdw-detroit-cut-jeans",
+    "brand": "Rick Owens DRKSHDW",
+    "name": "Detroit Cut Jeans",
+    "category": "bottom",
+    "url": "https://www.rickowens.eu/en-us/products/du02f6366sbw99x",
+    "images": [
+      "/products/rick-owens-drkshdw-detroit-cut-jeans/0.webp",
+      "/products/rick-owens-drkshdw-detroit-cut-jeans/1.webp",
+      "/products/rick-owens-drkshdw-detroit-cut-jeans/2.webp",
+      "/products/rick-owens-drkshdw-detroit-cut-jeans/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#2e2b2a",
+      "#514e4c",
+      "#cfb7aa"
+    ],
+    "tags": [
+      "cyberpunk",
+      "avant-garde"
+    ],
+    "grailedQuery": "rick owens drkshdw detroit",
+    "grailedCategory": "bottoms.denim",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 860
+  },
+  {
+    "id": "rick-owens-drkshdw-sneaks-ramones-high-top",
+    "brand": "Rick Owens DRKSHDW",
+    "name": "Sneaks (Ramones high-top)",
+    "category": "footwear",
+    "url": "https://www.rickowens.eu/en-us/products/du02f6800doem89811",
+    "images": [
+      "/products/rick-owens-drkshdw-sneaks-ramones-high-top/0.webp",
+      "/products/rick-owens-drkshdw-sneaks-ramones-high-top/1.webp",
+      "/products/rick-owens-drkshdw-sneaks-ramones-high-top/2.webp",
+      "/products/rick-owens-drkshdw-sneaks-ramones-high-top/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#2e292a",
+      "#e8e5dc"
+    ],
+    "tags": [
+      "cyberpunk",
+      "avant-garde"
+    ],
+    "grailedQuery": "rick owens drkshdw ramones",
+    "grailedCategory": "footwear.hitop_sneakers",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 840
+  },
+  {
+    "id": "heliot-emil-moire-technical-jacket",
+    "brand": "Heliot Emil",
+    "name": "Moire Technical Jacket",
+    "category": "outerwear",
+    "url": "https://heliotemil.com/products/moire-technical-jacket-black-preaw25",
+    "images": [
+      "/products/heliot-emil-moire-technical-jacket/0.webp",
+      "/products/heliot-emil-moire-technical-jacket/1.webp",
+      "/products/heliot-emil-moire-technical-jacket/2.webp",
+      "/products/heliot-emil-moire-technical-jacket/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#2c2c2c",
+      "#cfcfcf"
+    ],
+    "tags": [
+      "cyberpunk",
+      "techwear"
+    ],
+    "grailedQuery": "heliot emil jacket",
+    "grailedCategory": "outerwear.light_jackets",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 750
+  },
+  {
+    "id": "post-archive-faction-souvenir-tee-paris-edition",
+    "brand": "Post Archive Faction",
+    "name": "Souvenir Tee, Paris Edition",
+    "category": "top",
+    "url": "https://postarchivefaction.com/products/souvenir-paris-wh-r1",
+    "images": [
+      "/products/post-archive-faction-souvenir-tee-paris-edition/0.webp",
+      "/products/post-archive-faction-souvenir-tee-paris-edition/1.webp",
+      "/products/post-archive-faction-souvenir-tee-paris-edition/2.webp",
+      "/products/post-archive-faction-souvenir-tee-paris-edition/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#edecec"
+    ],
+    "tags": [
+      "cyberpunk",
+      "techwear"
+    ],
+    "grailedQuery": "post archive faction t shirt",
+    "grailedCategory": "tops.short_sleeve_shirts",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 91
+  },
+  {
+    "id": "acne-studios-1996m-regular-fit-jeans-vintage-black",
+    "brand": "Acne Studios",
+    "name": "1996M Regular Fit Jeans, vintage black",
+    "category": "bottom",
+    "url": "https://www.acnestudios.com/us/en/acne-studios-1996m-vintage-black/B00513-900.html?g=man",
+    "images": [
+      "/products/acne-studios-1996m-regular-fit-jeans-vintage-black/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#313132",
+      "#6f6d6d",
+      "#afafaf"
+    ],
+    "tags": [
+      "denim"
+    ],
+    "grailedQuery": "acne studios 1996",
+    "grailedCategory": "bottoms.denim",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  },
+  {
+    "id": "chrome-hearts-keeper-ring-silver-resale",
+    "brand": "Chrome Hearts",
+    "name": "Keeper Ring, silver (resale)",
+    "category": "accessory",
+    "url": "https://www.stadiumgoods.com/products/keeper-ring-silver-170736",
+    "images": [
+      "/products/chrome-hearts-keeper-ring-silver-resale/0.webp",
+      "/products/chrome-hearts-keeper-ring-silver-resale/1.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#35302a",
+      "#928873",
+      "#635c52"
+    ],
+    "tags": [
+      "silver",
+      "moto"
+    ],
+    "grailedQuery": "chrome hearts keeper ring",
+    "grailedCategory": "accessories.jewelry_watches",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 2788
+  },
+  {
+    "id": "superdry-vintage-logo-classic-t-shirt",
+    "brand": "Superdry",
+    "name": "Vintage Logo Classic T-Shirt",
+    "category": "top",
+    "url": "https://www.superdry.com/us/mens/t-shirts/vintage-logo-classic-t-shirt-276647.html",
+    "images": [
+      "/products/superdry-vintage-logo-classic-t-shirt/0.webp",
+      "/products/superdry-vintage-logo-classic-t-shirt/1.webp",
+      "/products/superdry-vintage-logo-classic-t-shirt/2.webp",
+      "/products/superdry-vintage-logo-classic-t-shirt/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#d7d0c6",
+      "#0e0f13",
+      "#ab7357"
+    ],
+    "tags": [
+      "basics"
+    ],
+    "grailedQuery": "superdry vintage logo t shirt",
+    "grailedCategory": "tops.short_sleeve_shirts",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 44.95,
+    "currency": "USD"
+  },
+  {
+    "id": "armani-exchange-straight-fit-5-pocket-jeans",
+    "brand": "Armani Exchange",
+    "name": "Straight Fit 5-Pocket Jeans",
+    "category": "bottom",
+    "url": "https://www.armani.com/en-us/armani-exchange/straight-fit-5-pockets-pant-in-cotton-denim-cod-XM000069-AF28151-MB002/",
+    "images": [
+      "/products/armani-exchange-straight-fit-5-pocket-jeans/0.webp",
+      "/products/armani-exchange-straight-fit-5-pocket-jeans/1.webp",
+      "/products/armani-exchange-straight-fit-5-pocket-jeans/2.webp",
+      "/products/armani-exchange-straight-fit-5-pocket-jeans/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#28344a",
+      "#677079",
+      "#b2b5bb"
+    ],
+    "tags": [
+      "denim",
+      "basics"
+    ],
+    "grailedQuery": "armani exchange jeans",
+    "grailedCategory": "bottoms.denim",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 180,
+    "currency": "USD"
+  },
+  {
+    "id": "vitaly-proxy-ring",
+    "brand": "Vitaly",
+    "name": "Proxy Ring",
+    "category": "accessory",
+    "url": "https://www.vitalydesign.com/products/proxy",
+    "images": [
+      "/products/vitaly-proxy-ring/0.webp",
+      "/products/vitaly-proxy-ring/1.webp",
+      "/products/vitaly-proxy-ring/2.webp",
+      "/products/vitaly-proxy-ring/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#afafaf"
+    ],
+    "tags": [
+      "silver"
+    ],
+    "grailedQuery": "vitaly ring",
+    "grailedCategory": "accessories.jewelry_watches",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 84
+  },
+  {
+    "id": "onitsuka-tiger-mexico-66-swiss-store-pick-your-region",
+    "brand": "Onitsuka Tiger",
+    "name": "Mexico 66 (Swiss store, pick your region)",
+    "category": "footwear",
+    "url": "https://www.onitsukatiger.com/ch/en-ch/mexico-66/p/1183c102-100.html",
+    "images": [
+      "/products/onitsuka-tiger-mexico-66-swiss-store-pick-your-region/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#d7d4d5",
+      "#c6b48b",
+      "#0a5291"
+    ],
+    "tags": [
+      "basics"
+    ],
+    "grailedQuery": "onitsuka tiger mexico 66",
+    "grailedCategory": "footwear.lowtop_sneakers",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 195,
+    "currency": "CHF"
+  },
+  {
+    "id": "personsoul-embroidered-stand-collar-washed-denim-jacket",
+    "brand": "Personsoul",
+    "name": "Embroidered Stand Collar Washed Denim Jacket",
+    "category": "outerwear",
+    "url": "https://www.personsoul.com/products/personsoul-embroidered-stand-collar-washed-denim-jacket",
+    "images": [
+      "/products/personsoul-embroidered-stand-collar-washed-denim-jacket/0.webp",
+      "/products/personsoul-embroidered-stand-collar-washed-denim-jacket/1.webp",
+      "/products/personsoul-embroidered-stand-collar-washed-denim-jacket/2.webp",
+      "/products/personsoul-embroidered-stand-collar-washed-denim-jacket/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#4e292f",
+      "#d1cdd0"
+    ],
+    "tags": [
+      "dune",
+      "denim"
+    ],
+    "grailedQuery": "personsoul denim jacket",
+    "grailedCategory": "outerwear.denim_jackets",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 489
+  },
+  {
+    "id": "personsoul-vintage-washed-corduroy-wide-leg-pants",
+    "brand": "Personsoul",
+    "name": "Vintage Washed Corduroy Wide Leg Pants",
+    "category": "bottom",
+    "url": "https://www.personsoul.com/products/personsoul-vintage-washed-corduroy-wide-leg-pants-with-belt",
+    "images": [
+      "/products/personsoul-vintage-washed-corduroy-wide-leg-pants/0.webp",
+      "/products/personsoul-vintage-washed-corduroy-wide-leg-pants/1.webp",
+      "/products/personsoul-vintage-washed-corduroy-wide-leg-pants/2.webp",
+      "/products/personsoul-vintage-washed-corduroy-wide-leg-pants/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#484d50",
+      "#afafb0"
+    ],
+    "tags": [
+      "dune"
+    ],
+    "grailedQuery": "personsoul corduroy pants",
+    "grailedCategory": "bottoms.casual_pants",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 299
+  },
+  {
+    "id": "personsoul-sterling-silver-armor-ring",
+    "brand": "Personsoul",
+    "name": "Sterling Silver Armor Ring",
+    "category": "accessory",
+    "url": "https://www.personsoul.com/products/personsoul-sterling-silver-armor-ring",
+    "images": [
+      "/products/personsoul-sterling-silver-armor-ring/0.webp",
+      "/products/personsoul-sterling-silver-armor-ring/1.webp",
+      "/products/personsoul-sterling-silver-armor-ring/2.webp",
+      "/products/personsoul-sterling-silver-armor-ring/3.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#d2d2d2",
+      "#928e92"
+    ],
+    "tags": [
+      "silver"
+    ],
+    "grailedQuery": "personsoul ring",
+    "grailedCategory": "accessories.jewelry_watches",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 109
+  },
+  {
+    "id": "diesel-red-colour-block-perforated-leather-biker-jacket",
+    "brand": "Diesel",
+    "name": "Red Colour-Block Perforated Leather Biker Jacket",
+    "category": "outerwear",
+    "url": "https://www.ssense.com/en-us/men/product/diesel/red-colour-block-perforated-leather-biker-jacket/19359541",
+    "images": [
+      "/products/diesel-red-colour-block-perforated-leather-biker-jacket/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#2d2b2e",
+      "#af4f50",
+      "#710a16"
+    ],
+    "tags": [
+      "moto",
+      "statement"
+    ],
+    "grailedQuery": "diesel red leather jacket",
+    "grailedCategory": "outerwear.leather_jackets",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z",
+    "price": 1195,
+    "currency": "USD"
+  },
+  {
+    "id": "new-balance-9060-sea-salt",
+    "brand": "New Balance",
+    "name": "9060, sea salt",
+    "category": "footwear",
+    "url": "https://www.newbalance.com/pd/9060/U9060V1-49464-PMG-NA.html?dwvar_U9060V1-49464-PMG-NA_style=U9060ECA",
+    "images": [
+      "/products/new-balance-9060-sea-salt/0.webp"
+    ],
+    "status": "idea",
+    "colors": [
+      "#756f6c",
+      "#312e2f",
+      "#c5baae"
+    ],
+    "tags": [
+      "streetwear"
+    ],
+    "grailedQuery": "new balance 9060",
+    "grailedCategory": "footwear.lowtop_sneakers",
+    "source": "lookbook",
+    "addedAt": "2026-11-09T03:27:06.078Z"
+  }
+]

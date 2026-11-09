@@ -1,0 +1,19 @@
+{
+  "sizes": {},
+  "budget": {
+    "currency": "USD"
+  },
+  "styles": [
+    "post-apocalyptic streetwear",
+    "cyberpunk",
+    "dune",
+    "vintage moto edge"
+  ],
+  "rules": [
+    "Tall frame: cropped, boxy jacket on top, loose straight jeans below.",
+    "For expensive pieces, check Grailed first for 40-60% off."
+  ],
+  "height": "tall",
+  "location": "San Francisco",
+  "measurements": {}
+}

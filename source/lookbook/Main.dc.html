@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tetraslam Lookbook</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0e0e0f}
+a{color:#e8e4dc;text-decoration:none}a:hover{color:#ffffff}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #0e0e0f; color: #e8e4dc; font-family: 'Space Grotesk', system-ui, sans-serif; box-sizing: border-box; padding: 56px 24px 80px">
+<div style="max-width: 1360px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
+<header style="display: flex; flex-direction: column; gap: 14px; border-bottom: 1px solid #2a2a2c; padding-bottom: 32px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: {{accent}}">Lookbook / 20 fits</div>
+<h1 style="margin: 0; font-size: 64px; line-height: 1; font-weight: 700; letter-spacing: -0.03em">Post-apocalyptic streetwear</h1>
+<p style="margin: 0; max-width: 720px; font-size: 18px; line-height: 1.5; color: #b9b4ab">Statement jackets, chunky metal, roomy jeans, heavy tees. Every piece links straight to its real product page, so tap one to see the photos.</p>
+</header>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px">
+<sc-for list="{{outfits}}" as="o" hint-placeholder-count="20">
+<article style="background: #18181a; border: 1px solid #2a2a2c; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column">
+<div style="display: flex; height: 10px">
+<sc-for list="{{o.swatches}}" as="s" hint-placeholder-count="4">
+<div style="flex: 1; background: {{s.c}}"></div>
+</sc-for>
+</div>
+<div style="padding: 18px 18px 8px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{accent}}">{{o.num}}</div>
+<h2 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.01em">{{o.name}}</h2>
+<p style="margin: 0; font-size: 14px; line-height: 1.45; color: #b9b4ab">{{o.vibe}}</p>
+</div>
+<ul style="margin: 0; padding: 8px 10px 12px; list-style: none; display: flex; flex-direction: column; gap: 4px">
+<sc-for list="{{o.pieces}}" as="p" hint-placeholder-count="4">
+<li>
+<a href="{{p.url}}" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 8px 10px; border-radius: 10px; background: #202023">
+<span style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1; min-width: 0">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #a39e95">{{p.brand}}</span>
+<span style="font-size: 15px; line-height: 1.3">{{p.item}}</span>
+</span>
+<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="flex-shrink: 0"><path d="M5 11 L11 5 M6 5 H11 V10" fill="none" stroke="#a39e95" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</a>
+</li>
+</sc-for>
+</ul>
+</article>
+</sc-for>
+</div>
+<footer style="font-size: 14px; line-height: 1.5; color: #a39e95; border-top: 1px solid #2a2a2c; padding-top: 24px">Rule of thumb for a tall frame: cropped, boxy jacket on top, loose straight jeans below. For the expensive pieces, check Grailed first for 40–60% off.</footer>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#e0483c","options":["#e0483c","#d9a441","#7fb3d5","#c9ccd1"]},"$preview":{"width":1440,"height":2800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const P = (brand, item, url) => ({ brand, item, url });
+    const U = {
+      h2sRed: 'https://has2sons.com/products/red-scimitar-sleeve-pu-leather-jacket-washed-silhouette-short-coat-lapel-air-pressure-3d-gluing-process',
+      cos: 'https://www.cos.com/en-ww/men/menswear/tshirts/oversized-fit/product/the-heavy-duty-t-shirt-white-1147848001',
+      l568: 'https://www.levi.com/US/en_US/clothing/men/jeans/loose/568TM-loose-straight-mens-jeans/p/290370066',
+      dm1460: 'https://www.drmartens.com/us/en/1460-smooth-leather-lace-up-boots-black/p/11822006',
+      vitChain: 'https://www.vitalydesign.com/products/miami-chain-2-0',
+      dieselBiker: 'https://diesel.com/en-us/outerwear-%26-jackets/l-eon-brown/A200000ALBB7BB.html',
+      dieselTee: 'https://diesel.com/en-us/tshirts/t-rawnorm-grey/A261670KMAH900.html',
+      dieselMacro: 'https://diesel.com/en-us/relaxed/relaxed-jeans-2001-d-macro-09p09-black/A1159809P0902.html',
+      dieselMacro2: 'https://diesel.com/en-us/relaxed/relaxed-jeans-2001-d-macro-0bebb-black/A115980BEBB02.html',
+      jadon: 'https://www.drmartens.com/us/en/jadon-boot-smooth-leather-platforms-black/p/15265001',
+      repBomber: 'https://representclo.com/products/smart-bomber-nero',
+      ladyWhite: 'https://ladywhiteco.com/products/our-t-shirt-2-pack-white',
+      repDenim: 'https://representclo.com/products/r3-baggy-denim-aged-black',
+      nb1906: 'https://www.newbalance.com/pd/1906r/M1906RV1-47448-PMG-NA.html',
+      schott: 'https://www.schottnyc.com/products/618-classic-perfecto-steerhide-leather-motorcycle-jacket',
+      laa: 'https://losangelesapparel.net/products/the-1801-garment-dye',
+      l578: 'https://www.levi.com/US/en_US/clothing/men/jeans/loose/578TM-baggy-mens-jeans/p/A47500021',
+      rwEngineer: 'https://www.redwingheritage.com/mens/heritage/engineer-02966.html',
+      thugTee: 'https://global.thugclub.store/products/vintage-riding-skull-t-shirt',
+      acne1981: 'https://www.acnestudios.com/us/en/acne-studios-1981-u-light-blue-vintage/C00097-228.html',
+      thugRing: 'https://global.thugclub.store/products/tc-riding-skull-ring',
+      drkLow: 'https://www.rickowens.eu/en-us/products/du02f6832bmo911',
+      psCoat: 'https://www.personsoul.com/products/personsoul-double-breasted-shield-buckle-long-coat',
+      kapWide: 'https://www.mrporter.com/en-us/mens/product/kapital/clothing/straight-jeans/new-momonroe-wide-leg-jeans/1647597345955021',
+      guidi: 'https://guidi.it/products/back-zip-mid-bootsm',
+      acneLeather: 'https://www.acnestudios.com/us/en/leather-jacket-rum-brown/B70168-DT0.html',
+      camber: 'https://camberusa.com/max-weight/',
+      acneBoot: 'https://www.acnestudios.com/us/en/ac-mn-shoe000017/BD0390-900.html',
+      vanson: 'https://www.vansonleathers.com/leather-garments/379-model-B-leather-motorcycle-jacket-B.html',
+      naked: 'https://nakedandfamousdenim.com/products/naked-famous-super-guy-stretch-selvedge',
+      chuck: 'https://www.converse.com/shop/p/chuck-70-canvas-unisex-high-top-shoe/162056C.html',
+      abBomber: 'https://adsb.co.kr/products/fur-collar-ma-1-bomber-khaki',
+      xt6: 'https://www.salomon.com/en-us/product/xt-6-lg4239/L41086600',
+      ader: 'https://www.farfetch.com/shopping/men/ader-error-hooded-denim-jacket-item-32066173.aspx',
+      af1: 'https://www.nike.com/t/air-force-1-07-mens-shoes-DZejrQoC/CW2288-111',
+      rwild: 'https://roaringwild.com/products/roaringwild-patch-work-detroit-jacket',
+      timb: 'https://www.timberland.com/en-us/p/men/footwear-10039/mens-timberland-premium-6-inch-waterproof-boot-TB110061713',
+      sftm: 'https://www.songforthemute.com/product/playground-coach-coat-poly-wool-melton-navy/',
+      kapBandana: 'https://glasswingshop.com/products/kapital-fastcolor-selvedge-bandana-churchill-garden-large-sax',
+      wdwJacket: 'https://www.neimanmarcus.com/p/who-decides-war-mens-mechanic-embroidered-patchwork-trucker-jacket-prod286960813',
+      wdwJeans: 'https://whodecideswar.com/products/save-you-denim',
+      kapBoro: 'https://www.mrporter.com/en-us/mens/product/kapital/clothing/lightweight-waterproof-jackets/boro-distressed-patchwork-denim-jacket/1647597345952727',
+      kapCentury: 'https://shopcanoeclub.com/products/century-denim-5p-monkey-cisco-n5s',
+      rwMoc: 'https://www.redwingheritage.com/mens/heritage/classic-moc/classic-moc-00875.html',
+      drkHoodie: 'https://www.rickowens.eu/products/du02f6291rigp09',
+      drkDetroit: 'https://www.rickowens.eu/en-us/products/du02f6366sbw99x',
+      drkSneaks: 'https://www.rickowens.eu/en-us/products/du02f6800doem89811',
+      heliot: 'https://heliotemil.com/products/moire-technical-jacket-black-preaw25',
+      paf: 'https://postarchivefaction.com/products/souvenir-paris-wh-r1',
+      acneBlack: 'https://www.acnestudios.com/us/en/acne-studios-1996m-vintage-black/B00513-900.html?g=man',
+      chRing: 'https://www.stadiumgoods.com/products/keeper-ring-silver-170736',
+      sdTee: 'https://www.superdry.com/us/mens/t-shirts/vintage-logo-classic-t-shirt-276647.html',
+      ax: 'https://www.armani.com/en-us/armani-exchange/straight-fit-5-pockets-pant-in-cotton-denim-cod-XM000069-AF28151-MB002/',
+      vitRing: 'https://www.vitalydesign.com/products/proxy',
+      mexico66: 'https://www.onitsukatiger.com/ch/en-ch/mexico-66/p/1183c102-100.html',
+      psJacket: 'https://www.personsoul.com/products/personsoul-embroidered-stand-collar-washed-denim-jacket',
+      psPants: 'https://www.personsoul.com/products/personsoul-vintage-washed-corduroy-wide-leg-pants-with-belt',
+      psRing: 'https://www.personsoul.com/products/personsoul-sterling-silver-armor-ring',
+      dieselRed: 'https://www.ssense.com/en-us/men/product/diesel/red-colour-block-perforated-leather-biker-jacket/19359541',
+      nb9060: 'https://www.newbalance.com/pd/9060/U9060V1-49464-PMG-NA.html?dwvar_U9060V1-49464-PMG-NA_style=U9060ECA'
+    };
+    const COS = P('COS', 'Oversized Heavyweight Cotton T-Shirt, white', U.cos);
+    const LAA = P('Los Angeles Apparel', 'The 1801 6.5 oz Garment Dye Tee', U.laa);
+    const raw = [
+      { name: 'Red Rider', vibe: 'Your best jacket, built into a full outfit. Clean white under loud red.', c: ['#b3261e', '#efece6', '#7d9bb8', '#141414'],
+        pieces: [P('Has2sons', 'Red Curved-Sleeve PU Leather Jacket', U.h2sRed), COS, P('Levi’s', '568 Loose Straight Jeans', U.l568), P('Dr. Martens', '1460 Smooth Leather Boots, black', U.dm1460), P('Vitaly', 'Miami Chain', U.vitChain)] },
+      { name: 'Wasteland Diesel', vibe: 'Worn-in leather, faded grey tee, washed black denim. Looks like it survived something.', c: ['#5a3a28', '#7b7d80', '#2f3033', '#1a1a1a'],
+        pieces: [P('Diesel', 'L-Eon treated leather biker jacket', U.dieselBiker), P('Diesel', 'T-Rawnorm raw-edge tee, grey', U.dieselTee), P('Diesel', '2001 D-Macro Relaxed Jeans, black', U.dieselMacro), P('Dr. Martens', 'Jadon Platform Boots', U.jadon)] },
+      { name: 'Represent Racer', vibe: 'Dark brown bomber, white tee, aged black baggy denim. Easy and warm.', c: ['#3b2a22', '#efece6', '#2b2b2d', '#d9d6cf'],
+        pieces: [P('Represent', 'Smart Bomber, Nero', U.repBomber), P('Lady White Co', 'Our T-Shirt 2-Pack, white', U.ladyWhite), P('Represent', 'R3 Baggy Denim, aged black', U.repDenim), P('New Balance', '1906R, silver metallic', U.nb1906)] },
+      { name: 'Black Perfecto', vibe: 'The classic. A real moto jacket that will outlive you.', c: ['#121212', '#1d1d1d', '#3f5f86', '#141414'],
+        pieces: [P('Schott NYC', '618 Steerhide Perfecto', U.schott), LAA, P('Levi’s', '578 Baggy Jeans', U.l578), P('Red Wing', 'Engineer Boot 2966, black', U.rwEngineer)] },
+      { name: 'Seoul Loud', vibe: 'Skull graphic tee and silver. The jacket stays at home.', c: ['#ece8df', '#a8bccd', '#c9ccd1', '#151515'],
+        pieces: [P('Thug Club', 'Vintage Riding Skull T-Shirt', U.thugTee), P('Acne Studios', '1981 Loose Fit Jeans, light blue', U.acne1981), P('Thug Club', 'TC Riding Skull Ring', U.thugRing), P('Rick Owens DRKSHDW', 'Mega Bumper Low Sneaks', U.drkLow)] },
+      { name: 'Canton Monk', vibe: 'A long buckled coat over a white tee. Personsoul’s calm, ancient side.', c: ['#2b2b2e', '#efece6', '#33415c', '#141414'],
+        pieces: [P('Personsoul', 'Double-Breasted Shield Buckle Long Coat', U.psCoat), COS, P('Kapital', 'New Momonroe Wide-Leg Jeans', U.kapWide), P('Guidi', 'Back Zip Boots', U.guidi)] },
+      { name: 'Acne Grail', vibe: 'Soft brown leather and pale denim. Quiet, but expensive-looking.', c: ['#7a4b2e', '#ebe2cf', '#b3c4d4', '#141414'],
+        pieces: [P('Acne Studios', 'Leather Jacket, rum brown', U.acneLeather), P('Camber USA', 'Max-Weight Tee', U.camber), P('Acne Studios', '1981 Loose Fit Jeans, light blue', U.acne1981), P('Acne Studios', 'Leather Ankle Boot, black', U.acneBoot)] },
+      { name: 'Cafe Racer', vibe: 'A Vanson racer jacket. Your red jacket’s older, tougher brother.', c: ['#1a1a1a', '#8a8a8a', '#1c2740', '#ececec'],
+        pieces: [P('Vanson', 'Model B Leather Motorcycle Jacket', U.vanson), LAA, P('Naked & Famous', 'Super Guy Stretch Selvedge', U.naked), P('Converse', 'Chuck 70 Canvas, white', U.chuck)] },
+      { name: 'Trail Bell', vibe: 'A khaki MA-1 with a fur collar, plus trail shoes. Comfortable enough to walk all day.', c: ['#7a7552', '#efece6', '#a3a59a', '#1a1a1a'],
+        pieces: [P('Andersson Bell', 'Fur Collar MA-1 Bomber, khaki', U.abBomber), COS, P('Levi’s', '568 Loose Straight Jeans', U.l568), P('Salomon', 'XT-6, black', U.xt6)] },
+      { name: 'Error Blue', vibe: 'One blue denim jacket, everything else black. One color does all the work.', c: ['#4f74b8', '#141414', '#1a1a1a', '#ededed'],
+        pieces: [P('ADER error', 'Hooded Denim Jacket, blue', U.ader), LAA, P('Diesel', '2001 D-Macro Relaxed Jeans, black', U.dieselMacro2), P('Nike', 'Air Force 1 ’07, white', U.af1)] },
+      { name: 'Roaring Workwear', vibe: 'A patchwork work jacket and baggy jeans. Chinese streetwear with a builder feel.', c: ['#a68a5c', '#141414', '#7d9bb8', '#5b4636'],
+        pieces: [P('Roaringwild', 'Patch Work Detroit Jacket', U.rwild), LAA, P('Levi’s', '578 Baggy Jeans', U.l578), P('Timberland', 'Premium 6-Inch Waterproof Boot', U.timb)] },
+      { name: 'Navy Mute', vibe: 'A heavy navy coat, a bandana, washed black jeans. The Dune feeling, but for the street.', c: ['#1e2a44', '#3a3633', '#2b2b2d', '#6b8fc4'],
+        pieces: [P('Song for the Mute', '“Playground” Coach Coat, navy', U.sftm), COS, P('Diesel', '2001 D-Macro Relaxed Jeans, black', U.dieselMacro), P('Kapital', 'Fastcolor Selvedge Bandana', U.kapBandana)] },
+      { name: 'Denim on Denim', vibe: 'A patched, embroidered trucker with matching jeans. Very loud, in a good way.', c: ['#3d5a80', '#efece6', '#3d5a80', '#4a2c1c'],
+        pieces: [P('Who Decides War', 'Mechanic Patchwork Trucker Jacket', U.wdwJacket), P('Who Decides War', 'Save You Denim', U.wdwJeans), COS, P('Dr. Martens', '1460 Smooth Leather Boots', U.dm1460)] },
+      { name: 'Indigo Nomad', vibe: 'Patched boro denim and a big bandana. The closest thing to a Fremen in jeans.', c: ['#26354f', '#d8cfbc', '#2e3e5c', '#6b4630'],
+        pieces: [P('Kapital', 'Boro Distressed Patchwork Denim Jacket', U.kapBoro), P('Kapital', 'Century Denim 5P', U.kapCentury), P('Kapital', 'Fastcolor Selvedge Bandana', U.kapBandana), P('Red Wing', 'Classic Moc 875, brown', U.rwMoc)] },
+      { name: 'DRKSHDW', vibe: 'Black hoodie, black jeans, big sneakers. Rick Owens without going all the way.', c: ['#151515', '#232323', '#2f4a73', '#ece9e2'],
+        pieces: [P('Rick Owens DRKSHDW', 'Gimp Hoodie, black', U.drkHoodie), P('Rick Owens DRKSHDW', 'Detroit Cut Jeans', U.drkDetroit), P('Rick Owens DRKSHDW', 'Sneaks (Ramones high-top)', U.drkSneaks)] },
+      { name: 'Clipped In', vibe: 'A black technical jacket with a carabiner closure. The most cyberpunk fit here that is still comfy.', c: ['#1b1d20', '#efece6', '#202022', '#2c2f33'],
+        pieces: [P('Heliot Emil', 'Moire Technical Jacket', U.heliot), P('Post Archive Faction', 'Souvenir Tee, Paris Edition', U.paf), P('Diesel', '2001 D-Macro Relaxed Jeans, black', U.dieselMacro), P('Salomon', 'XT-6, black', U.xt6)] },
+      { name: 'Rivet Night', vibe: 'Black leather, black denim, heavy silver. For going out.', c: ['#0f0f10', '#1a1a1a', '#222224', '#c9ccd1'],
+        pieces: [P('Schott NYC', '618 Steerhide Perfecto', U.schott), P('Los Angeles Apparel', 'The 1801 Tee, black', U.laa), P('Acne Studios', '1996M Regular Fit Jeans, vintage black', U.acneBlack), P('Chrome Hearts', 'Keeper Ring, silver (resale)', U.chRing)] },
+      { name: 'SF Summer', vibe: 'No jacket. Just a good tee, good jeans, and steel.', c: ['#3e4a3d', '#50698a', '#c9ccd1', '#ededed'],
+        pieces: [P('Superdry', 'Vintage Logo Classic T-Shirt', U.sdTee), P('Armani Exchange', 'Straight Fit 5-Pocket Jeans', U.ax), P('Vitaly', 'Proxy Ring', U.vitRing), P('Onitsuka Tiger', 'Mexico 66 (Swiss store, pick your region)', U.mexico66)] },
+      { name: 'Full Personsoul', vibe: 'All one brand, top to bottom. Washed denim, corduroy, and a silver ring.', c: ['#5a6e86', '#efece6', '#4a3d30', '#c9ccd1'],
+        pieces: [P('Personsoul', 'Embroidered Stand Collar Washed Denim Jacket', U.psJacket), P('Personsoul', 'Vintage Washed Corduroy Wide Leg Pants', U.psPants), P('Personsoul', 'Sterling Silver Armor Ring', U.psRing), COS] },
+      { name: 'Red Echo', vibe: 'A second red jacket, in perforated leather. The red jacket idea, done another way.', c: ['#9e2a22', '#151515', '#262628', '#e9e1cf'],
+        pieces: [P('Diesel', 'Red Colour-Block Perforated Leather Biker Jacket', U.dieselRed), LAA, P('Diesel', '2001 D-Macro Relaxed Jeans, black', U.dieselMacro2), P('New Balance', '9060, sea salt', U.nb9060)] }
+    ];
+    const outfits = raw.map((o, i) => ({ ...o, num: String(i + 1).padStart(2, '0'), swatches: o.c.map((c) => ({ c })) }));
+    return { accent: this.props.accent ?? '#e0483c', outfits };
+  }
+}
+</script>
+</body>
+</html>
